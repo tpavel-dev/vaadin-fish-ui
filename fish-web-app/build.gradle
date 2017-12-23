@@ -1,0 +1,34 @@
+apply plugin: 'org.springframework.boot'
+//apply plugin: "com.gorylenko.gradle-git-properties"
+
+version "${release_version}"
+
+dependencies {
+    compile project(':fish-vaadin.valo')
+}
+
+springBoot {
+    executable = true
+    buildInfo()
+//    buildInfo {
+//        additionalProperties = [
+//                'foo': 'bar'
+//        ]
+//    }
+}
+
+bootRepackage {
+    enabled = true
+}
+
+/*
+gitProperties {
+    gitRepositoryRoot = new File("${project.rootDir}/..")
+//    gitPropertiesDir = new File("${project.rootDir}/../fish-mobile.vaadin.valo.app/src/main/resources")
+//    gitPropertiesDir = new File("${project.rootDir}/your/custom/dir")
+//    gitPropertiesDir = new File("/home/x/prj/fish/src/project-fish-mobile.vaadin")
+    dateFormat = "yyyy-MM-dd'T'HH:mmZ"
+    dateFormatTimeZone = "Asia/Almaty"
+}
+
+*/

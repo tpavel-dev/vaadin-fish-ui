@@ -1,0 +1,6 @@
+dependencies {
+    compile project(':fish-config')
+    compile project(':fish-resources')
+    compile project(':fish-exception')
+    compile project(':fish-coda-stub-prod')
+}

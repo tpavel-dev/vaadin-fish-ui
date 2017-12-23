@@ -1,0 +1,2559 @@
+<definitions name="rbServices" targetNamespace="http://kz.kcell.apps.pentagon.coda.ws" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://kz.kcell.apps.pentagon.coda.ws" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <types>
+  <xs:schema targetNamespace="http://kz.kcell.apps.pentagon.coda.ws" version="1.0" xmlns:tns="http://kz.kcell.apps.pentagon.coda.ws" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="CDDBInternalFailure" type="tns:CDDBInternalFailure"/>
+   <xs:element name="CODAInternalFailure" type="tns:CODAInternalFailure"/>
+   <xs:element name="getActiveProducts" type="tns:getActiveProducts"/>
+   <xs:element name="getActiveProductsResponse" type="tns:getActiveProductsResponse"/>
+   <xs:element name="getAllActiveBusinessProductsRB" type="tns:getAllActiveBusinessProductsRB"/>
+   <xs:element name="getAllActiveBusinessProductsRBResponse" type="tns:getAllActiveBusinessProductsRBResponse"/>
+   <xs:element name="getAllPrintTemplatesIds" type="tns:getAllPrintTemplatesIds"/>
+   <xs:element name="getAllPrintTemplatesIdsResponse" type="tns:getAllPrintTemplatesIdsResponse"/>
+   <xs:element name="getAllProducts" type="tns:getAllProducts"/>
+   <xs:element name="getAllProductsResponse" type="tns:getAllProductsResponse"/>
+   <xs:element name="getAttachTypesRB" type="tns:getAttachTypesRB"/>
+   <xs:element name="getAttachTypesRBFiltered" type="tns:getAttachTypesRBFiltered"/>
+   <xs:element name="getAttachTypesRBFilteredResponse" type="tns:getAttachTypesRBFilteredResponse"/>
+   <xs:element name="getAttachTypesRBResponse" type="tns:getAttachTypesRBResponse"/>
+   <xs:element name="getBalancesRB" type="tns:getBalancesRB"/>
+   <xs:element name="getBalancesRBResponse" type="tns:getBalancesRBResponse"/>
+   <xs:element name="getBanksRB" type="tns:getBanksRB"/>
+   <xs:element name="getBanksRBResponse" type="tns:getBanksRBResponse"/>
+   <xs:element name="getBonusesRB" type="tns:getBonusesRB"/>
+   <xs:element name="getBonusesRBResponse" type="tns:getBonusesRBResponse"/>
+   <xs:element name="getBusinessCategoriesRB" type="tns:getBusinessCategoriesRB"/>
+   <xs:element name="getBusinessCategoriesRBResponse" type="tns:getBusinessCategoriesRBResponse"/>
+   <xs:element name="getChangeReasons" type="tns:getChangeReasons"/>
+   <xs:element name="getChangeReasonsResponse" type="tns:getChangeReasonsResponse"/>
+   <xs:element name="getChannels" type="tns:getChannels"/>
+   <xs:element name="getChannelsResponse" type="tns:getChannelsResponse"/>
+   <xs:element name="getCorpAttributesRB" type="tns:getCorpAttributesRB"/>
+   <xs:element name="getCorpAttributesRBResponse" type="tns:getCorpAttributesRBResponse"/>
+   <xs:element name="getCorpItemTypesRB" type="tns:getCorpItemTypesRB"/>
+   <xs:element name="getCorpItemTypesRBResponse" type="tns:getCorpItemTypesRBResponse"/>
+   <xs:element name="getCorpReasonRB" type="tns:getCorpReasonRB"/>
+   <xs:element name="getCorpReasonRBResponse" type="tns:getCorpReasonRBResponse"/>
+   <xs:element name="getDealersRB" type="tns:getDealersRB"/>
+   <xs:element name="getDealersRBResponse" type="tns:getDealersRBResponse"/>
+   <xs:element name="getDeliveryGroupsRB" type="tns:getDeliveryGroupsRB"/>
+   <xs:element name="getDeliveryGroupsRBResponse" type="tns:getDeliveryGroupsRBResponse"/>
+   <xs:element name="getDeliveryMethodsRB" type="tns:getDeliveryMethodsRB"/>
+   <xs:element name="getDeliveryMethodsRBResponse" type="tns:getDeliveryMethodsRBResponse"/>
+   <xs:element name="getDicData" type="tns:getDicData"/>
+   <xs:element name="getDicDataResponse" type="tns:getDicDataResponse"/>
+   <xs:element name="getDocissuersRB" type="tns:getDocissuersRB"/>
+   <xs:element name="getDocissuersRBResponse" type="tns:getDocissuersRBResponse"/>
+   <xs:element name="getDoctypesRB" type="tns:getDoctypesRB"/>
+   <xs:element name="getDoctypesRBResponse" type="tns:getDoctypesRBResponse"/>
+   <xs:element name="getEligibleBusinessProductsRB" type="tns:getEligibleBusinessProductsRB"/>
+   <xs:element name="getEligibleBusinessProductsRBResponse" type="tns:getEligibleBusinessProductsRBResponse"/>
+   <xs:element name="getErrTemplates" type="tns:getErrTemplates"/>
+   <xs:element name="getErrTemplatesResponse" type="tns:getErrTemplatesResponse"/>
+   <xs:element name="getEventsSupportRB" type="tns:getEventsSupportRB"/>
+   <xs:element name="getEventsSupportRBResponse" type="tns:getEventsSupportRBResponse"/>
+   <xs:element name="getInfoMessageTypeRB" type="tns:getInfoMessageTypeRB"/>
+   <xs:element name="getInfoMessageTypeRBResponse" type="tns:getInfoMessageTypeRBResponse"/>
+   <xs:element name="getJournalGroupsRB" type="tns:getJournalGroupsRB"/>
+   <xs:element name="getJournalGroupsRBResponse" type="tns:getJournalGroupsRBResponse"/>
+   <xs:element name="getLangsRB" type="tns:getLangsRB"/>
+   <xs:element name="getLangsRBResponse" type="tns:getLangsRBResponse"/>
+   <xs:element name="getLifeCyclesRB" type="tns:getLifeCyclesRB"/>
+   <xs:element name="getLifeCyclesRBResponse" type="tns:getLifeCyclesRBResponse"/>
+   <xs:element name="getLocationsRB" type="tns:getLocationsRB"/>
+   <xs:element name="getLocationsRBResponse" type="tns:getLocationsRBResponse"/>
+   <xs:element name="getMeetingCityIds" type="tns:getMeetingCityIds"/>
+   <xs:element name="getMeetingCityIdsResponse" type="tns:getMeetingCityIdsResponse"/>
+   <xs:element name="getMsgMappingsRB" type="tns:getMsgMappingsRB"/>
+   <xs:element name="getMsgMappingsRBResponse" type="tns:getMsgMappingsRBResponse"/>
+   <xs:element name="getMsisdnCategoriesRB" type="tns:getMsisdnCategoriesRB"/>
+   <xs:element name="getMsisdnCategoriesRBResponse" type="tns:getMsisdnCategoriesRBResponse"/>
+   <xs:element name="getObjectAttrs" type="tns:getObjectAttrs"/>
+   <xs:element name="getObjectAttrsResponse" type="tns:getObjectAttrsResponse"/>
+   <xs:element name="getOrgTypesRB" type="tns:getOrgTypesRB"/>
+   <xs:element name="getOrgTypesRBResponse" type="tns:getOrgTypesRBResponse"/>
+   <xs:element name="getOrgUnitsRB" type="tns:getOrgUnitsRB"/>
+   <xs:element name="getOrgUnitsRBResponse" type="tns:getOrgUnitsRBResponse"/>
+   <xs:element name="getPaymentCompaniesRB" type="tns:getPaymentCompaniesRB"/>
+   <xs:element name="getPaymentCompaniesRBResponse" type="tns:getPaymentCompaniesRBResponse"/>
+   <xs:element name="getPaymentTypesRB" type="tns:getPaymentTypesRB"/>
+   <xs:element name="getPaymentTypesRBResponse" type="tns:getPaymentTypesRBResponse"/>
+   <xs:element name="getPoNameRB" type="tns:getPoNameRB"/>
+   <xs:element name="getPoNameRBResponse" type="tns:getPoNameRBResponse"/>
+   <xs:element name="getPrintTemplate" type="tns:getPrintTemplate"/>
+   <xs:element name="getPrintTemplateResponse" type="tns:getPrintTemplateResponse"/>
+   <xs:element name="getPrintTemplatesForCategory" type="tns:getPrintTemplatesForCategory"/>
+   <xs:element name="getPrintTemplatesForCategoryResponse" type="tns:getPrintTemplatesForCategoryResponse"/>
+   <xs:element name="getRfmPaymentCompaniesRB" type="tns:getRfmPaymentCompaniesRB"/>
+   <xs:element name="getRfmPaymentCompaniesRBResponse" type="tns:getRfmPaymentCompaniesRBResponse"/>
+   <xs:element name="getSites" type="tns:getSites"/>
+   <xs:element name="getSitesResponse" type="tns:getSitesResponse"/>
+   <xs:element name="getTransactionTypesRB" type="tns:getTransactionTypesRB"/>
+   <xs:element name="getTransactionTypesRBResponse" type="tns:getTransactionTypesRBResponse"/>
+   <xs:element name="getUserRefRB" type="tns:getUserRefRB"/>
+   <xs:element name="getUserRefRBResponse" type="tns:getUserRefRBResponse"/>
+   <xs:complexType name="getChannels">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getChannelsResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:channelsRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="channelsRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="channels" type="tns:channelDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="channelDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:string"/>
+     <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="CDDBInternalFailure">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getLifeCyclesRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getLifeCyclesRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:lifeCyclesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lifeCyclesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="lcStates" type="tns:lcDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="lcDTO">
+    <xs:sequence>
+     <xs:element name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="state" type="xs:string"/>
+     <xs:element minOccurs="0" name="substate" type="xs:string"/>
+     <xs:element name="forSubscription" type="xs:boolean"/>
+     <xs:element name="forTla" type="xs:boolean"/>
+     <xs:element name="forComponent" type="xs:boolean"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getDealersRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getDealersRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:dealersRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dealersRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="dealers" type="tns:dmDealerDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dmDealerDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="dealersId" type="xs:long"/>
+     <xs:element minOccurs="0" name="dealerTypeId" type="xs:string"/>
+     <xs:element minOccurs="0" name="parentDealerId" type="xs:long"/>
+     <xs:element minOccurs="0" name="dealerOrganizationTypeId" type="xs:long"/>
+     <xs:element minOccurs="0" name="name" type="xs:string"/>
+     <xs:element minOccurs="0" name="responsiblePerson" type="xs:string"/>
+     <xs:element minOccurs="0" name="rnn" type="xs:string"/>
+     <xs:element minOccurs="0" name="iin" type="xs:string"/>
+     <xs:element minOccurs="0" name="dealerBankId" type="xs:long"/>
+     <xs:element minOccurs="0" name="bankAccount" type="xs:string"/>
+     <xs:element minOccurs="0" name="documentNumber" type="xs:string"/>
+     <xs:element minOccurs="0" name="documentSerial" type="xs:string"/>
+     <xs:element minOccurs="0" name="documentGivenDate" type="xs:dateTime"/>
+     <xs:element minOccurs="0" name="sapCreditor" type="xs:string"/>
+     <xs:element minOccurs="0" name="sapDebitor" type="xs:string"/>
+     <xs:element minOccurs="0" name="dealerOpenedDate" type="xs:dateTime"/>
+     <xs:element minOccurs="0" name="state" type="tns:dmDealerState"/>
+     <xs:element minOccurs="0" name="description" type="xs:string"/>
+     <xs:element minOccurs="0" name="cbossAccount" type="xs:string"/>
+     <xs:element minOccurs="0" name="orgaCode" type="xs:string"/>
+     <xs:element minOccurs="0" name="comment" type="xs:string"/>
+     <xs:element minOccurs="0" name="category" type="tns:dmDealerCategory"/>
+     <xs:element minOccurs="0" name="modifiedByUserId" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getMsisdnCategoriesRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getMsisdnCategoriesRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:msisdnCategoriesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msisdnCategoriesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="msisdnCategories" type="tns:msisdnCategoryDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msisdnCategoryDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="visual" type="tns:msisdnCategoriesVisualDTO"/>
+     <xs:element minOccurs="0" name="brand" type="xs:string"/>
+     <xs:element minOccurs="0" name="dscEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="dscKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="dscRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="msisdnCategoriesVisualId" type="xs:long"/>
+     <xs:element minOccurs="0" name="msisdnSelectionEligible" type="xs:boolean"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="price" type="xs:float"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msisdnCategoriesVisualDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="categoryGroup" type="tns:msisdnCategoriesGroupsDTO"/>
+     <xs:element minOccurs="0" name="css" type="xs:string"/>
+     <xs:element minOccurs="0" name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="msisdnCategoriesGroupsId" type="xs:long"/>
+     <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msisdnCategoriesGroupsDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getDoctypesRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getDoctypesRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:docTypesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="docTypesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="doctypes" type="tns:doctypesDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="doctypesDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getDocissuersRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getDocissuersRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:docIssuersRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="docIssuersRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="docissuers" type="tns:docissuerDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="docissuerDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="docissuersId" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getBanksRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getBanksRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:banksRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="banksRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="banks" type="tns:banksDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="banksDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="name" type="xs:string"/>
+     <xs:element minOccurs="0" name="usersId" type="xs:long"/>
+     <xs:element minOccurs="0" name="bik" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getLocationsRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getLocationsRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:locationsRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="locationsRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="cities" type="tns:cityDTO"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="countries" type="tns:countryDTO"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="dmSalesPoints" type="tns:dmSalesPointDTO"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="hrLocations" type="tns:hrLocationDTO"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="regions" type="tns:regionDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="cityDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="gpsLat" type="xs:double"/>
+     <xs:element minOccurs="0" name="gpsLng" type="xs:double"/>
+     <xs:element name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="postcode" type="xs:string"/>
+     <xs:element minOccurs="0" name="region" type="tns:regionDTO"/>
+     <xs:element name="regionsId" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="regionDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="countriesId" type="xs:string"/>
+     <xs:element minOccurs="0" name="country" type="tns:countryDTO"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="parentId" type="xs:long"/>
+     <xs:element name="regionsId" type="xs:long"/>
+     <xs:element minOccurs="0" name="type" type="tns:regionType"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="countryDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dmSalesPointDTO">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="addresses" nillable="true" type="tns:addressDTO"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="businessHours" nillable="true" type="tns:businessHoursDTO"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="businessHoursExceptions" nillable="true" type="tns:businessHoursExceptionsDTO"/>
+     <xs:element minOccurs="0" name="comment" type="xs:string"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="contacts" nillable="true" type="tns:contactDTO"/>
+     <xs:element minOccurs="0" name="dealerId" type="xs:long"/>
+     <xs:element minOccurs="0" name="dealerMerchandiserUserId" type="xs:long"/>
+     <xs:element minOccurs="0" name="description" type="xs:string"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="files" nillable="true" type="tns:dmSlpImgDTO"/>
+     <xs:element minOccurs="0" name="isActive" type="tns:yesNoType"/>
+     <xs:element minOccurs="0" name="isOfficial" type="tns:yesNoType"/>
+     <xs:element minOccurs="0" name="modifiedByUserId" type="xs:long"/>
+     <xs:element minOccurs="0" name="motivationSystem" type="xs:unsignedShort"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="responsiblePerson" type="xs:string"/>
+     <xs:element minOccurs="0" name="salesPointId" type="xs:long"/>
+     <xs:element minOccurs="0" name="salesPointType" type="tns:dmSlpType"/>
+     <xs:element minOccurs="0" name="state" type="tns:dmSlpTypeState"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="addressDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="addressesId" type="xs:long"/>
+     <xs:element minOccurs="0" name="ownerId" type="xs:long"/>
+     <xs:element minOccurs="0" name="addrtype" type="tns:addressType"/>
+     <xs:element minOccurs="0" name="citiesId" type="xs:long"/>
+     <xs:element minOccurs="0" name="ownerType" type="tns:ownerType"/>
+     <xs:element minOccurs="0" name="postcode" type="xs:string"/>
+     <xs:element minOccurs="0" name="building" type="xs:string"/>
+     <xs:element minOccurs="0" name="section" type="xs:string"/>
+     <xs:element minOccurs="0" name="floor" type="xs:int"/>
+     <xs:element minOccurs="0" name="apartment" type="xs:string"/>
+     <xs:element minOccurs="0" name="addinfo" type="xs:string"/>
+     <xs:element minOccurs="0" name="usersId" type="xs:long"/>
+     <xs:element minOccurs="0" name="microdistrictsId" type="xs:long"/>
+     <xs:element minOccurs="0" name="gpsLongitude" type="xs:double"/>
+     <xs:element minOccurs="0" name="gpsLatitude" type="xs:double"/>
+     <xs:element minOccurs="0" name="streetRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="streetEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="streetKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="office" type="xs:string"/>
+     <xs:element minOccurs="0" name="districtRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="districtEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="districtKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="state" type="tns:ownerState"/>
+     <xs:element minOccurs="0" name="action" type="tns:actType"/>
+     <xs:element minOccurs="0" name="city" type="tns:cityDTO"/>
+     <xs:element minOccurs="0" name="microdistrict" type="tns:microdistrictDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="microdistrictDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="citiesId" type="xs:long"/>
+     <xs:element minOccurs="0" name="microdistrictsId" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="businessHoursDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="businessHoursId" type="xs:long"/>
+     <xs:element minOccurs="0" name="endHour" type="xs:int"/>
+     <xs:element minOccurs="0" name="endMinute" type="xs:int"/>
+     <xs:element minOccurs="0" name="lunchEndHour" type="xs:int"/>
+     <xs:element minOccurs="0" name="lunchEndMinute" type="xs:int"/>
+     <xs:element minOccurs="0" name="lunchStartHour" type="xs:int"/>
+     <xs:element minOccurs="0" name="lunchStartMinute" type="xs:int"/>
+     <xs:element minOccurs="0" name="ownerId" type="xs:long"/>
+     <xs:element minOccurs="0" name="ownerTypesId" type="xs:int"/>
+     <xs:element minOccurs="0" name="startHour" type="xs:int"/>
+     <xs:element minOccurs="0" name="startMinute" type="xs:int"/>
+     <xs:element minOccurs="0" name="weekday" type="tns:weekdayDTO"/>
+     <xs:element minOccurs="0" name="weekdayId" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="weekdayDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="shortName" type="xs:string"/>
+     <xs:element minOccurs="0" name="weekdayId" type="xs:int"/>
+     <xs:element minOccurs="0" name="weekdayType" type="tns:weekdayType"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="businessHoursExceptionsDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="businessHoursExceptionsId" type="xs:long"/>
+     <xs:element minOccurs="0" name="day" type="xs:int"/>
+     <xs:element minOccurs="0" name="endHour" type="xs:int"/>
+     <xs:element minOccurs="0" name="endMinute" type="xs:int"/>
+     <xs:element minOccurs="0" name="lunchEndHour" type="xs:int"/>
+     <xs:element minOccurs="0" name="lunchEndMinute" type="xs:int"/>
+     <xs:element minOccurs="0" name="lunchStartHour" type="xs:int"/>
+     <xs:element minOccurs="0" name="lunchStartMinute" type="xs:int"/>
+     <xs:element minOccurs="0" name="month" type="xs:int"/>
+     <xs:element minOccurs="0" name="ownerId" type="xs:long"/>
+     <xs:element minOccurs="0" name="ownertypesId" type="xs:int"/>
+     <xs:element minOccurs="0" name="startHour" type="xs:int"/>
+     <xs:element minOccurs="0" name="startMinute" type="xs:int"/>
+     <xs:element minOccurs="0" name="vacation" type="xs:unsignedShort"/>
+     <xs:element minOccurs="0" name="year" type="xs:int"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="contactDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="contactsId" type="xs:long"/>
+     <xs:element minOccurs="0" name="ownerId" type="xs:long"/>
+     <xs:element minOccurs="0" name="contactType" type="tns:contactType"/>
+     <xs:element minOccurs="0" name="ownerType" type="tns:ownerType"/>
+     <xs:element minOccurs="0" name="contact" type="xs:string"/>
+     <xs:element minOccurs="0" name="usersId" type="xs:long"/>
+     <xs:element minOccurs="0" name="state" type="tns:ownerState"/>
+     <xs:element minOccurs="0" name="action" type="tns:actType"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dmSlpImgDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="description" type="xs:string"/>
+     <xs:element minOccurs="0" name="dmSalespointsId" type="xs:long"/>
+     <xs:element minOccurs="0" name="dmSlpImgId" type="xs:long"/>
+     <xs:element minOccurs="0" name="imageType" type="tns:dmSlpImgType"/>
+     <xs:element minOccurs="0" name="url" type="xs:string"/>
+     <xs:element minOccurs="0" name="usersId" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="hrLocationDTO">
+    <xs:sequence>
+     <xs:element name="cityId" type="xs:long"/>
+     <xs:element minOccurs="0" name="code" type="xs:string"/>
+     <xs:element name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="parentHRLocation" type="tns:hrLocationDTO"/>
+     <xs:element name="parentId" type="xs:long"/>
+     <xs:element minOccurs="0" name="shortName" type="xs:string"/>
+     <xs:element minOccurs="0" name="type" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getOrgUnitsRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getOrgUnitsRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:orgUnitsRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orgUnitsRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="orgUnits" type="tns:orgUnitDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orgUnitDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="code" type="xs:string"/>
+     <xs:element name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element name="parentId" type="xs:long"/>
+     <xs:element minOccurs="0" name="parentOrgUnit" type="tns:orgUnitDTO"/>
+     <xs:element minOccurs="0" name="shortname" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getChangeReasons">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getChangeReasonsResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:changeReasonsRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="changeReasonsRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="reasons" type="tns:changeReasonDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="changeReasonDTO">
+    <xs:sequence>
+     <xs:element name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="type" type="xs:string"/>
+     <xs:element name="paid" type="xs:boolean"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getSites">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getSitesResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:sitesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sitesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="sites" type="tns:sitesDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="sitesDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:string"/>
+     <xs:element minOccurs="0" name="channel" type="xs:string"/>
+     <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getBalancesRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getBalancesRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:balancesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="balancesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="balancesRB" type="tns:balanceRBDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="balanceRBDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="extRef" type="xs:string"/>
+     <xs:element minOccurs="0" name="name_ru" type="xs:string"/>
+     <xs:element minOccurs="0" name="name_kz" type="xs:string"/>
+     <xs:element minOccurs="0" name="name_en" type="xs:string"/>
+     <xs:element minOccurs="0" name="orgaId" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getBonusesRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getBonusesRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:bonusesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bonusesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="bonusesRB" type="tns:bonusDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="bonusDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="amount" type="xs:int"/>
+     <xs:element minOccurs="0" name="balanceId" type="xs:long"/>
+     <xs:element minOccurs="0" name="bonusId" type="xs:long"/>
+     <xs:element minOccurs="0" name="comments" type="xs:string"/>
+     <xs:element minOccurs="0" name="name_en" type="xs:string"/>
+     <xs:element minOccurs="0" name="name_kz" type="xs:string"/>
+     <xs:element minOccurs="0" name="name_ru" type="xs:string"/>
+     <xs:element minOccurs="0" name="validity" type="xs:int"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getOrgTypesRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getOrgTypesRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:orgTypesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orgTypesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="orgTypesRB" type="tns:orgTypeDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="orgTypeDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="shortNameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="shortNameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="shortNameRu" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getBusinessCategoriesRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getBusinessCategoriesRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:businessCategoriesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="businessCategoriesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="businessCategoriesRB" type="tns:businessCategoryDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="businessCategoryDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="sapName" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getJournalGroupsRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getJournalGroupsRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:journalGroupsRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="journalGroupsRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="journalGroupsRB" type="tns:journalGroupDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="journalGroupDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="journalGroupsId" type="xs:long"/>
+     <xs:element minOccurs="0" name="name" type="xs:string"/>
+     <xs:element minOccurs="0" name="codeId" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getPaymentTypesRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getPaymentTypesRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:paymentTypesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentTypesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="paymentTypesRB" type="tns:paymentTypeDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentTypeDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="paymentTypesId" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="extRef" type="xs:string"/>
+     <xs:element minOccurs="0" name="cbossId" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getTransactionTypesRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getTransactionTypesRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:transactionTypesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transactionTypesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="transactionTypesRB" type="tns:transactionTypeDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="transactionTypeDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="transactionTypesId" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="extRef" type="xs:string"/>
+     <xs:element minOccurs="0" name="cbossId" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getUserRefRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getUserRefRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:userRefRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userRefRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="userRefRB" type="tns:userRef"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="userRef">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="username" type="xs:string"/>
+     <xs:element minOccurs="0" name="type" type="tns:ownerType"/>
+     <xs:element minOccurs="0" name="ownerId" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getAllActiveBusinessProductsRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getAllActiveBusinessProductsRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:businessProductsRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="businessProductsRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="bizProductsRB" type="tns:businessProductDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="businessProductDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="bpId" type="xs:long"/>
+     <xs:element minOccurs="0" name="productType" type="tns:productType"/>
+     <xs:element minOccurs="0" name="maxAmount" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="startDate" type="xs:dateTime"/>
+     <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+     <xs:element minOccurs="0" name="isStartdate" type="tns:businessProductFieldOptionality"/>
+     <xs:element minOccurs="0" name="isEnddate" type="tns:businessProductFieldOptionality"/>
+     <xs:element minOccurs="0" name="isAmount" type="tns:businessProductFieldOptionality"/>
+     <xs:element minOccurs="0" name="isChargeAmount" type="tns:businessProductFieldOptionality"/>
+     <xs:element minOccurs="0" name="icebergFormName" type="xs:string"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="productAttributes" nillable="true" type="tns:businessProductAttributeDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="businessProductAttributeDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="businessProductAttrsId" type="xs:long"/>
+     <xs:element minOccurs="0" name="businessProductsId" type="xs:long"/>
+     <xs:element minOccurs="0" name="name" type="xs:string"/>
+     <xs:element minOccurs="0" name="value" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getEligibleBusinessProductsRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="elTypes" type="tns:businessProductEligible"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getEligibleBusinessProductsRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:businessProductsRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getActiveProducts">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getActiveProductsResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:productsRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productsRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="prodTypes" type="tns:productTypeDTO"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="products" type="tns:productDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productTypeDTO">
+    <xs:sequence>
+     <xs:element name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="productsId" type="xs:long"/>
+     <xs:element minOccurs="0" name="productType" type="tns:productType"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="extRef" type="xs:string"/>
+     <xs:element minOccurs="0" name="masterRef" type="xs:string"/>
+     <xs:element minOccurs="0" name="created" type="xs:dateTime"/>
+     <xs:element minOccurs="0" name="comments" type="xs:string"/>
+     <xs:element minOccurs="0" name="state" type="tns:ownerState"/>
+     <xs:element minOccurs="0" name="usersId" type="xs:long"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="productAttributes" nillable="true" type="tns:productAttributeDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="productAttributeDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="name" type="xs:string"/>
+     <xs:element minOccurs="0" name="productattrsId" type="xs:long"/>
+     <xs:element minOccurs="0" name="productsId" type="xs:long"/>
+     <xs:element minOccurs="0" name="value" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getAllProducts">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getAllProductsResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:productsRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getDicData">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getDicDataResponse">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:drDicDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="drDicDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:int"/>
+     <xs:element minOccurs="0" name="dicId" type="xs:int"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="values" nillable="true" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getErrTemplates">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getErrTemplatesResponse">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:drErrTemplateDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="drErrTemplateDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:int"/>
+     <xs:element minOccurs="0" name="valuedate" type="xs:dateTime"/>
+     <xs:element minOccurs="0" name="raisedBy" type="xs:int"/>
+     <xs:element minOccurs="0" name="category" type="xs:int"/>
+     <xs:element minOccurs="0" name="pattern" type="xs:string"/>
+     <xs:element minOccurs="0" name="valueRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="valueEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="valueKz" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getMeetingCityIds">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getMeetingCityIdsResponse">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getLangsRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getLangsRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:languageRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="languageRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="langs" type="tns:langInfoDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="langInfoDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="langCode" type="xs:string"/>
+     <xs:element minOccurs="0" name="langName" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getInfoMessageTypeRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getInfoMessageTypeRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:infoMessageTypeRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="infoMessageTypeRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="infoMessageTypes" type="tns:infoMessageTypeDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="infoMessageTypeDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="infoMsgTypesId" type="xs:int"/>
+     <xs:element minOccurs="0" name="titleEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="titleRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="titleKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="severity" type="tns:infoMessageSeverity"/>
+     <xs:element minOccurs="0" name="userId" type="xs:long"/>
+     <xs:element minOccurs="0" name="closeable" type="xs:boolean"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getMsgMappingsRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getMsgMappingsRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:msgMappingsRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msgMappingsRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="msgMappings" type="tns:msgMappingsDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="msgMappingsDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="key" type="xs:string"/>
+     <xs:element minOccurs="0" name="textKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="textRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="textEn" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getPoNameRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getPoNameRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:poNameRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="poNameRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="infoMessageTypes" type="tns:poNameDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="poNameDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="poNamesId" type="xs:int"/>
+     <xs:element minOccurs="0" name="extRef" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getEventsSupportRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getEventsSupportRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:eventsSupportRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eventsSupportRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="errors" type="tns:errorDTO"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="eventTypes" type="tns:eventTypeDTO"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="typeParams" type="tns:typeParamDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="errorDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="errorId" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKk" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eventTypeDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="eventTypeId" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKk" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="eventTypeGroup" type="tns:eventTypeGroupDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="eventTypeGroupDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="eventTypeGroupId" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="typeParamDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="eventTypeId" type="xs:string"/>
+     <xs:element minOccurs="0" name="paramId" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKk" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getAttachTypesRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getAttachTypesRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:attachTypesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="attachTypesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="attachTypesRB" type="tns:attachTypeDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="attachTypeDTO">
+    <xs:sequence>
+     <xs:element name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="name_ru" type="xs:string"/>
+     <xs:element minOccurs="0" name="name_en" type="xs:string"/>
+     <xs:element minOccurs="0" name="name_kz" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getAttachTypesRBFiltered">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getAttachTypesRBFilteredResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:attachTypesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getCorpAttributesRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getCorpAttributesRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:corpAttributesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="corpAttributesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="corpAttributesRB" type="tns:corpAttributeDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="corpAttributeDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element name="isForClient" type="xs:boolean"/>
+     <xs:element name="isForZone" type="xs:boolean"/>
+     <xs:element minOccurs="0" name="state" type="tns:ownerState"/>
+     <xs:element minOccurs="0" name="validator" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getCorpItemTypesRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getCorpItemTypesRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:corpItemTypesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="corpItemTypesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="corpItemTypesRB" type="tns:corpItemsType"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="corpItemsType">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="execRole" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getCorpReasonRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getCorpReasonRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:corpReasonsRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="corpReasonsRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="corpReasonsRB" type="tns:corpReasonDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="corpReasonDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="type" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getPrintTemplatesForCategory">
+    <xs:sequence>
+     <xs:element name="arg0" type="xs:long"/>
+     <xs:element name="arg1" type="xs:boolean"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getPrintTemplatesForCategoryResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:refItemDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="refItemDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:string"/>
+     <xs:element name="isIdNumber" type="xs:boolean"/>
+     <xs:element minOccurs="0" name="type" type="tns:ownerType"/>
+     <xs:element minOccurs="0" name="description" type="xs:string"/>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="subItems" nillable="true" type="tns:refItemDTO"/>
+     <xs:element name="props">
+      <xs:complexType>
+       <xs:sequence>
+        <xs:element maxOccurs="unbounded" minOccurs="0" name="entry">
+         <xs:complexType>
+          <xs:sequence>
+           <xs:element minOccurs="0" name="key" type="xs:string"/>
+           <xs:element minOccurs="0" name="value" type="xs:string"/>
+          </xs:sequence>
+         </xs:complexType>
+        </xs:element>
+       </xs:sequence>
+      </xs:complexType>
+     </xs:element>
+     <xs:element minOccurs="0" name="refItemParent" type="tns:refItemDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getAllPrintTemplatesIds">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getAllPrintTemplatesIdsResponse">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getPrintTemplate">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getPrintTemplateResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:printTemplateDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="printTemplateDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="type" type="tns:printTemplateType"/>
+     <xs:element minOccurs="0" name="contentEn" ns1:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns1="http://www.w3.org/2005/05/xmlmime"/>
+     <xs:element minOccurs="0" name="contentKz" ns2:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns2="http://www.w3.org/2005/05/xmlmime"/>
+     <xs:element minOccurs="0" name="contentRu" ns3:expectedContentTypes="application/octet-stream" type="xs:base64Binary" xmlns:ns3="http://www.w3.org/2005/05/xmlmime"/>
+     <xs:element minOccurs="0" name="filename" type="xs:string"/>
+     <xs:element minOccurs="0" name="id" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="CODAInternalFailure">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getRfmPaymentCompaniesRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getRfmPaymentCompaniesRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:rfmPaymentCompaniesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rfmPaymentCompaniesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="companies" type="tns:rfmInstitutionDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rfmInstitutionDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="institutionCode" type="xs:long"/>
+     <xs:element minOccurs="0" name="aggregator" type="tns:rfmAggregatorDTO"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="commonName" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="rfmAggregatorDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="aggregatorId" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getPaymentCompaniesRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getPaymentCompaniesRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:paymentCompaniesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentCompaniesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="companies" type="tns:paymentInstitutionDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentInstitutionDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="institutionCode" type="xs:string"/>
+     <xs:element minOccurs="0" name="aggregator" type="tns:paymentAggregatorDTO"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="commonName" type="xs:string"/>
+     <xs:element minOccurs="0" name="paymentType" type="tns:refillPaymentType"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="paymentAggregatorDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="aggregatorId" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getDeliveryMethodsRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getDeliveryMethodsRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:deliveryMethodsRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="deliveryMethodsRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="banks" type="tns:deliveryMethodsDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="deliveryMethodsDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="dsc" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getDeliveryGroupsRB">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getDeliveryGroupsRBResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:deliveryGroupsRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="deliveryGroupsRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="banks" type="tns:deliveryGroupsDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="deliveryGroupsDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:long"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="dsc" type="xs:string"/>
+     <xs:element minOccurs="0" name="printCentersId" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getObjectAttrs">
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name="getObjectAttrsResponse">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="return" type="tns:objectAttributesRB"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="objectAttributesRB">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" minOccurs="0" name="objectAttributes" type="tns:objectAttributDTO"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="objectAttributDTO">
+    <xs:sequence>
+     <xs:element minOccurs="0" name="id" type="xs:string"/>
+     <xs:element minOccurs="0" name="description" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameKz" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameRu" type="xs:string"/>
+     <xs:element minOccurs="0" name="nameEn" type="xs:string"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="dmDealerState">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="ACTIVE"/>
+     <xs:enumeration value="DELETED"/>
+     <xs:enumeration value="INACTIVE"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="dmDealerCategory">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="COMMON"/>
+     <xs:enumeration value="VIP"/>
+     <xs:enumeration value="FMCG"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="regionType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="DISTRICT"/>
+     <xs:enumeration value="REGION"/>
+     <xs:enumeration value="ESTATE"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="addressType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="LEGAL"/>
+     <xs:enumeration value="INVOICES"/>
+     <xs:enumeration value="PERSONAL"/>
+     <xs:enumeration value="WORKPLACE"/>
+     <xs:enumeration value="SALESPOINT"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="ownerType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="MSISDN"/>
+     <xs:enumeration value="ACCOUNT"/>
+     <xs:enumeration value="PERSON"/>
+     <xs:enumeration value="ORG"/>
+     <xs:enumeration value="PRODUCT"/>
+     <xs:enumeration value="REGISTRATION"/>
+     <xs:enumeration value="ADDRESS"/>
+     <xs:enumeration value="DEALER"/>
+     <xs:enumeration value="BANK"/>
+     <xs:enumeration value="USER"/>
+     <xs:enumeration value="CONTACT"/>
+     <xs:enumeration value="ASSOCIATION"/>
+     <xs:enumeration value="DEALER_REQUEST"/>
+     <xs:enumeration value="DM_DEALER"/>
+     <xs:enumeration value="DM_SALESPOINT"/>
+     <xs:enumeration value="BALANCE"/>
+     <xs:enumeration value="CORP_CLIENTS"/>
+     <xs:enumeration value="CORP_ZONES"/>
+     <xs:enumeration value="CORP_ORDERS"/>
+     <xs:enumeration value="CORP_ITEMS"/>
+     <xs:enumeration value="USERS"/>
+     <xs:enumeration value="CORP_REASONS"/>
+     <xs:enumeration value="STOCKS"/>
+     <xs:enumeration value="PT_TMPL_CATS"/>
+     <xs:enumeration value="PT_TEMPLATES"/>
+     <xs:enumeration value="BANK_REQUISITES"/>
+     <xs:enumeration value="SPECIAL_REQUIREMENTS"/>
+     <xs:enumeration value="PAYER_ACCOUNTS"/>
+     <xs:enumeration value="BUSINESS_PRODUCTS"/>
+     <xs:enumeration value="CUSTOMERS"/>
+     <xs:enumeration value="ROLES"/>
+     <xs:enumeration value="ATTACH_TYPE"/>
+     <xs:enumeration value="COMPONENT"/>
+     <xs:enumeration value="LC_STATE"/>
+     <xs:enumeration value="FS_CLIENT_SERVICE"/>
+     <xs:enumeration value="FS_CLIENT_RULE"/>
+     <xs:enumeration value="OBJ_ATTRIBUTE"/>
+     <xs:enumeration value="FS_RULE_TYPE"/>
+     <xs:enumeration value="FS_PMNT_ACC"/>
+     <xs:enumeration value="FS_ORDER"/>
+     <xs:enumeration value="FS_ACTION_TYPE"/>
+     <xs:enumeration value="FS_ORDER_LOG"/>
+     <xs:enumeration value="FS_CLIENT_NOTIFICATION"/>
+     <xs:enumeration value="FS_SERVICE_CONFIG"/>
+     <xs:enumeration value="FS_ACTION_LOG"/>
+     <xs:enumeration value="FS_BONUS"/>
+     <xs:enumeration value="FS_CONFIG_ATTR"/>
+     <xs:enumeration value="HLR_SERVICE_GROUP"/>
+     <xs:enumeration value="HLR_SERVICE"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="ownerState">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="ACTIVE"/>
+     <xs:enumeration value="DELETED"/>
+     <xs:enumeration value="INACTIVE"/>
+     <xs:enumeration value="NEW"/>
+     <xs:enumeration value="ORGALA"/>
+     <xs:enumeration value="PREPARED"/>
+     <xs:enumeration value="BACK"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="actType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="NO_ACTION"/>
+     <xs:enumeration value="DELETE"/>
+     <xs:enumeration value="SAVE"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="weekdayType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="MONDAY"/>
+     <xs:enumeration value="TUESDAY"/>
+     <xs:enumeration value="WEDNESDAY"/>
+     <xs:enumeration value="THURSDAY"/>
+     <xs:enumeration value="FRIDAY"/>
+     <xs:enumeration value="SATURDAY"/>
+     <xs:enumeration value="SUNDAY"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="contactType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="IND_POSTAL_INDEX"/>
+     <xs:enumeration value="IND_CONTACT_TEL"/>
+     <xs:enumeration value="IND_EMAIL"/>
+     <xs:enumeration value="JUR_POSTAL_INDEX"/>
+     <xs:enumeration value="JUR_CONTACT_TEL"/>
+     <xs:enumeration value="JUR_EMAIL"/>
+     <xs:enumeration value="JUR_FAX"/>
+     <xs:enumeration value="MAILDLVRY_POSTAL_INDEX"/>
+     <xs:enumeration value="MAILDLVRY_CONTACT_TEL"/>
+     <xs:enumeration value="MAILDLVRY_EMAIL"/>
+     <xs:enumeration value="IND_CELLPHONE"/>
+     <xs:enumeration value="WL_MOBILE"/>
+     <xs:enumeration value="WL_EMAIL"/>
+     <xs:enumeration value="WL_WORKPHONE"/>
+     <xs:enumeration value="WL_FAX"/>
+     <xs:enumeration value="WL_POSTALINDEX"/>
+     <xs:enumeration value="LC_PWD_EMAIL"/>
+     <xs:enumeration value="LC_REPORT_EMAIL"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="dmSlpImgType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="FRONT_VIEW"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="yesNoType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="YES"/>
+     <xs:enumeration value="NO"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="dmSlpType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="KCELL_CENTER"/>
+     <xs:enumeration value="KCELL_EXPRESS"/>
+     <xs:enumeration value="SHOP_IN_SHOP"/>
+     <xs:enumeration value="SERVICE_POINT"/>
+     <xs:enumeration value="BRANDING_RETAIL"/>
+     <xs:enumeration value="ONLINE_SALES"/>
+     <xs:enumeration value="FMCG_POS"/>
+     <xs:enumeration value="NETWORK_PARTNER"/>
+     <xs:enumeration value="SPOS"/>
+     <xs:enumeration value="OPTOVKA"/>
+     <xs:enumeration value="HOME_DELIVERY"/>
+     <xs:enumeration value="KCELL_OFFICE"/>
+     <xs:enumeration value="KCELL_POINT"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="dmSlpTypeState">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="ACTIVE"/>
+     <xs:enumeration value="DELETED"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="productType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="TARIFF"/>
+     <xs:enumeration value="SERVICE"/>
+     <xs:enumeration value="START_PACKAGE"/>
+     <xs:enumeration value="ONE_TIME_FEE"/>
+     <xs:enumeration value="SIEBEL_CAMPAIGN_FORCED"/>
+     <xs:enumeration value="SIEBEL_CAMPAIGN_SELF"/>
+     <xs:enumeration value="BONUS"/>
+     <xs:enumeration value="DISCOUNT"/>
+     <xs:enumeration value="SERVICE_CBOSS"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="businessProductFieldOptionality">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="MANDATORY"/>
+     <xs:enumeration value="OPTIONAL"/>
+     <xs:enumeration value="NOT_EXPECTED"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="businessProductEligible">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="CMS_ELIGIBLE"/>
+     <xs:enumeration value="CC_ELIGIBLE"/>
+     <xs:enumeration value="DROP_ELIGIBLE"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="infoMessageSeverity">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="INFO"/>
+     <xs:enumeration value="WARN"/>
+     <xs:enumeration value="ERROR"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="printTemplateType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="CRD_ORDER"/>
+     <xs:enumeration value="CARD_PAY"/>
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="refillPaymentType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="TTRFM"/>
+     <xs:enumeration value="KUBA"/>
+     <xs:enumeration value="OTHER"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:schema>
+ </types>
+ <message name="RefBooksServicesWS_getLangsRBResponse">
+  <part element="tns:getLangsRBResponse" name="getLangsRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getChangeReasons">
+  <part element="tns:getChangeReasons" name="getChangeReasons"/>
+ </message>
+ <message name="RefBooksServicesWS_getMeetingCityIdsResponse">
+  <part element="tns:getMeetingCityIdsResponse" name="getMeetingCityIdsResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getAllActiveBusinessProductsRB">
+  <part element="tns:getAllActiveBusinessProductsRB" name="getAllActiveBusinessProductsRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getOrgTypesRBResponse">
+  <part element="tns:getOrgTypesRBResponse" name="getOrgTypesRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getChannelsResponse">
+  <part element="tns:getChannelsResponse" name="getChannelsResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getEligibleBusinessProductsRB">
+  <part element="tns:getEligibleBusinessProductsRB" name="getEligibleBusinessProductsRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getInfoMessageTypeRB">
+  <part element="tns:getInfoMessageTypeRB" name="getInfoMessageTypeRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getBonusesRBResponse">
+  <part element="tns:getBonusesRBResponse" name="getBonusesRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getChangeReasonsResponse">
+  <part element="tns:getChangeReasonsResponse" name="getChangeReasonsResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getLifeCyclesRB">
+  <part element="tns:getLifeCyclesRB" name="getLifeCyclesRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getLangsRB">
+  <part element="tns:getLangsRB" name="getLangsRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getCorpAttributesRB">
+  <part element="tns:getCorpAttributesRB" name="getCorpAttributesRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getBanksRBResponse">
+  <part element="tns:getBanksRBResponse" name="getBanksRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getAllProductsResponse">
+  <part element="tns:getAllProductsResponse" name="getAllProductsResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getCorpReasonRB">
+  <part element="tns:getCorpReasonRB" name="getCorpReasonRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getEventsSupportRB">
+  <part element="tns:getEventsSupportRB" name="getEventsSupportRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getUserRefRB">
+  <part element="tns:getUserRefRB" name="getUserRefRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getBusinessCategoriesRB">
+  <part element="tns:getBusinessCategoriesRB" name="getBusinessCategoriesRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getSites">
+  <part element="tns:getSites" name="getSites"/>
+ </message>
+ <message name="RefBooksServicesWS_getAttachTypesRBResponse">
+  <part element="tns:getAttachTypesRBResponse" name="getAttachTypesRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getAttachTypesRBFiltered">
+  <part element="tns:getAttachTypesRBFiltered" name="getAttachTypesRBFiltered"/>
+ </message>
+ <message name="RefBooksServicesWS_getCorpItemTypesRB">
+  <part element="tns:getCorpItemTypesRB" name="getCorpItemTypesRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getDealersRB">
+  <part element="tns:getDealersRB" name="getDealersRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getDeliveryMethodsRBResponse">
+  <part element="tns:getDeliveryMethodsRBResponse" name="getDeliveryMethodsRBResponse"/>
+ </message>
+ <message name="CDDBInternalFailure">
+  <part element="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+ </message>
+ <message name="RefBooksServicesWS_getPoNameRB">
+  <part element="tns:getPoNameRB" name="getPoNameRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getDeliveryMethodsRB">
+  <part element="tns:getDeliveryMethodsRB" name="getDeliveryMethodsRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getDoctypesRB">
+  <part element="tns:getDoctypesRB" name="getDoctypesRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getCorpAttributesRBResponse">
+  <part element="tns:getCorpAttributesRBResponse" name="getCorpAttributesRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getOrgTypesRB">
+  <part element="tns:getOrgTypesRB" name="getOrgTypesRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getAllPrintTemplatesIds">
+  <part element="tns:getAllPrintTemplatesIds" name="getAllPrintTemplatesIds"/>
+ </message>
+ <message name="RefBooksServicesWS_getPoNameRBResponse">
+  <part element="tns:getPoNameRBResponse" name="getPoNameRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getActiveProducts">
+  <part element="tns:getActiveProducts" name="getActiveProducts"/>
+ </message>
+ <message name="RefBooksServicesWS_getLocationsRB">
+  <part element="tns:getLocationsRB" name="getLocationsRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getPrintTemplatesForCategory">
+  <part element="tns:getPrintTemplatesForCategory" name="getPrintTemplatesForCategory"/>
+ </message>
+ <message name="CODAInternalFailure">
+  <part element="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+ </message>
+ <message name="RefBooksServicesWS_getMsgMappingsRBResponse">
+  <part element="tns:getMsgMappingsRBResponse" name="getMsgMappingsRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getAllProducts">
+  <part element="tns:getAllProducts" name="getAllProducts"/>
+ </message>
+ <message name="RefBooksServicesWS_getPrintTemplate">
+  <part element="tns:getPrintTemplate" name="getPrintTemplate"/>
+ </message>
+ <message name="RefBooksServicesWS_getDeliveryGroupsRB">
+  <part element="tns:getDeliveryGroupsRB" name="getDeliveryGroupsRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getAllActiveBusinessProductsRBResponse">
+  <part element="tns:getAllActiveBusinessProductsRBResponse" name="getAllActiveBusinessProductsRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getAllPrintTemplatesIdsResponse">
+  <part element="tns:getAllPrintTemplatesIdsResponse" name="getAllPrintTemplatesIdsResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getDicDataResponse">
+  <part element="tns:getDicDataResponse" name="getDicDataResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getPaymentCompaniesRB">
+  <part element="tns:getPaymentCompaniesRB" name="getPaymentCompaniesRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getBalancesRB">
+  <part element="tns:getBalancesRB" name="getBalancesRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getDealersRBResponse">
+  <part element="tns:getDealersRBResponse" name="getDealersRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getEventsSupportRBResponse">
+  <part element="tns:getEventsSupportRBResponse" name="getEventsSupportRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getMsgMappingsRB">
+  <part element="tns:getMsgMappingsRB" name="getMsgMappingsRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getErrTemplates">
+  <part element="tns:getErrTemplates" name="getErrTemplates"/>
+ </message>
+ <message name="RefBooksServicesWS_getBanksRB">
+  <part element="tns:getBanksRB" name="getBanksRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getJournalGroupsRBResponse">
+  <part element="tns:getJournalGroupsRBResponse" name="getJournalGroupsRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getDocissuersRB">
+  <part element="tns:getDocissuersRB" name="getDocissuersRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getPrintTemplateResponse">
+  <part element="tns:getPrintTemplateResponse" name="getPrintTemplateResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getBonusesRB">
+  <part element="tns:getBonusesRB" name="getBonusesRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getSitesResponse">
+  <part element="tns:getSitesResponse" name="getSitesResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getRfmPaymentCompaniesRBResponse">
+  <part element="tns:getRfmPaymentCompaniesRBResponse" name="getRfmPaymentCompaniesRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getPaymentTypesRBResponse">
+  <part element="tns:getPaymentTypesRBResponse" name="getPaymentTypesRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getObjectAttrsResponse">
+  <part element="tns:getObjectAttrsResponse" name="getObjectAttrsResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getCorpReasonRBResponse">
+  <part element="tns:getCorpReasonRBResponse" name="getCorpReasonRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getBalancesRBResponse">
+  <part element="tns:getBalancesRBResponse" name="getBalancesRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getOrgUnitsRBResponse">
+  <part element="tns:getOrgUnitsRBResponse" name="getOrgUnitsRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getJournalGroupsRB">
+  <part element="tns:getJournalGroupsRB" name="getJournalGroupsRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getMeetingCityIds">
+  <part element="tns:getMeetingCityIds" name="getMeetingCityIds"/>
+ </message>
+ <message name="RefBooksServicesWS_getDeliveryGroupsRBResponse">
+  <part element="tns:getDeliveryGroupsRBResponse" name="getDeliveryGroupsRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getMsisdnCategoriesRB">
+  <part element="tns:getMsisdnCategoriesRB" name="getMsisdnCategoriesRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getLocationsRBResponse">
+  <part element="tns:getLocationsRBResponse" name="getLocationsRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getErrTemplatesResponse">
+  <part element="tns:getErrTemplatesResponse" name="getErrTemplatesResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getBusinessCategoriesRBResponse">
+  <part element="tns:getBusinessCategoriesRBResponse" name="getBusinessCategoriesRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getAttachTypesRBFilteredResponse">
+  <part element="tns:getAttachTypesRBFilteredResponse" name="getAttachTypesRBFilteredResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getTransactionTypesRBResponse">
+  <part element="tns:getTransactionTypesRBResponse" name="getTransactionTypesRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getTransactionTypesRB">
+  <part element="tns:getTransactionTypesRB" name="getTransactionTypesRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getChannels">
+  <part element="tns:getChannels" name="getChannels"/>
+ </message>
+ <message name="RefBooksServicesWS_getMsisdnCategoriesRBResponse">
+  <part element="tns:getMsisdnCategoriesRBResponse" name="getMsisdnCategoriesRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getOrgUnitsRB">
+  <part element="tns:getOrgUnitsRB" name="getOrgUnitsRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getEligibleBusinessProductsRBResponse">
+  <part element="tns:getEligibleBusinessProductsRBResponse" name="getEligibleBusinessProductsRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getDocissuersRBResponse">
+  <part element="tns:getDocissuersRBResponse" name="getDocissuersRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getObjectAttrs">
+  <part element="tns:getObjectAttrs" name="getObjectAttrs"/>
+ </message>
+ <message name="RefBooksServicesWS_getUserRefRBResponse">
+  <part element="tns:getUserRefRBResponse" name="getUserRefRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getRfmPaymentCompaniesRB">
+  <part element="tns:getRfmPaymentCompaniesRB" name="getRfmPaymentCompaniesRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getPaymentCompaniesRBResponse">
+  <part element="tns:getPaymentCompaniesRBResponse" name="getPaymentCompaniesRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getLifeCyclesRBResponse">
+  <part element="tns:getLifeCyclesRBResponse" name="getLifeCyclesRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getPrintTemplatesForCategoryResponse">
+  <part element="tns:getPrintTemplatesForCategoryResponse" name="getPrintTemplatesForCategoryResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getDoctypesRBResponse">
+  <part element="tns:getDoctypesRBResponse" name="getDoctypesRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getAttachTypesRB">
+  <part element="tns:getAttachTypesRB" name="getAttachTypesRB"/>
+ </message>
+ <message name="RefBooksServicesWS_getActiveProductsResponse">
+  <part element="tns:getActiveProductsResponse" name="getActiveProductsResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getCorpItemTypesRBResponse">
+  <part element="tns:getCorpItemTypesRBResponse" name="getCorpItemTypesRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getInfoMessageTypeRBResponse">
+  <part element="tns:getInfoMessageTypeRBResponse" name="getInfoMessageTypeRBResponse"/>
+ </message>
+ <message name="RefBooksServicesWS_getDicData">
+  <part element="tns:getDicData" name="getDicData"/>
+ </message>
+ <message name="RefBooksServicesWS_getPaymentTypesRB">
+  <part element="tns:getPaymentTypesRB" name="getPaymentTypesRB"/>
+ </message>
+ <portType name="RefBooksServicesWS">
+  <operation name="getActiveProducts" parameterOrder="getActiveProducts">
+   <input message="tns:RefBooksServicesWS_getActiveProducts"/>
+   <output message="tns:RefBooksServicesWS_getActiveProductsResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getAllActiveBusinessProductsRB" parameterOrder="getAllActiveBusinessProductsRB">
+   <input message="tns:RefBooksServicesWS_getAllActiveBusinessProductsRB"/>
+   <output message="tns:RefBooksServicesWS_getAllActiveBusinessProductsRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getAllPrintTemplatesIds" parameterOrder="getAllPrintTemplatesIds">
+   <input message="tns:RefBooksServicesWS_getAllPrintTemplatesIds"/>
+   <output message="tns:RefBooksServicesWS_getAllPrintTemplatesIdsResponse"/>
+  </operation>
+  <operation name="getAllProducts" parameterOrder="getAllProducts">
+   <input message="tns:RefBooksServicesWS_getAllProducts"/>
+   <output message="tns:RefBooksServicesWS_getAllProductsResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getAttachTypesRB" parameterOrder="getAttachTypesRB">
+   <input message="tns:RefBooksServicesWS_getAttachTypesRB"/>
+   <output message="tns:RefBooksServicesWS_getAttachTypesRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getAttachTypesRBFiltered" parameterOrder="getAttachTypesRBFiltered">
+   <input message="tns:RefBooksServicesWS_getAttachTypesRBFiltered"/>
+   <output message="tns:RefBooksServicesWS_getAttachTypesRBFilteredResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getBalancesRB" parameterOrder="getBalancesRB">
+   <input message="tns:RefBooksServicesWS_getBalancesRB"/>
+   <output message="tns:RefBooksServicesWS_getBalancesRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getBanksRB" parameterOrder="getBanksRB">
+   <input message="tns:RefBooksServicesWS_getBanksRB"/>
+   <output message="tns:RefBooksServicesWS_getBanksRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getBonusesRB" parameterOrder="getBonusesRB">
+   <input message="tns:RefBooksServicesWS_getBonusesRB"/>
+   <output message="tns:RefBooksServicesWS_getBonusesRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getBusinessCategoriesRB" parameterOrder="getBusinessCategoriesRB">
+   <input message="tns:RefBooksServicesWS_getBusinessCategoriesRB"/>
+   <output message="tns:RefBooksServicesWS_getBusinessCategoriesRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getChangeReasons" parameterOrder="getChangeReasons">
+   <input message="tns:RefBooksServicesWS_getChangeReasons"/>
+   <output message="tns:RefBooksServicesWS_getChangeReasonsResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getChannels" parameterOrder="getChannels">
+   <input message="tns:RefBooksServicesWS_getChannels"/>
+   <output message="tns:RefBooksServicesWS_getChannelsResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getCorpAttributesRB" parameterOrder="getCorpAttributesRB">
+   <input message="tns:RefBooksServicesWS_getCorpAttributesRB"/>
+   <output message="tns:RefBooksServicesWS_getCorpAttributesRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getCorpItemTypesRB" parameterOrder="getCorpItemTypesRB">
+   <input message="tns:RefBooksServicesWS_getCorpItemTypesRB"/>
+   <output message="tns:RefBooksServicesWS_getCorpItemTypesRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getCorpReasonRB" parameterOrder="getCorpReasonRB">
+   <input message="tns:RefBooksServicesWS_getCorpReasonRB"/>
+   <output message="tns:RefBooksServicesWS_getCorpReasonRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getDealersRB" parameterOrder="getDealersRB">
+   <input message="tns:RefBooksServicesWS_getDealersRB"/>
+   <output message="tns:RefBooksServicesWS_getDealersRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getDeliveryGroupsRB" parameterOrder="getDeliveryGroupsRB">
+   <input message="tns:RefBooksServicesWS_getDeliveryGroupsRB"/>
+   <output message="tns:RefBooksServicesWS_getDeliveryGroupsRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getDeliveryMethodsRB" parameterOrder="getDeliveryMethodsRB">
+   <input message="tns:RefBooksServicesWS_getDeliveryMethodsRB"/>
+   <output message="tns:RefBooksServicesWS_getDeliveryMethodsRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getDicData" parameterOrder="getDicData">
+   <input message="tns:RefBooksServicesWS_getDicData"/>
+   <output message="tns:RefBooksServicesWS_getDicDataResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getDocissuersRB" parameterOrder="getDocissuersRB">
+   <input message="tns:RefBooksServicesWS_getDocissuersRB"/>
+   <output message="tns:RefBooksServicesWS_getDocissuersRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getDoctypesRB" parameterOrder="getDoctypesRB">
+   <input message="tns:RefBooksServicesWS_getDoctypesRB"/>
+   <output message="tns:RefBooksServicesWS_getDoctypesRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getEligibleBusinessProductsRB" parameterOrder="getEligibleBusinessProductsRB">
+   <input message="tns:RefBooksServicesWS_getEligibleBusinessProductsRB"/>
+   <output message="tns:RefBooksServicesWS_getEligibleBusinessProductsRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getErrTemplates" parameterOrder="getErrTemplates">
+   <input message="tns:RefBooksServicesWS_getErrTemplates"/>
+   <output message="tns:RefBooksServicesWS_getErrTemplatesResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getEventsSupportRB" parameterOrder="getEventsSupportRB">
+   <input message="tns:RefBooksServicesWS_getEventsSupportRB"/>
+   <output message="tns:RefBooksServicesWS_getEventsSupportRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getInfoMessageTypeRB" parameterOrder="getInfoMessageTypeRB">
+   <input message="tns:RefBooksServicesWS_getInfoMessageTypeRB"/>
+   <output message="tns:RefBooksServicesWS_getInfoMessageTypeRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getJournalGroupsRB" parameterOrder="getJournalGroupsRB">
+   <input message="tns:RefBooksServicesWS_getJournalGroupsRB"/>
+   <output message="tns:RefBooksServicesWS_getJournalGroupsRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getLangsRB" parameterOrder="getLangsRB">
+   <input message="tns:RefBooksServicesWS_getLangsRB"/>
+   <output message="tns:RefBooksServicesWS_getLangsRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getLifeCyclesRB" parameterOrder="getLifeCyclesRB">
+   <input message="tns:RefBooksServicesWS_getLifeCyclesRB"/>
+   <output message="tns:RefBooksServicesWS_getLifeCyclesRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getLocationsRB" parameterOrder="getLocationsRB">
+   <input message="tns:RefBooksServicesWS_getLocationsRB"/>
+   <output message="tns:RefBooksServicesWS_getLocationsRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getMeetingCityIds" parameterOrder="getMeetingCityIds">
+   <input message="tns:RefBooksServicesWS_getMeetingCityIds"/>
+   <output message="tns:RefBooksServicesWS_getMeetingCityIdsResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getMsgMappingsRB" parameterOrder="getMsgMappingsRB">
+   <input message="tns:RefBooksServicesWS_getMsgMappingsRB"/>
+   <output message="tns:RefBooksServicesWS_getMsgMappingsRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getMsisdnCategoriesRB" parameterOrder="getMsisdnCategoriesRB">
+   <input message="tns:RefBooksServicesWS_getMsisdnCategoriesRB"/>
+   <output message="tns:RefBooksServicesWS_getMsisdnCategoriesRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getObjectAttrs" parameterOrder="getObjectAttrs">
+   <input message="tns:RefBooksServicesWS_getObjectAttrs"/>
+   <output message="tns:RefBooksServicesWS_getObjectAttrsResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getOrgTypesRB" parameterOrder="getOrgTypesRB">
+   <input message="tns:RefBooksServicesWS_getOrgTypesRB"/>
+   <output message="tns:RefBooksServicesWS_getOrgTypesRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getOrgUnitsRB" parameterOrder="getOrgUnitsRB">
+   <input message="tns:RefBooksServicesWS_getOrgUnitsRB"/>
+   <output message="tns:RefBooksServicesWS_getOrgUnitsRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getPaymentCompaniesRB" parameterOrder="getPaymentCompaniesRB">
+   <input message="tns:RefBooksServicesWS_getPaymentCompaniesRB"/>
+   <output message="tns:RefBooksServicesWS_getPaymentCompaniesRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getPaymentTypesRB" parameterOrder="getPaymentTypesRB">
+   <input message="tns:RefBooksServicesWS_getPaymentTypesRB"/>
+   <output message="tns:RefBooksServicesWS_getPaymentTypesRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getPoNameRB" parameterOrder="getPoNameRB">
+   <input message="tns:RefBooksServicesWS_getPoNameRB"/>
+   <output message="tns:RefBooksServicesWS_getPoNameRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getPrintTemplate" parameterOrder="getPrintTemplate">
+   <input message="tns:RefBooksServicesWS_getPrintTemplate"/>
+   <output message="tns:RefBooksServicesWS_getPrintTemplateResponse"/>
+   <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+  </operation>
+  <operation name="getPrintTemplatesForCategory" parameterOrder="getPrintTemplatesForCategory">
+   <input message="tns:RefBooksServicesWS_getPrintTemplatesForCategory"/>
+   <output message="tns:RefBooksServicesWS_getPrintTemplatesForCategoryResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getRfmPaymentCompaniesRB" parameterOrder="getRfmPaymentCompaniesRB">
+   <input message="tns:RefBooksServicesWS_getRfmPaymentCompaniesRB"/>
+   <output message="tns:RefBooksServicesWS_getRfmPaymentCompaniesRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getSites" parameterOrder="getSites">
+   <input message="tns:RefBooksServicesWS_getSites"/>
+   <output message="tns:RefBooksServicesWS_getSitesResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getTransactionTypesRB" parameterOrder="getTransactionTypesRB">
+   <input message="tns:RefBooksServicesWS_getTransactionTypesRB"/>
+   <output message="tns:RefBooksServicesWS_getTransactionTypesRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+  <operation name="getUserRefRB" parameterOrder="getUserRefRB">
+   <input message="tns:RefBooksServicesWS_getUserRefRB"/>
+   <output message="tns:RefBooksServicesWS_getUserRefRBResponse"/>
+   <fault message="tns:CDDBInternalFailure" name="CDDBInternalFailure"/>
+  </operation>
+ </portType>
+ <binding name="RefBooksServicesWSBinding" type="tns:RefBooksServicesWS">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="getActiveProducts">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getAllActiveBusinessProductsRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getAllPrintTemplatesIds">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+  </operation>
+  <operation name="getAllProducts">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getAttachTypesRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getAttachTypesRBFiltered">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getBalancesRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getBanksRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getBonusesRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getBusinessCategoriesRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getChangeReasons">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getChannels">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getCorpAttributesRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getCorpItemTypesRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getCorpReasonRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getDealersRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getDeliveryGroupsRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getDeliveryMethodsRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getDicData">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getDocissuersRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getDoctypesRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getEligibleBusinessProductsRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getErrTemplates">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getEventsSupportRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getInfoMessageTypeRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getJournalGroupsRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getLangsRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getLifeCyclesRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getLocationsRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getMeetingCityIds">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getMsgMappingsRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getMsisdnCategoriesRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getObjectAttrs">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getOrgTypesRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getOrgUnitsRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getPaymentCompaniesRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getPaymentTypesRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getPoNameRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getPrintTemplate">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CODAInternalFailure">
+    <soap:fault name="CODAInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getPrintTemplatesForCategory">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getRfmPaymentCompaniesRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getSites">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getTransactionTypesRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+  <operation name="getUserRefRB">
+   <soap:operation soapAction=""/>
+   <input>
+    <soap:body use="literal"/>
+   </input>
+   <output>
+    <soap:body use="literal"/>
+   </output>
+   <fault name="CDDBInternalFailure">
+    <soap:fault name="CDDBInternalFailure" use="literal"/>
+   </fault>
+  </operation>
+ </binding>
+ <service name="rbServices">
+  <port binding="tns:RefBooksServicesWSBinding" name="RefBooksServicesWSPort">
+   <soap:address location="http://192.168.208.181:8080/coda/rb"/>
+  </port>
+ </service>
+</definitions>

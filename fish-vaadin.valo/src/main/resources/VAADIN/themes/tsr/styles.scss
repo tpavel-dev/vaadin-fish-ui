@@ -1,0 +1,16 @@
+//@import "tsr-typography";
+//@import "tsr--CORE/__dev-tsr-sass/variables";
+@import "_tsr-variables";
+@import "variables";
+//@import "flat-variables";
+//@import "facebook_variables";
+@import "../tests-valo/valotest";
+@import "views/products";
+@import "views/dashboard";
+@import "views/login";
+
+.tsr {
+   @include valotest;
+   @include products-view;
+   //@include dashboard-view;
+}

@@ -1,0 +1,19 @@
+includeFlat "fish-service-rest-client"
+includeFlat "fish-service-rest-api"
+includeFlat "fish-model"
+includeFlat "apps-commons-restclient"
+includeFlat "apps-utils"
+includeFlat "fish-exception"
+includeFlat "fish-resources"
+includeFlat "vaadin-utils"
+includeFlat "fish-vaadin.valo"
+includeFlat "fish-web-app"
+includeFlat "fish-captcha"
+//includeFlat "fish-configuration"
+
+
+
+
+
+
+

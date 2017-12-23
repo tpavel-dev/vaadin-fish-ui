@@ -1,0 +1,1685 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="users" resourceRoot="" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="UserServicesWSBinding" type="wsdl" bindingName="{http://kz.kcell.apps.pentagon.coda.ws}UserServicesWSBinding" soapVersion="1_1" anonymous="optional" definition="file:/prj/spmot/src/spmot-coda-client/src/wsdl/users.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/prj/spmot/src/spmot-coda-client/src/wsdl/users.wsdl"><con:part><con:url>file:/prj/spmot/src/spmot-coda-client/src/wsdl/users.wsdl</con:url><con:content><![CDATA[<definitions name="userServices" targetNamespace="http://kz.kcell.apps.pentagon.coda.ws" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://kz.kcell.apps.pentagon.coda.ws" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <xs:schema targetNamespace="http://kz.kcell.apps.pentagon.coda.ws" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="CODAAccessViolation" type="tns:CODAAccessViolation"/>
+      <xs:element name="CODAInternalFailure" type="tns:CODAInternalFailure"/>
+      <xs:element name="ICSPinDeletedException" type="tns:ICSPinDeletedException"/>
+      <xs:element name="InvalidInputDataException" type="tns:InvalidInputDataException"/>
+      <xs:element name="MandatoryParameterEmptyException" type="tns:MandatoryParameterEmptyException"/>
+      <xs:element name="MsisdnNotFoundException" type="tns:MsisdnNotFoundException"/>
+      <xs:element name="addSMSPassword" type="tns:addSMSPassword"/>
+      <xs:element name="addSMSPasswordResponse" type="tns:addSMSPasswordResponse"/>
+      <xs:element name="authenticate" type="tns:authenticate"/>
+      <xs:element name="authenticateResponse" type="tns:authenticateResponse"/>
+      <xs:element name="changeICSPassword" type="tns:changeICSPassword"/>
+      <xs:element name="changeICSPasswordResponse" type="tns:changeICSPasswordResponse"/>
+      <xs:element name="changeSMSPassword" type="tns:changeSMSPassword"/>
+      <xs:element name="changeSMSPasswordResponse" type="tns:changeSMSPasswordResponse"/>
+      <xs:element name="checkDealerLoginViaSMS" type="tns:checkDealerLoginViaSMS"/>
+      <xs:element name="checkDealerLoginViaSMSResponse" type="tns:checkDealerLoginViaSMSResponse"/>
+      <xs:element name="checkICSLogin" type="tns:checkICSLogin"/>
+      <xs:element name="checkICSLoginResponse" type="tns:checkICSLoginResponse"/>
+      <xs:element name="checkICSPinLogin" type="tns:checkICSPinLogin"/>
+      <xs:element name="checkICSPinLoginResponse" type="tns:checkICSPinLoginResponse"/>
+      <xs:element name="checkLoginViaSMS" type="tns:checkLoginViaSMS"/>
+      <xs:element name="checkLoginViaSMSResponse" type="tns:checkLoginViaSMSResponse"/>
+      <xs:element name="deleteICSPinPasswordByAdmin" type="tns:deleteICSPinPasswordByAdmin"/>
+      <xs:element name="deleteICSPinPasswordByAdminResponse" type="tns:deleteICSPinPasswordByAdminResponse"/>
+      <xs:element name="deleteICSPinPasswordByCustomerFault" type="tns:deleteICSPinPasswordByCustomerFault"/>
+      <xs:element name="deleteICSPinPasswordByCustomerFaultResponse" type="tns:deleteICSPinPasswordByCustomerFaultResponse"/>
+      <xs:element name="deleteICSPinPasswordByCustomerWish" type="tns:deleteICSPinPasswordByCustomerWish"/>
+      <xs:element name="deleteICSPinPasswordByCustomerWishResponse" type="tns:deleteICSPinPasswordByCustomerWishResponse"/>
+      <xs:element name="findActiveUserByUsername" type="tns:findActiveUserByUsername"/>
+      <xs:element name="findActiveUserByUsernameResponse" type="tns:findActiveUserByUsernameResponse"/>
+      <xs:element name="findUserByUsername" type="tns:findUserByUsername"/>
+      <xs:element name="findUserByUsernameResponse" type="tns:findUserByUsernameResponse"/>
+      <xs:element name="findUsers" type="tns:findUsers"/>
+      <xs:element name="findUsersByUsername" type="tns:findUsersByUsername"/>
+      <xs:element name="findUsersByUsernameResponse" type="tns:findUsersByUsernameResponse"/>
+      <xs:element name="findUsersResponse" type="tns:findUsersResponse"/>
+      <xs:element name="generateICSPinPassword" type="tns:generateICSPinPassword"/>
+      <xs:element name="generateICSPinPasswordResponse" type="tns:generateICSPinPasswordResponse"/>
+      <xs:element name="getActiveUserByUsersId" type="tns:getActiveUserByUsersId"/>
+      <xs:element name="getActiveUserByUsersIdResponse" type="tns:getActiveUserByUsersIdResponse"/>
+      <xs:element name="getActiveUsersOfRole" type="tns:getActiveUsersOfRole"/>
+      <xs:element name="getActiveUsersOfRoleResponse" type="tns:getActiveUsersOfRoleResponse"/>
+      <xs:element name="getAvailableBonuses" type="tns:getAvailableBonuses"/>
+      <xs:element name="getAvailableBonusesResponse" type="tns:getAvailableBonusesResponse"/>
+      <xs:element name="getUserLocationName" type="tns:getUserLocationName"/>
+      <xs:element name="getUserLocationNameResponse" type="tns:getUserLocationNameResponse"/>
+      <xs:element name="getUserRefById" type="tns:getUserRefById"/>
+      <xs:element name="getUserRefByIdResponse" type="tns:getUserRefByIdResponse"/>
+      <xs:element name="getUserSettings" type="tns:getUserSettings"/>
+      <xs:element name="getUserSettingsResponse" type="tns:getUserSettingsResponse"/>
+      <xs:element name="isCustomPasswordSet" type="tns:isCustomPasswordSet"/>
+      <xs:element name="isCustomPasswordSetResponse" type="tns:isCustomPasswordSetResponse"/>
+      <xs:element name="isICSPasswordEnabled" type="tns:isICSPasswordEnabled"/>
+      <xs:element name="isICSPasswordEnabledResponse" type="tns:isICSPasswordEnabledResponse"/>
+      <xs:element name="isICSPinPasswordSet" type="tns:isICSPinPasswordSet"/>
+      <xs:element name="isICSPinPasswordSetResponse" type="tns:isICSPinPasswordSetResponse"/>
+      <xs:element name="isSMSPasswordSet" type="tns:isSMSPasswordSet"/>
+      <xs:element name="isSMSPasswordSetResponse" type="tns:isSMSPasswordSetResponse"/>
+      <xs:element name="mustChangePassword" type="tns:mustChangePassword"/>
+      <xs:element name="mustChangePasswordResponse" type="tns:mustChangePasswordResponse"/>
+      <xs:element name="newICSPassword" type="tns:newICSPassword"/>
+      <xs:element name="newICSPasswordResponse" type="tns:newICSPasswordResponse"/>
+      <xs:element name="newSMSPassword" type="tns:newSMSPassword"/>
+      <xs:element name="newSMSPasswordResponse" type="tns:newSMSPasswordResponse"/>
+      <xs:element name="setAndSendTemporaryICSPassword" type="tns:setAndSendTemporaryICSPassword"/>
+      <xs:element name="setAndSendTemporaryICSPasswordResponse" type="tns:setAndSendTemporaryICSPasswordResponse"/>
+      <xs:element name="updateUserSettings" type="tns:updateUserSettings"/>
+      <xs:element name="updateUserSettingsResponse" type="tns:updateUserSettingsResponse"/>
+      <xs:complexType name="authenticate">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="username" type="xs:string"/>
+          <xs:element minOccurs="0" name="password" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="authenticateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:authenticatedUserDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="authenticatedUserDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="username" type="xs:string"/>
+          <xs:element minOccurs="0" name="commonname" type="xs:string"/>
+          <xs:element minOccurs="0" name="usersId" type="xs:long"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="roles" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="profiles" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="dmSalespointId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CODAAccessViolation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CODAInternalFailure">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getAvailableBonuses">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getAvailableBonusesResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:bonusDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="bonusDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amount" type="xs:int"/>
+          <xs:element minOccurs="0" name="balanceId" type="xs:long"/>
+          <xs:element minOccurs="0" name="bonusId" type="xs:long"/>
+          <xs:element minOccurs="0" name="comments" type="xs:string"/>
+          <xs:element minOccurs="0" name="name_en" type="xs:string"/>
+          <xs:element minOccurs="0" name="name_kz" type="xs:string"/>
+          <xs:element minOccurs="0" name="name_ru" type="xs:string"/>
+          <xs:element minOccurs="0" name="validity" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getUserLocationName">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="usersId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getUserLocationNameResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findUsers">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="str" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findUsersResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:userDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="userDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="address" type="xs:string"/>
+          <xs:element minOccurs="0" name="birthday" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="boss" type="tns:userDTO"/>
+          <xs:element minOccurs="0" name="bossId" type="xs:long"/>
+          <xs:element minOccurs="0" name="commonname" type="xs:string"/>
+          <xs:element minOccurs="0" name="commonnameEn" type="xs:string"/>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="employeeCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="ext" type="xs:string"/>
+          <xs:element minOccurs="0" name="fax" type="xs:string"/>
+          <xs:element minOccurs="0" name="firedate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="firstnameEn" type="xs:string"/>
+          <xs:element minOccurs="0" name="fn" type="xs:string"/>
+          <xs:element minOccurs="0" name="hiredate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="lastnameEn" type="xs:string"/>
+          <xs:element minOccurs="0" name="ln" type="xs:string"/>
+          <xs:element minOccurs="0" name="locationsId" type="xs:int"/>
+          <xs:element minOccurs="0" name="mi" type="xs:string"/>
+          <xs:element minOccurs="0" name="middlenameEn" type="xs:string"/>
+          <xs:element minOccurs="0" name="mobile" type="xs:string"/>
+          <xs:element minOccurs="0" name="orgunitsId" type="xs:int"/>
+          <xs:element minOccurs="0" name="ownerId" type="xs:long"/>
+          <xs:element minOccurs="0" name="ownerTypesId" type="xs:int"/>
+          <xs:element minOccurs="0" name="password" type="xs:string"/>
+          <xs:element minOccurs="0" name="positionsId" type="xs:int"/>
+          <xs:element minOccurs="0" name="pstn" type="xs:string"/>
+          <xs:element minOccurs="0" name="sex" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="state" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="username" type="xs:string"/>
+          <xs:element minOccurs="0" name="usersId" type="xs:long"/>
+          <xs:element minOccurs="0" name="usersubtype" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="usertype" type="xs:unsignedShort"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findUserByUsername">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findUserByUsernameResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:userDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MandatoryParameterEmptyException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+          <xs:element minOccurs="0" name="msg" type="xs:string"/>
+          <xs:element minOccurs="0" name="paramName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findUsersByUsername">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findUsersByUsernameResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:userDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getActiveUserByUsersId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="usersId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getActiveUserByUsersIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:userDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findActiveUserByUsername">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findActiveUserByUsernameResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:userDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getUserSettings">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getUserSettingsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:userSettingsDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="userSettingsDTO">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="simple" nillable="true" type="tns:userSimpleSettingDTO"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="tables" nillable="true" type="tns:userTableSettingDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="userSimpleSettingDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="value" type="xs:string"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="userTableSettingDTO">
+        <xs:complexContent>
+          <xs:extension base="tns:userSimpleSettingDTO">
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="columnsOrder" nillable="true" type="xs:string"/>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="columnsCollapsed" nillable="true" type="xs:boolean"/>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="columnsWidth" nillable="true" type="xs:int"/>
+              <xs:element maxOccurs="unbounded" minOccurs="0" name="columnsExpand" nillable="true" type="xs:float"/>
+              <xs:element minOccurs="0" name="sortColumn" type="xs:string"/>
+              <xs:element minOccurs="0" name="sortAscending" type="xs:boolean"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="updateUserSettings">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="tns:userSettingsDTO"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateUserSettingsResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="checkLoginViaSMS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+          <xs:element minOccurs="0" name="password" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkLoginViaSMSResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkDealerLoginViaSMS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkDealerLoginViaSMSResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isSMSPasswordSet">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isSMSPasswordSetResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="changeSMSPassword">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+          <xs:element minOccurs="0" name="oldPassword" type="xs:string"/>
+          <xs:element minOccurs="0" name="newPassword" type="xs:string"/>
+          <xs:element minOccurs="0" name="confirmPassword" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="changeSMSPasswordResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="InvalidInputDataException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+          <xs:element minOccurs="0" name="msg" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addSMSPassword">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addSMSPasswordResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="newSMSPassword">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+          <xs:element minOccurs="0" name="newPassword" type="xs:string"/>
+          <xs:element minOccurs="0" name="confirmPassword" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="newSMSPasswordResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getUserRefById">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getUserRefByIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:userRef"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="userRef">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="username" type="xs:string"/>
+          <xs:element minOccurs="0" name="type" type="tns:ownerType"/>
+          <xs:element minOccurs="0" name="ownerId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="mustChangePassword">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="mustChangePasswordResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isCustomPasswordSet">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isCustomPasswordSetResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setAndSendTemporaryICSPassword">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="setAndSendTemporaryICSPasswordResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getActiveUsersOfRole">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="role" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getActiveUsersOfRoleResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:userRef"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="changeICSPassword">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+          <xs:element minOccurs="0" name="oldPassword" type="xs:string"/>
+          <xs:element minOccurs="0" name="newPassword" type="xs:string"/>
+          <xs:element minOccurs="0" name="confirmPassword" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="changeICSPasswordResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="newICSPassword">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+          <xs:element minOccurs="0" name="newPassword" type="xs:string"/>
+          <xs:element minOccurs="0" name="confirmPassword" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="newICSPasswordResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="isICSPasswordEnabled">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isICSPasswordEnabledResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkICSPinLogin">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+          <xs:element minOccurs="0" name="password" type="xs:string"/>
+          <xs:element minOccurs="0" name="channel" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkICSPinLoginResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="MsisdnNotFoundException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+          <xs:element minOccurs="0" name="msg" type="xs:string"/>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+          <xs:element minOccurs="0" name="msisdnId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ICSPinDeletedException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isICSPinPasswordSet">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="isICSPinPasswordSetResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkICSLogin">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+          <xs:element minOccurs="0" name="password" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkICSLoginResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="generateICSPinPassword">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+          <xs:element minOccurs="0" name="channel" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="generateICSPinPasswordResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteICSPinPasswordByCustomerWish">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+          <xs:element minOccurs="0" name="channel" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteICSPinPasswordByCustomerWishResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteICSPinPasswordByCustomerFault">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+          <xs:element minOccurs="0" name="channel" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteICSPinPasswordByCustomerFaultResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteICSPinPasswordByAdmin">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="msisdn" type="xs:string"/>
+          <xs:element minOccurs="0" name="channel" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteICSPinPasswordByAdminResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ownerType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="MSISDN"/>
+          <xs:enumeration value="ACCOUNT"/>
+          <xs:enumeration value="PERSON"/>
+          <xs:enumeration value="ORG"/>
+          <xs:enumeration value="PRODUCT"/>
+          <xs:enumeration value="REGISTRATION"/>
+          <xs:enumeration value="ADDRESS"/>
+          <xs:enumeration value="DEALER"/>
+          <xs:enumeration value="BANK"/>
+          <xs:enumeration value="USER"/>
+          <xs:enumeration value="CONTACT"/>
+          <xs:enumeration value="ASSOCIATION"/>
+          <xs:enumeration value="DEALER_REQUEST"/>
+          <xs:enumeration value="DM_DEALER"/>
+          <xs:enumeration value="DM_SALESPOINT"/>
+          <xs:enumeration value="BALANCE"/>
+          <xs:enumeration value="CORP_CLIENTS"/>
+          <xs:enumeration value="CORP_ZONES"/>
+          <xs:enumeration value="CORP_ORDERS"/>
+          <xs:enumeration value="CORP_ITEMS"/>
+          <xs:enumeration value="USERS"/>
+          <xs:enumeration value="CORP_REASONS"/>
+          <xs:enumeration value="STOCKS"/>
+          <xs:enumeration value="PT_TMPL_CATS"/>
+          <xs:enumeration value="PT_TEMPLATES"/>
+          <xs:enumeration value="BANK_REQUISITES"/>
+          <xs:enumeration value="SPECIAL_REQUIREMENTS"/>
+          <xs:enumeration value="PAYER_ACCOUNTS"/>
+          <xs:enumeration value="BUSINESS_PRODUCTS"/>
+          <xs:enumeration value="CUSTOMERS"/>
+          <xs:enumeration value="ROLES"/>
+          <xs:enumeration value="ATTACH_TYPE"/>
+          <xs:enumeration value="COMPONENT"/>
+          <xs:enumeration value="LC_STATE"/>
+          <xs:enumeration value="FS_CLIENT_SERVICE"/>
+          <xs:enumeration value="FS_CLIENT_RULE"/>
+          <xs:enumeration value="OBJ_ATTRIBUTE"/>
+          <xs:enumeration value="FS_RULE_TYPE"/>
+          <xs:enumeration value="FS_PMNT_ACC"/>
+          <xs:enumeration value="FS_ORDER"/>
+          <xs:enumeration value="FS_ACTION_TYPE"/>
+          <xs:enumeration value="FS_ORDER_LOG"/>
+          <xs:enumeration value="FS_CLIENT_NOTIFICATION"/>
+          <xs:enumeration value="FS_SERVICE_CONFIG"/>
+          <xs:enumeration value="FS_ACTION_LOG"/>
+          <xs:enumeration value="FS_BONUS"/>
+          <xs:enumeration value="FS_CONFIG_ATTR"/>
+          <xs:enumeration value="HLR_SERVICE_GROUP"/>
+          <xs:enumeration value="HLR_SERVICE"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </types>
+  <message name="UserServicesWS_setAndSendTemporaryICSPassword">
+    <part element="tns:setAndSendTemporaryICSPassword" name="setAndSendTemporaryICSPassword"/>
+  </message>
+  <message name="UserServicesWS_checkLoginViaSMSResponse">
+    <part element="tns:checkLoginViaSMSResponse" name="checkLoginViaSMSResponse"/>
+  </message>
+  <message name="UserServicesWS_findUserByUsernameResponse">
+    <part element="tns:findUserByUsernameResponse" name="findUserByUsernameResponse"/>
+  </message>
+  <message name="UserServicesWS_isICSPinPasswordSetResponse">
+    <part element="tns:isICSPinPasswordSetResponse" name="isICSPinPasswordSetResponse"/>
+  </message>
+  <message name="UserServicesWS_isCustomPasswordSetResponse">
+    <part element="tns:isCustomPasswordSetResponse" name="isCustomPasswordSetResponse"/>
+  </message>
+  <message name="UserServicesWS_checkDealerLoginViaSMS">
+    <part element="tns:checkDealerLoginViaSMS" name="checkDealerLoginViaSMS"/>
+  </message>
+  <message name="UserServicesWS_deleteICSPinPasswordByAdmin">
+    <part element="tns:deleteICSPinPasswordByAdmin" name="deleteICSPinPasswordByAdmin"/>
+  </message>
+  <message name="UserServicesWS_checkLoginViaSMS">
+    <part element="tns:checkLoginViaSMS" name="checkLoginViaSMS"/>
+  </message>
+  <message name="UserServicesWS_deleteICSPinPasswordByCustomerWish">
+    <part element="tns:deleteICSPinPasswordByCustomerWish" name="deleteICSPinPasswordByCustomerWish"/>
+  </message>
+  <message name="UserServicesWS_isSMSPasswordSetResponse">
+    <part element="tns:isSMSPasswordSetResponse" name="isSMSPasswordSetResponse"/>
+  </message>
+  <message name="UserServicesWS_deleteICSPinPasswordByAdminResponse">
+    <part element="tns:deleteICSPinPasswordByAdminResponse" name="deleteICSPinPasswordByAdminResponse"/>
+  </message>
+  <message name="UserServicesWS_getActiveUserByUsersIdResponse">
+    <part element="tns:getActiveUserByUsersIdResponse" name="getActiveUserByUsersIdResponse"/>
+  </message>
+  <message name="UserServicesWS_updateUserSettingsResponse">
+    <part element="tns:updateUserSettingsResponse" name="updateUserSettingsResponse"/>
+  </message>
+  <message name="CODAAccessViolation">
+    <part element="tns:CODAAccessViolation" name="CODAAccessViolation"/>
+  </message>
+  <message name="UserServicesWS_setAndSendTemporaryICSPasswordResponse">
+    <part element="tns:setAndSendTemporaryICSPasswordResponse" name="setAndSendTemporaryICSPasswordResponse"/>
+  </message>
+  <message name="UserServicesWS_getActiveUserByUsersId">
+    <part element="tns:getActiveUserByUsersId" name="getActiveUserByUsersId"/>
+  </message>
+  <message name="UserServicesWS_getAvailableBonusesResponse">
+    <part element="tns:getAvailableBonusesResponse" name="getAvailableBonusesResponse"/>
+  </message>
+  <message name="UserServicesWS_getAvailableBonuses">
+    <part element="tns:getAvailableBonuses" name="getAvailableBonuses"/>
+  </message>
+  <message name="UserServicesWS_isICSPasswordEnabledResponse">
+    <part element="tns:isICSPasswordEnabledResponse" name="isICSPasswordEnabledResponse"/>
+  </message>
+  <message name="UserServicesWS_deleteICSPinPasswordByCustomerFaultResponse">
+    <part element="tns:deleteICSPinPasswordByCustomerFaultResponse" name="deleteICSPinPasswordByCustomerFaultResponse"/>
+  </message>
+  <message name="UserServicesWS_deleteICSPinPasswordByCustomerWishResponse">
+    <part element="tns:deleteICSPinPasswordByCustomerWishResponse" name="deleteICSPinPasswordByCustomerWishResponse"/>
+  </message>
+  <message name="UserServicesWS_deleteICSPinPasswordByCustomerFault">
+    <part element="tns:deleteICSPinPasswordByCustomerFault" name="deleteICSPinPasswordByCustomerFault"/>
+  </message>
+  <message name="UserServicesWS_checkICSPinLoginResponse">
+    <part element="tns:checkICSPinLoginResponse" name="checkICSPinLoginResponse"/>
+  </message>
+  <message name="UserServicesWS_findActiveUserByUsername">
+    <part element="tns:findActiveUserByUsername" name="findActiveUserByUsername"/>
+  </message>
+  <message name="UserServicesWS_getActiveUsersOfRoleResponse">
+    <part element="tns:getActiveUsersOfRoleResponse" name="getActiveUsersOfRoleResponse"/>
+  </message>
+  <message name="UserServicesWS_mustChangePassword">
+    <part element="tns:mustChangePassword" name="mustChangePassword"/>
+  </message>
+  <message name="UserServicesWS_changeICSPassword">
+    <part element="tns:changeICSPassword" name="changeICSPassword"/>
+  </message>
+  <message name="UserServicesWS_changeSMSPasswordResponse">
+    <part element="tns:changeSMSPasswordResponse" name="changeSMSPasswordResponse"/>
+  </message>
+  <message name="UserServicesWS_isCustomPasswordSet">
+    <part element="tns:isCustomPasswordSet" name="isCustomPasswordSet"/>
+  </message>
+  <message name="UserServicesWS_updateUserSettings">
+    <part element="tns:updateUserSettings" name="updateUserSettings"/>
+  </message>
+  <message name="UserServicesWS_checkICSLogin">
+    <part element="tns:checkICSLogin" name="checkICSLogin"/>
+  </message>
+  <message name="UserServicesWS_findActiveUserByUsernameResponse">
+    <part element="tns:findActiveUserByUsernameResponse" name="findActiveUserByUsernameResponse"/>
+  </message>
+  <message name="UserServicesWS_checkICSLoginResponse">
+    <part element="tns:checkICSLoginResponse" name="checkICSLoginResponse"/>
+  </message>
+  <message name="InvalidInputDataException">
+    <part element="tns:InvalidInputDataException" name="InvalidInputDataException"/>
+  </message>
+  <message name="UserServicesWS_generateICSPinPassword">
+    <part element="tns:generateICSPinPassword" name="generateICSPinPassword"/>
+  </message>
+  <message name="UserServicesWS_newICSPassword">
+    <part element="tns:newICSPassword" name="newICSPassword"/>
+  </message>
+  <message name="UserServicesWS_isICSPinPasswordSet">
+    <part element="tns:isICSPinPasswordSet" name="isICSPinPasswordSet"/>
+  </message>
+  <message name="CODAInternalFailure">
+    <part element="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+  </message>
+  <message name="UserServicesWS_mustChangePasswordResponse">
+    <part element="tns:mustChangePasswordResponse" name="mustChangePasswordResponse"/>
+  </message>
+  <message name="UserServicesWS_generateICSPinPasswordResponse">
+    <part element="tns:generateICSPinPasswordResponse" name="generateICSPinPasswordResponse"/>
+  </message>
+  <message name="UserServicesWS_addSMSPassword">
+    <part element="tns:addSMSPassword" name="addSMSPassword"/>
+  </message>
+  <message name="UserServicesWS_getActiveUsersOfRole">
+    <part element="tns:getActiveUsersOfRole" name="getActiveUsersOfRole"/>
+  </message>
+  <message name="MsisdnNotFoundException">
+    <part element="tns:MsisdnNotFoundException" name="MsisdnNotFoundException"/>
+  </message>
+  <message name="UserServicesWS_findUsersResponse">
+    <part element="tns:findUsersResponse" name="findUsersResponse"/>
+  </message>
+  <message name="UserServicesWS_changeICSPasswordResponse">
+    <part element="tns:changeICSPasswordResponse" name="changeICSPasswordResponse"/>
+  </message>
+  <message name="UserServicesWS_findUsersByUsername">
+    <part element="tns:findUsersByUsername" name="findUsersByUsername"/>
+  </message>
+  <message name="UserServicesWS_getUserRefById">
+    <part element="tns:getUserRefById" name="getUserRefById"/>
+  </message>
+  <message name="UserServicesWS_addSMSPasswordResponse">
+    <part element="tns:addSMSPasswordResponse" name="addSMSPasswordResponse"/>
+  </message>
+  <message name="UserServicesWS_getUserLocationName">
+    <part element="tns:getUserLocationName" name="getUserLocationName"/>
+  </message>
+  <message name="UserServicesWS_findUsers">
+    <part element="tns:findUsers" name="findUsers"/>
+  </message>
+  <message name="UserServicesWS_isSMSPasswordSet">
+    <part element="tns:isSMSPasswordSet" name="isSMSPasswordSet"/>
+  </message>
+  <message name="UserServicesWS_findUsersByUsernameResponse">
+    <part element="tns:findUsersByUsernameResponse" name="findUsersByUsernameResponse"/>
+  </message>
+  <message name="UserServicesWS_checkICSPinLogin">
+    <part element="tns:checkICSPinLogin" name="checkICSPinLogin"/>
+  </message>
+  <message name="UserServicesWS_newSMSPasswordResponse">
+    <part element="tns:newSMSPasswordResponse" name="newSMSPasswordResponse"/>
+  </message>
+  <message name="UserServicesWS_changeSMSPassword">
+    <part element="tns:changeSMSPassword" name="changeSMSPassword"/>
+  </message>
+  <message name="ICSPinDeletedException">
+    <part element="tns:ICSPinDeletedException" name="ICSPinDeletedException"/>
+  </message>
+  <message name="UserServicesWS_authenticateResponse">
+    <part element="tns:authenticateResponse" name="authenticateResponse"/>
+  </message>
+  <message name="UserServicesWS_newSMSPassword">
+    <part element="tns:newSMSPassword" name="newSMSPassword"/>
+  </message>
+  <message name="UserServicesWS_findUserByUsername">
+    <part element="tns:findUserByUsername" name="findUserByUsername"/>
+  </message>
+  <message name="UserServicesWS_checkDealerLoginViaSMSResponse">
+    <part element="tns:checkDealerLoginViaSMSResponse" name="checkDealerLoginViaSMSResponse"/>
+  </message>
+  <message name="UserServicesWS_getUserLocationNameResponse">
+    <part element="tns:getUserLocationNameResponse" name="getUserLocationNameResponse"/>
+  </message>
+  <message name="UserServicesWS_getUserSettingsResponse">
+    <part element="tns:getUserSettingsResponse" name="getUserSettingsResponse"/>
+  </message>
+  <message name="UserServicesWS_getUserRefByIdResponse">
+    <part element="tns:getUserRefByIdResponse" name="getUserRefByIdResponse"/>
+  </message>
+  <message name="UserServicesWS_authenticate">
+    <part element="tns:authenticate" name="authenticate"/>
+  </message>
+  <message name="MandatoryParameterEmptyException">
+    <part element="tns:MandatoryParameterEmptyException" name="MandatoryParameterEmptyException"/>
+  </message>
+  <message name="UserServicesWS_newICSPasswordResponse">
+    <part element="tns:newICSPasswordResponse" name="newICSPasswordResponse"/>
+  </message>
+  <message name="UserServicesWS_isICSPasswordEnabled">
+    <part element="tns:isICSPasswordEnabled" name="isICSPasswordEnabled"/>
+  </message>
+  <message name="UserServicesWS_getUserSettings">
+    <part element="tns:getUserSettings" name="getUserSettings"/>
+  </message>
+  <portType name="UserServicesWS">
+    <operation name="addSMSPassword" parameterOrder="addSMSPassword">
+      <input message="tns:UserServicesWS_addSMSPassword"/>
+      <output message="tns:UserServicesWS_addSMSPasswordResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="authenticate" parameterOrder="authenticate">
+      <input message="tns:UserServicesWS_authenticate"/>
+      <output message="tns:UserServicesWS_authenticateResponse"/>
+      <fault message="tns:CODAAccessViolation" name="CODAAccessViolation"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="changeICSPassword" parameterOrder="changeICSPassword">
+      <input message="tns:UserServicesWS_changeICSPassword"/>
+      <output message="tns:UserServicesWS_changeICSPasswordResponse"/>
+      <fault message="tns:InvalidInputDataException" name="InvalidInputDataException"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="changeSMSPassword" parameterOrder="changeSMSPassword">
+      <input message="tns:UserServicesWS_changeSMSPassword"/>
+      <output message="tns:UserServicesWS_changeSMSPasswordResponse"/>
+      <fault message="tns:InvalidInputDataException" name="InvalidInputDataException"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="checkDealerLoginViaSMS" parameterOrder="checkDealerLoginViaSMS">
+      <input message="tns:UserServicesWS_checkDealerLoginViaSMS"/>
+      <output message="tns:UserServicesWS_checkDealerLoginViaSMSResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="checkICSLogin" parameterOrder="checkICSLogin">
+      <input message="tns:UserServicesWS_checkICSLogin"/>
+      <output message="tns:UserServicesWS_checkICSLoginResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="checkICSPinLogin" parameterOrder="checkICSPinLogin">
+      <input message="tns:UserServicesWS_checkICSPinLogin"/>
+      <output message="tns:UserServicesWS_checkICSPinLoginResponse"/>
+      <fault message="tns:ICSPinDeletedException" name="ICSPinDeletedException"/>
+      <fault message="tns:MsisdnNotFoundException" name="MsisdnNotFoundException"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="checkLoginViaSMS" parameterOrder="checkLoginViaSMS">
+      <input message="tns:UserServicesWS_checkLoginViaSMS"/>
+      <output message="tns:UserServicesWS_checkLoginViaSMSResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="deleteICSPinPasswordByAdmin" parameterOrder="deleteICSPinPasswordByAdmin">
+      <input message="tns:UserServicesWS_deleteICSPinPasswordByAdmin"/>
+      <output message="tns:UserServicesWS_deleteICSPinPasswordByAdminResponse"/>
+      <fault message="tns:MsisdnNotFoundException" name="MsisdnNotFoundException"/>
+      <fault message="tns:MandatoryParameterEmptyException" name="MandatoryParameterEmptyException"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="deleteICSPinPasswordByCustomerFault" parameterOrder="deleteICSPinPasswordByCustomerFault">
+      <input message="tns:UserServicesWS_deleteICSPinPasswordByCustomerFault"/>
+      <output message="tns:UserServicesWS_deleteICSPinPasswordByCustomerFaultResponse"/>
+      <fault message="tns:MsisdnNotFoundException" name="MsisdnNotFoundException"/>
+      <fault message="tns:MandatoryParameterEmptyException" name="MandatoryParameterEmptyException"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="deleteICSPinPasswordByCustomerWish" parameterOrder="deleteICSPinPasswordByCustomerWish">
+      <input message="tns:UserServicesWS_deleteICSPinPasswordByCustomerWish"/>
+      <output message="tns:UserServicesWS_deleteICSPinPasswordByCustomerWishResponse"/>
+      <fault message="tns:MsisdnNotFoundException" name="MsisdnNotFoundException"/>
+      <fault message="tns:MandatoryParameterEmptyException" name="MandatoryParameterEmptyException"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="findActiveUserByUsername" parameterOrder="findActiveUserByUsername">
+      <input message="tns:UserServicesWS_findActiveUserByUsername"/>
+      <output message="tns:UserServicesWS_findActiveUserByUsernameResponse"/>
+      <fault message="tns:MandatoryParameterEmptyException" name="MandatoryParameterEmptyException"/>
+    </operation>
+    <operation name="findUserByUsername" parameterOrder="findUserByUsername">
+      <input message="tns:UserServicesWS_findUserByUsername"/>
+      <output message="tns:UserServicesWS_findUserByUsernameResponse"/>
+      <fault message="tns:MandatoryParameterEmptyException" name="MandatoryParameterEmptyException"/>
+    </operation>
+    <operation name="findUsers" parameterOrder="findUsers">
+      <input message="tns:UserServicesWS_findUsers"/>
+      <output message="tns:UserServicesWS_findUsersResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="findUsersByUsername" parameterOrder="findUsersByUsername">
+      <input message="tns:UserServicesWS_findUsersByUsername"/>
+      <output message="tns:UserServicesWS_findUsersByUsernameResponse"/>
+      <fault message="tns:MandatoryParameterEmptyException" name="MandatoryParameterEmptyException"/>
+    </operation>
+    <operation name="generateICSPinPassword" parameterOrder="generateICSPinPassword">
+      <input message="tns:UserServicesWS_generateICSPinPassword"/>
+      <output message="tns:UserServicesWS_generateICSPinPasswordResponse"/>
+      <fault message="tns:MsisdnNotFoundException" name="MsisdnNotFoundException"/>
+      <fault message="tns:MandatoryParameterEmptyException" name="MandatoryParameterEmptyException"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="getActiveUserByUsersId" parameterOrder="getActiveUserByUsersId">
+      <input message="tns:UserServicesWS_getActiveUserByUsersId"/>
+      <output message="tns:UserServicesWS_getActiveUserByUsersIdResponse"/>
+      <fault message="tns:MandatoryParameterEmptyException" name="MandatoryParameterEmptyException"/>
+    </operation>
+    <operation name="getActiveUsersOfRole" parameterOrder="getActiveUsersOfRole">
+      <input message="tns:UserServicesWS_getActiveUsersOfRole"/>
+      <output message="tns:UserServicesWS_getActiveUsersOfRoleResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="getAvailableBonuses" parameterOrder="getAvailableBonuses">
+      <input message="tns:UserServicesWS_getAvailableBonuses"/>
+      <output message="tns:UserServicesWS_getAvailableBonusesResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="getUserLocationName" parameterOrder="getUserLocationName">
+      <input message="tns:UserServicesWS_getUserLocationName"/>
+      <output message="tns:UserServicesWS_getUserLocationNameResponse"/>
+    </operation>
+    <operation name="getUserRefById" parameterOrder="getUserRefById">
+      <input message="tns:UserServicesWS_getUserRefById"/>
+      <output message="tns:UserServicesWS_getUserRefByIdResponse"/>
+    </operation>
+    <operation name="getUserSettings" parameterOrder="getUserSettings">
+      <input message="tns:UserServicesWS_getUserSettings"/>
+      <output message="tns:UserServicesWS_getUserSettingsResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="isCustomPasswordSet" parameterOrder="isCustomPasswordSet">
+      <input message="tns:UserServicesWS_isCustomPasswordSet"/>
+      <output message="tns:UserServicesWS_isCustomPasswordSetResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="isICSPasswordEnabled" parameterOrder="isICSPasswordEnabled">
+      <input message="tns:UserServicesWS_isICSPasswordEnabled"/>
+      <output message="tns:UserServicesWS_isICSPasswordEnabledResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="isICSPinPasswordSet" parameterOrder="isICSPinPasswordSet">
+      <input message="tns:UserServicesWS_isICSPinPasswordSet"/>
+      <output message="tns:UserServicesWS_isICSPinPasswordSetResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="isSMSPasswordSet" parameterOrder="isSMSPasswordSet">
+      <input message="tns:UserServicesWS_isSMSPasswordSet"/>
+      <output message="tns:UserServicesWS_isSMSPasswordSetResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="mustChangePassword" parameterOrder="mustChangePassword">
+      <input message="tns:UserServicesWS_mustChangePassword"/>
+      <output message="tns:UserServicesWS_mustChangePasswordResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="newICSPassword" parameterOrder="newICSPassword">
+      <input message="tns:UserServicesWS_newICSPassword"/>
+      <output message="tns:UserServicesWS_newICSPasswordResponse"/>
+      <fault message="tns:InvalidInputDataException" name="InvalidInputDataException"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="newSMSPassword" parameterOrder="newSMSPassword">
+      <input message="tns:UserServicesWS_newSMSPassword"/>
+      <output message="tns:UserServicesWS_newSMSPasswordResponse"/>
+      <fault message="tns:InvalidInputDataException" name="InvalidInputDataException"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="setAndSendTemporaryICSPassword" parameterOrder="setAndSendTemporaryICSPassword">
+      <input message="tns:UserServicesWS_setAndSendTemporaryICSPassword"/>
+      <output message="tns:UserServicesWS_setAndSendTemporaryICSPasswordResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+    <operation name="updateUserSettings" parameterOrder="updateUserSettings">
+      <input message="tns:UserServicesWS_updateUserSettings"/>
+      <output message="tns:UserServicesWS_updateUserSettingsResponse"/>
+      <fault message="tns:CODAInternalFailure" name="CODAInternalFailure"/>
+    </operation>
+  </portType>
+  <binding name="UserServicesWSBinding" type="tns:UserServicesWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="addSMSPassword">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="authenticate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAAccessViolation">
+        <soap:fault name="CODAAccessViolation" use="literal"/>
+      </fault>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="changeICSPassword">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="InvalidInputDataException">
+        <soap:fault name="InvalidInputDataException" use="literal"/>
+      </fault>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="changeSMSPassword">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="InvalidInputDataException">
+        <soap:fault name="InvalidInputDataException" use="literal"/>
+      </fault>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="checkDealerLoginViaSMS">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="checkICSLogin">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="checkICSPinLogin">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="ICSPinDeletedException">
+        <soap:fault name="ICSPinDeletedException" use="literal"/>
+      </fault>
+      <fault name="MsisdnNotFoundException">
+        <soap:fault name="MsisdnNotFoundException" use="literal"/>
+      </fault>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="checkLoginViaSMS">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteICSPinPasswordByAdmin">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="MsisdnNotFoundException">
+        <soap:fault name="MsisdnNotFoundException" use="literal"/>
+      </fault>
+      <fault name="MandatoryParameterEmptyException">
+        <soap:fault name="MandatoryParameterEmptyException" use="literal"/>
+      </fault>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteICSPinPasswordByCustomerFault">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="MsisdnNotFoundException">
+        <soap:fault name="MsisdnNotFoundException" use="literal"/>
+      </fault>
+      <fault name="MandatoryParameterEmptyException">
+        <soap:fault name="MandatoryParameterEmptyException" use="literal"/>
+      </fault>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="deleteICSPinPasswordByCustomerWish">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="MsisdnNotFoundException">
+        <soap:fault name="MsisdnNotFoundException" use="literal"/>
+      </fault>
+      <fault name="MandatoryParameterEmptyException">
+        <soap:fault name="MandatoryParameterEmptyException" use="literal"/>
+      </fault>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findActiveUserByUsername">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="MandatoryParameterEmptyException">
+        <soap:fault name="MandatoryParameterEmptyException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findUserByUsername">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="MandatoryParameterEmptyException">
+        <soap:fault name="MandatoryParameterEmptyException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findUsers">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="findUsersByUsername">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="MandatoryParameterEmptyException">
+        <soap:fault name="MandatoryParameterEmptyException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="generateICSPinPassword">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="MsisdnNotFoundException">
+        <soap:fault name="MsisdnNotFoundException" use="literal"/>
+      </fault>
+      <fault name="MandatoryParameterEmptyException">
+        <soap:fault name="MandatoryParameterEmptyException" use="literal"/>
+      </fault>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getActiveUserByUsersId">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="MandatoryParameterEmptyException">
+        <soap:fault name="MandatoryParameterEmptyException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getActiveUsersOfRole">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getAvailableBonuses">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="getUserLocationName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getUserRefById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="getUserSettings">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="isCustomPasswordSet">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="isICSPasswordEnabled">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="isICSPinPasswordSet">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="isSMSPasswordSet">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="mustChangePassword">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="newICSPassword">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="InvalidInputDataException">
+        <soap:fault name="InvalidInputDataException" use="literal"/>
+      </fault>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="newSMSPassword">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="InvalidInputDataException">
+        <soap:fault name="InvalidInputDataException" use="literal"/>
+      </fault>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="setAndSendTemporaryICSPassword">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="updateUserSettings">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="CODAInternalFailure">
+        <soap:fault name="CODAInternalFailure" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="userServices">
+    <port binding="tns:UserServicesWSBinding" name="UserServicesWSPort">
+      <soap:address location="http://192.168.208.181:8080/coda/users"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="addSMSPassword" bindingOperationName="addSMSPassword" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:addSMSPassword>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+      </kz:addSMSPassword>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/addSMSPasswordRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="authenticate" bindingOperationName="authenticate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:authenticate>
+         <!--Optional:-->
+         <username>?</username>
+         <!--Optional:-->
+         <password>?</password>
+      </kz:authenticate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/authenticateRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="changeICSPassword" bindingOperationName="changeICSPassword" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:changeICSPassword>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+         <!--Optional:-->
+         <oldPassword>?</oldPassword>
+         <!--Optional:-->
+         <newPassword>?</newPassword>
+         <!--Optional:-->
+         <confirmPassword>?</confirmPassword>
+      </kz:changeICSPassword>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/changeICSPasswordRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="changeSMSPassword" bindingOperationName="changeSMSPassword" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:changeSMSPassword>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+         <!--Optional:-->
+         <oldPassword>?</oldPassword>
+         <!--Optional:-->
+         <newPassword>?</newPassword>
+         <!--Optional:-->
+         <confirmPassword>?</confirmPassword>
+      </kz:changeSMSPassword>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/changeSMSPasswordRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="checkDealerLoginViaSMS" bindingOperationName="checkDealerLoginViaSMS" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:checkDealerLoginViaSMS>
+         <!--Optional:-->
+         <arg0>?</arg0>
+         <!--Optional:-->
+         <arg1>?</arg1>
+      </kz:checkDealerLoginViaSMS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/checkDealerLoginViaSMSRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="checkICSLogin" bindingOperationName="checkICSLogin" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:checkICSLogin>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+         <!--Optional:-->
+         <password>?</password>
+      </kz:checkICSLogin>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/checkICSLoginRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="checkICSPinLogin" bindingOperationName="checkICSPinLogin" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:checkICSPinLogin>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+         <!--Optional:-->
+         <password>?</password>
+         <!--Optional:-->
+         <channel>?</channel>
+      </kz:checkICSPinLogin>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/checkICSPinLoginRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="checkLoginViaSMS" bindingOperationName="checkLoginViaSMS" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:checkLoginViaSMS>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+         <!--Optional:-->
+         <password>?</password>
+      </kz:checkLoginViaSMS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/checkLoginViaSMSRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="deleteICSPinPasswordByAdmin" bindingOperationName="deleteICSPinPasswordByAdmin" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:deleteICSPinPasswordByAdmin>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+         <!--Optional:-->
+         <channel>?</channel>
+      </kz:deleteICSPinPasswordByAdmin>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/deleteICSPinPasswordByAdminRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="deleteICSPinPasswordByCustomerFault" bindingOperationName="deleteICSPinPasswordByCustomerFault" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:deleteICSPinPasswordByCustomerFault>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+         <!--Optional:-->
+         <channel>?</channel>
+      </kz:deleteICSPinPasswordByCustomerFault>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/deleteICSPinPasswordByCustomerFaultRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="deleteICSPinPasswordByCustomerWish" bindingOperationName="deleteICSPinPasswordByCustomerWish" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:deleteICSPinPasswordByCustomerWish>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+         <!--Optional:-->
+         <channel>?</channel>
+      </kz:deleteICSPinPasswordByCustomerWish>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/deleteICSPinPasswordByCustomerWishRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="findActiveUserByUsername" bindingOperationName="findActiveUserByUsername" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:findActiveUserByUsername>
+         <!--Optional:-->
+         <arg0>?</arg0>
+      </kz:findActiveUserByUsername>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/findActiveUserByUsernameRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="findUserByUsername" bindingOperationName="findUserByUsername" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:findUserByUsername>
+         <!--Optional:-->
+         <arg0>?</arg0>
+      </kz:findUserByUsername>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/findUserByUsernameRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="findUsers" bindingOperationName="findUsers" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:findUsers>
+         <!--Optional:-->
+         <str>?</str>
+      </kz:findUsers>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/findUsersRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="findUsersByUsername" bindingOperationName="findUsersByUsername" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:findUsersByUsername>
+         <!--Optional:-->
+         <arg0>?</arg0>
+      </kz:findUsersByUsername>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/findUsersByUsernameRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="generateICSPinPassword" bindingOperationName="generateICSPinPassword" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:generateICSPinPassword>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+         <!--Optional:-->
+         <channel>?</channel>
+      </kz:generateICSPinPassword>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/generateICSPinPasswordRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getActiveUserByUsersId" bindingOperationName="getActiveUserByUsersId" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:getActiveUserByUsersId>
+         <!--Optional:-->
+         <usersId>?</usersId>
+      </kz:getActiveUserByUsersId>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/getActiveUserByUsersIdRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getActiveUsersOfRole" bindingOperationName="getActiveUsersOfRole" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:getActiveUsersOfRole>
+         <!--Optional:-->
+         <role>?</role>
+      </kz:getActiveUsersOfRole>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/getActiveUsersOfRoleRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getAvailableBonuses" bindingOperationName="getAvailableBonuses" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:getAvailableBonuses/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/getAvailableBonusesRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getUserLocationName" bindingOperationName="getUserLocationName" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:getUserLocationName>
+         <!--Optional:-->
+         <usersId>?</usersId>
+      </kz:getUserLocationName>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/getUserLocationNameRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getUserRefById" bindingOperationName="getUserRefById" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:getUserRefById>
+         <!--Optional:-->
+         <userId>?</userId>
+      </kz:getUserRefById>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/getUserRefByIdRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getUserSettings" bindingOperationName="getUserSettings" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:getUserSettings>
+         <!--Optional:-->
+         <arg0>?</arg0>
+      </kz:getUserSettings>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/getUserSettingsRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="isCustomPasswordSet" bindingOperationName="isCustomPasswordSet" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:isCustomPasswordSet>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+      </kz:isCustomPasswordSet>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/isCustomPasswordSetRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="isICSPasswordEnabled" bindingOperationName="isICSPasswordEnabled" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:isICSPasswordEnabled>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+      </kz:isICSPasswordEnabled>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/isICSPasswordEnabledRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="isICSPinPasswordSet" bindingOperationName="isICSPinPasswordSet" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:isICSPinPasswordSet>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+      </kz:isICSPinPasswordSet>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/isICSPinPasswordSetRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="isSMSPasswordSet" bindingOperationName="isSMSPasswordSet" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:isSMSPasswordSet>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+      </kz:isSMSPasswordSet>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/isSMSPasswordSetRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="mustChangePassword" bindingOperationName="mustChangePassword" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:mustChangePassword>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+      </kz:mustChangePassword>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/mustChangePasswordRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="newICSPassword" bindingOperationName="newICSPassword" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:newICSPassword>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+         <!--Optional:-->
+         <newPassword>?</newPassword>
+         <!--Optional:-->
+         <confirmPassword>?</confirmPassword>
+      </kz:newICSPassword>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/newICSPasswordRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="newSMSPassword" bindingOperationName="newSMSPassword" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:newSMSPassword>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+         <!--Optional:-->
+         <newPassword>?</newPassword>
+         <!--Optional:-->
+         <confirmPassword>?</confirmPassword>
+      </kz:newSMSPassword>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/newSMSPasswordRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="setAndSendTemporaryICSPassword" bindingOperationName="setAndSendTemporaryICSPassword" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:setAndSendTemporaryICSPassword>
+         <!--Optional:-->
+         <msisdn>?</msisdn>
+      </kz:setAndSendTemporaryICSPassword>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/setAndSendTemporaryICSPasswordRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateUserSettings" bindingOperationName="updateUserSettings" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.208.181:8080/coda/users</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:kz="http://kz.kcell.apps.pentagon.coda.ws">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <kz:updateUserSettings>
+         <!--Optional:-->
+         <arg0>?</arg0>
+         <!--Optional:-->
+         <arg1>
+            <!--Zero or more repetitions:-->
+            <simple>
+               <!--Optional:-->
+               <value>?</value>
+               <!--Optional:-->
+               <name>?</name>
+            </simple>
+            <!--Zero or more repetitions:-->
+            <tables>
+               <!--Optional:-->
+               <value>?</value>
+               <!--Optional:-->
+               <name>?</name>
+               <!--Zero or more repetitions:-->
+               <columnsOrder>?</columnsOrder>
+               <!--Zero or more repetitions:-->
+               <columnsCollapsed>?</columnsCollapsed>
+               <!--Zero or more repetitions:-->
+               <columnsWidth>?</columnsWidth>
+               <!--Zero or more repetitions:-->
+               <columnsExpand>?</columnsExpand>
+               <!--Optional:-->
+               <sortColumn>?</sortColumn>
+               <!--Optional:-->
+               <sortAscending>?</sortAscending>
+            </tables>
+         </arg1>
+      </kz:updateUserSettings>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://kz.kcell.apps.pentagon.coda.ws/UserServicesWS/updateUserSettingsRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

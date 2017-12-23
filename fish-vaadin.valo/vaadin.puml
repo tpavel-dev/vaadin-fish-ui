@@ -1,0 +1,47 @@
+@startuml
+left to right direction
+
+class LoggerRequestHandler {
+  set MDC
+}
+class SpmotVaadinServletService
+
+SpmotVaadinServletService -> SpmotUnsupportedBrowserHandler
+SpmotVaadinServletService -> LoggerRequestHandler
+
+class SpmotVaadinServlet
+SpmotVaadinServlet --> SpmotVaadinServletService
+SpmotVaadinServlet --> SpmotSessionInitListener
+
+class SpmotUIProvider
+SpmotUIProvider -> ValoMainUIImpl
+
+class SpmotSystemMessagesProvider {
+    set messages
+}
+
+class SpmotSessionInitListener
+SpmotSessionInitListener --> SpmotUIProvider: new
+SpmotSessionInitListener --> SpmotSystemMessagesProvider
+SpmotSessionInitListener --> SpmotBootstrapListener
+SpmotSessionInitListener --> SessionManager: initRequestHandler(VaadinSession)
+
+class SpmotBootstrapListener
+
+class SessionManager {
+    create account
+    session.addRequestHandler( set MDC msisdn)
+}
+
+class SpmotUnsupportedBrowserHandler
+class ErrorHandler {
+    static void handle(Throwable e)
+    error(com.vaadin.server.ErrorEvent event) (call handle())
+
+}
+
+ValoMainUIImpl --> ErrorHandler : inject
+
+
+
+@enduml

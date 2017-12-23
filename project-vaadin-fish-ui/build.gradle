@@ -1,0 +1,203 @@
+buildscript {
+
+    repositories {
+        mavenLocal()
+//        mavenCentral()
+//        maven {url "https://plugins.gradle.org/m2/"}
+        maven { url "http://artifactory.kcell.kz/libs-release-local" }
+        maven { url "http://artifactory.kcell.kz/ext-release-local" }
+        maven { url "http://artifactory.kcell.kz/maven-central" }
+        maven { url "http://artifactory.kcell.kz/jcenter" }
+        maven { url "http://artifactory.kcell.kz/jboss-nexus" }
+        maven { url "http://artifactory.kcell.kz/gradle-plugins" }
+        maven { url "http://artifactory.kcell.kz/repo.spring.io" }
+
+
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version")
+        classpath "gradle.plugin.com.gorylenko.gradle-git-properties:gradle-git-properties:${gradle_git_properties}"
+        classpath "org.hidetake:gradle-ssh-plugin:$gradle_ssh_plugin"
+        classpath "io.spring.gradle:propdeps-plugin:$propdeps_plugin"
+    }
+
+
+}
+
+apply plugin: "org.hidetake.ssh"
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'propdeps'
+    apply plugin: 'propdeps-idea'
+
+
+    bootRepackage {
+//        mainClass = 'demo.Application'
+        enabled = false
+    }
+
+    test { enabled = false }
+
+    repositories {
+        mavenLocal()
+//        mavenCentral()
+//        maven {url "https://plugins.gradle.org/m2/"}
+        maven { url "http://artifactory.kcell.kz/libs-release-local" }
+        maven { url "http://artifactory.kcell.kz/ext-release-local" }
+        maven { url "http://artifactory.kcell.kz/maven-central" }
+        maven { url "http://artifactory.kcell.kz/jcenter" }
+        maven { url "http://artifactory.kcell.kz/jboss-nexus" }
+        maven { url "http://artifactory.kcell.kz/gradle-plugins" }
+        maven { url "http://artifactory.kcell.kz/repo.spring.io" }
+    }
+
+    dependencies {
+//        compile('org.springframework.boot:spring-boot-actuator-docs')
+        compile('org.springframework.boot:spring-boot-starter-actuator')
+        compile('org.springframework.boot:spring-boot-starter-data-rest')
+        compile('org.springframework.boot:spring-boot-starter-web')
+        compile('org.springframework.cloud:spring-cloud-starter')
+        compile('org.springframework.cloud:spring-cloud-starter-config')
+        compile('org.springframework.security:spring-security-rsa')
+        optional "org.springframework.boot:spring-boot-configuration-processor"
+        runtime('org.springframework.boot:spring-boot-devtools')
+
+        //        compile('org.springframework.data:spring-data-rest-hal-browser')
+        compile "com.google.guava:guava:${guava}"
+        compile "commons-io:commons-io:${commons_io}"
+        compile "org.apache.commons:commons-collections4:${commons_collections4}"
+        compile "org.apache.commons:commons-lang3:${commons_lang3}"
+        compile "org.apache.httpcomponents:httpclient:${httpclient}"
+        compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:${hibernate_jpa_api}"
+        compile "org.jboss.resteasy:resteasy-client:${resteasy_client}"
+        compile "org.jboss.resteasy:resteasy-jackson-provider:${resteasy_jackson_provider}"
+        compile "org.projectlombok:lombok:${lombok}"
+        compile "org.slf4j:slf4j-api:${slf4j_api}"
+        compile("com.vaadin:vaadin-spring-boot-starter:${vaadin_spring_boot_starter}")
+        compile("de.codecentric:spring-boot-admin-starter-client:${spring_boot_admin}")
+        testCompile "junit:junit:${junit}"
+    }
+
+    compileJava.dependsOn(processResources)
+
+    jar {
+        manifest.attributes provider: 'gradle'
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "com.vaadin:vaadin-bom:${vaadin_bom}"
+        }
+    }
+
+    compileJava.dependsOn(processResources)
+}
+
+subprojects {
+    afterEvaluate {
+        if (project.plugins.hasPlugin('io.spring.dependency-management')) {
+            if (!project.plugins.hasPlugin('org.springframework.boot')) {
+                dependencyManagement {
+                    imports {
+                        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${spring_cloud_dependencies}"
+                        mavenBom "org.springframework.cloud:spring-cloud-task-dependencies:${spring_cloud_task_dependencies}"
+                        mavenBom "com.vaadin:vaadin-bom:${vaadin_bom}"
+                    }
+                }
+
+            }
+            dependencyManagement {
+                imports {
+                    mavenBom "org.springframework.cloud:spring-cloud-dependencies:${spring_cloud_dependencies}"
+                    mavenBom "com.vaadin:vaadin-bom:${vaadin_bom}"
+                }
+            }
+        }
+    }
+
+/*
+    compileJava {
+        options.encoding = 'UTF-8'
+        options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    }
+
+    compileTestJava {
+        options.encoding = 'UTF-8'
+        options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    }
+*/
+
+}
+
+allprojects {
+    ext {
+        deploy_version = "3.2.2"
+        release_version = "3.2.2"
+        app_name = "fish-web"
+        app_module_name = "${app_name}-app"
+    }
+}
+
+remotes {
+    fish_prod {
+        role 'node'
+        host = '192.168.220.248'
+        user = 'user01'
+        password = 'user01'
+//        identity = file('/home/x/.ssh/id_rsa')
+    }
+    fish_preprod {
+        role 'node'
+        host = '192.168.216.147'
+        user = 'user01'
+        password = 'user01'
+    }
+}
+
+task 'deploy-to-prod' {
+    doLast {
+        ssh.run {
+            settings {
+                pty = true
+                jschLog = true
+            }
+
+            session(remotes.fish_prod) {
+                def appName = "${app_name}"
+                def appModuleName = "${app_name}-app"
+                def jarFileName="$appModuleName-${release_version}.jar"
+                def from = "${project(appModuleName).buildDir}/libs/$jarFileName"
+                def into = "$appName/$jarFileName"
+                println "from $from"
+                println "into $into"
+                put ( from: from, into: into)
+            }
+        }
+    }
+}
+
+task 'deploy-to-preprod' {
+    doLast {
+        ssh.run {
+            settings {
+                pty = true
+                jschLog = true
+            }
+
+            session(remotes.fish_preprod) {
+                def appName = "${app_name}"
+                def appModuleName = "${app_name}-app"
+                def jarFileName="$appModuleName-${release_version}.jar"
+                def from = "${project(appModuleName).buildDir}/libs/$jarFileName"
+                def into = "$appName/$jarFileName"
+                println "from $from"
+                println "into $into"
+                put ( from: from, into: into)
+            }
+        }
+    }
+}
+

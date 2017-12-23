@@ -1,0 +1,4 @@
+dependencies {
+    compile project(':apps-utils')
+    compile project(':fish-model')
+}

@@ -1,0 +1,26 @@
+@mixin products-view {
+
+  .v-button-multiline  {
+    white-space: normal !important;
+    //width: 100%;
+    //height: 100%;
+    //border: 2px solid #000000 !important;
+    text-align: left;
+    vertical-align: text-top;
+  }
+
+  .v-button-multiline:before{
+    display: none !important;
+  }
+
+  .valo-menu-item {
+    height: 4em;
+  }
+
+  .notification_error     {color: red;font-weight: bold;}
+  .notification_humanized {color: green;font-weight: bold;}
+  .notification_warning   {color: #ffff00;font-weight: bold;}
+  .notification_tray      {color: green;font-weight: bold;}
+  .notification_assistive {color: #0000cc;font-weight: bold;}
+
+}

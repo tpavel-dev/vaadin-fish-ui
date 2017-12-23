@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <jmxConfigurator/>
+
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout>
+            <!--<Pattern>%-4r [%thread] %-5level C:%X{client} N:%X{number} - %msg%n</Pattern>-->
+            <pattern>%date{"HH:mm:ss"} %-40.40logger{39} : %-5level %-65X %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <!--<logger name="org.springframework.web" level="DEBUG"/>-->
+    <logger name="com.vaadin" level="DEBUG"/>
+    <logger name="kz" level="TRACE"/>
+    <logger name="de.codecentric.boot.admin" level="ERROR"/>
+    <logger name="org.springframework.cloud.config.client.ConfigServicePropertySourceLocator" level="ERROR"/>
+    <logger name="com.vaadin.data.util.LegacyPropertyHelper" level="FINE"/>
+    <logger name="com.vaadin.ui.ConnectorTracker" level="INFO"/>
+
+
+    <logger name="org.jboss.resteasy.core" level="debug">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+</configuration>

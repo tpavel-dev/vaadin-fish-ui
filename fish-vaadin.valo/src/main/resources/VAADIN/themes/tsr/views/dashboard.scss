@@ -1,0 +1,62 @@
+/*@mixin dashboard-view {
+
+
+}*/
+
+/* Smartphones (landscape) ----------- */
+@media screen and (max-width: 320px) {
+  .tsr .res-button {
+    width: 100%;
+    height: 5em !important;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .tsr .res-button {
+    width: 50%;
+    height: 5em !important;
+  }
+}
+
+
+/* iPads (portrait and landscape) ----------- */
+@media screen and (min-width: 481px) and (max-width: 768px)  {
+  .tsr .res-button {
+    width: 33.33%;
+    height: 5em !important;
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media screen and (min-width: 769px) and (max-width: 1024px)  {
+  .tsr .res-button {
+    width: 33.33%;
+    height: 5em !important;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media screen and (min-width: 1025px) and (max-width: 1224px)  {
+  .tsr .res-button {
+    width: 25%;
+    height: 5em !important;
+  }
+}
+
+/* Large screens ----------- */
+@media screen and (min-width: 1225px) and (max-width: 1824px)  {
+  .tsr .res-button {
+    width: 11em;
+    height: 5em !important;
+  }
+}
+
+/* Very Large screens ----------- */
+@media screen and (min-width: 1825px)  {
+  .tsr .res-button {
+    width: 11em;
+    height: 5em !important;
+  }
+}
+

@@ -1,0 +1,19 @@
+debug: true
+
+spring:
+  application:
+    name: spmot
+  profiles:
+    active: web,security,logging,bootadmin,host,resources, managment
+  cloud:
+    config:
+#      uri: http://localhost:8888
+#      uri: http://192.168.216.147:8888
+      uri: http://192.168.220.248:8888
+      fail-fast: true
+  boot:
+    admin:
+      client:
+#        service-url: 'http://${host.ip}:8080'
+        service-url: 'http://localhost:8080'
+        name: SPMOT Web Public Interface

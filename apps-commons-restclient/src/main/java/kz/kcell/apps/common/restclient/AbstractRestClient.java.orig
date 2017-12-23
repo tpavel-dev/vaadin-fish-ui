@@ -1,0 +1,45 @@
+package kz.kcell.apps.common.restclient;
+
+import kz.kcell.apps.common.restclient.interceptors.MyClientResponseFilter;
+import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
+import org.jboss.resteasy.client.jaxrs.ResteasyClient;
+import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
+import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
+
+/**
+ * @author Pavel.Terechshenkov@kcell.kz
+ * @since 16 09 2014
+ */
+@Slf4j
+public abstract class AbstractRestClient<SERVICE> {
+    private Class<SERVICE> serviceClass;
+
+    private SERVICE service;
+    private static int POOL_SIZE = 100;
+
+    protected AbstractRestClient(Class<SERVICE> serviceClass) {
+        this.serviceClass = serviceClass;
+
+        buildProxy();
+    }
+
+    protected abstract String getRootPath();
+
+    private void buildProxy() {
+        ResteasyClient client = new ResteasyClientBuilder().connectionPoolSize(POOL_SIZE).build();
+//        client.register(new MyClientRequestFilter());
+        client.register(new MyClientResponseFilter());
+//        client.register(new BaseAuthenticator(config.getUser(), config.getPassword()));
+        ResteasyWebTarget target = client.target(getRootPath());
+
+        service = target.proxy(serviceClass);
+//        log.debug("Build RestClient poolSize {} for url {} {}",POOL_SIZE, target.getUri());
+    }
+
+    protected SERVICE getService() {
+        return service;
+    }
+
+
+}

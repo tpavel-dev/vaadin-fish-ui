@@ -1,0 +1,25 @@
+**.class
+\.hgignore
+bin.*
+.hg
+.idea
+target
+**.iml
+widgetsets
+.classpath
+.project
+.settings
+project-spmot-mobile.vaadin/logs/
+
+#passterns for gradle
+classes/
+build/
+out/
+.gradle
+**server.log
+git add .
+spmot-docker
+tomcat-basedir/
+application.pid
+application.port
+.gradletasknamecache
