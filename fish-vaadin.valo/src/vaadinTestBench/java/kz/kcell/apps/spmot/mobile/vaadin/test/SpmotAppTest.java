@@ -2,7 +2,7 @@ package test;
 
 import com.vaadin.testbench.TestBenchTestCase;
 import com.vaadin.testbench.elements.*;
-import kz.kcell.apps.spmot.mobile.vaadin.SpmotResourceBundle;
+import kz.kcell.apps.fish.mobile.vaadin.SpmotResourceBundle;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
@@ -10,7 +10,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.Arrays;
 
-import static kz.kcell.apps.spmot.domain.spmot.entity.SpmotResourceBundle.*;
+import static kz.kcell.apps.fish.domain.spmot.entity.SpmotResourceBundle.*;
 
 /**
  * @author Pavel.Terechshenkov@kcell.kz

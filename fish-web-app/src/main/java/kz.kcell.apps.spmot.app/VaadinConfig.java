@@ -1,4 +1,4 @@
-package kz.kcell.apps.spmot.app;
+package kz.kcell.apps.fish.app;
 
 import org.springframework.context.annotation.Configuration;
 

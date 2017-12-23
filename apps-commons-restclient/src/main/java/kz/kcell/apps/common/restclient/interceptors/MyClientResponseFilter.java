@@ -3,14 +3,13 @@ package kz.kcell.apps.common.restclient.interceptors;
 
 import kz.kcell.apps.common.exceptions.BaseException;
 import kz.kcell.apps.common.exceptions.code.ExceptionCodeEnum;
-import kz.kcell.apps.spmot.rest.exception.BE_ExceptionMapper;
+import kz.kcell.apps.fish.rest.exception.BE_ExceptionMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.ws.rs.client.ClientRequestContext;
 import javax.ws.rs.client.ClientResponseContext;
 import javax.ws.rs.client.ClientResponseFilter;
-import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.ext.Provider;
 import java.io.IOException;
 import java.util.List;

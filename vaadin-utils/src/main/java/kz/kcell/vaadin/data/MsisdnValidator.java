@@ -6,7 +6,7 @@ import com.vaadin.data.ValueContext;
 import com.vaadin.data.validator.AbstractValidator;
 import kz.kcell.apps.common.msisdn.FastMsisdn;
 import kz.kcell.apps.common.msisdn.IllegalFormatMsisdnException;
-import kz.kcell.apps.spmot.exceptions.InvalidValueException;
+import kz.kcell.apps.fish.exceptions.InvalidValueException;
 
 /**
  * @author Pavel.Terechshenkov@kcell.kz

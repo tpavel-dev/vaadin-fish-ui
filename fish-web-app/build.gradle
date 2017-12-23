@@ -1,5 +1,5 @@
 apply plugin: 'org.springframework.boot'
-//apply plugin: "com.gorylenko.gradle-git-properties"
+apply plugin: "com.gorylenko.gradle-git-properties"
 
 version "${release_version}"
 
@@ -21,7 +21,6 @@ bootRepackage {
     enabled = true
 }
 
-/*
 gitProperties {
     gitRepositoryRoot = new File("${project.rootDir}/..")
 //    gitPropertiesDir = new File("${project.rootDir}/../fish-mobile.vaadin.valo.app/src/main/resources")
@@ -31,4 +30,3 @@ gitProperties {
     dateFormatTimeZone = "Asia/Almaty"
 }
 
-*/

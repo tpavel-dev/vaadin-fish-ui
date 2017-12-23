@@ -1,6 +1,6 @@
 package kz.kcell.vaadin.data;
 
-import kz.kcell.apps.spmot.exceptions.InvalidValueException;
+import kz.kcell.apps.fish.exceptions.InvalidValueException;
 import com.vaadin.data.ValidationResult;
 import com.vaadin.data.ValueContext;
 import com.vaadin.data.validator.AbstractValidator;

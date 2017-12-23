@@ -2,7 +2,7 @@ package kz.kcell.vaadin.ui.behaviors;
 
 
 import kz.kcell.apps.common.exceptions.BaseException;
-import kz.kcell.apps.spmot.exceptions.InvalidValueException;
+import kz.kcell.apps.fish.exceptions.InvalidValueException;
 
 import java.util.EventObject;
 
