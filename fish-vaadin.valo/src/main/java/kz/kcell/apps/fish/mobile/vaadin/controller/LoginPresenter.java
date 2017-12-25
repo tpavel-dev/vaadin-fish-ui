@@ -4,6 +4,7 @@ import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinSession;
 import com.vaadin.ui.UI;
+import kz.kcell.app.bonus_cmdr.ws.stub.AuthService;
 import kz.kcell.apps.bonus_cmdr.model.User;
 import kz.kcell.apps.common.Language;
 import kz.kcell.apps.common.exceptions.BaseException;
@@ -56,6 +57,9 @@ public class LoginPresenter extends AbstractPresenter<LoginView> implements Pres
     @Autowired
     private UIController eventBus;
 
+    @Autowired
+    private AuthService authService;
+
     public LoginPresenter() {
     }
 
@@ -67,17 +71,17 @@ public class LoginPresenter extends AbstractPresenter<LoginView> implements Pres
     @Override
     public void onSubmit(EventObject source) throws BaseException, InvalidValueException {
 
-        RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
-//        restTemplateBuilder.
-
 
         String password = view.getPassword();
         EmptyStringValidator.validate($(login_validate_msg_enter_msisdn), view.getUserName());
         EmptyStringValidator.validate($(login_validate_msg_enter_password), password);
-        FastMsisdn msisdn = new FastMsisdn(view.getUserName());
+        String user = view.getUserName();
 
-        MDC.put(MDCKeys.msisdn.name(),msisdn.get());
-        getAccount().setMsisdn(msisdn);
+
+        authService.auth(user, password);
+
+//        MDC.put(MDCKeys.msisdn.name(),msisdn.get());
+//        getAccount().setMsisdn(msisdn);
 
         getAccount().setAuthorized(true);
 
@@ -85,7 +89,7 @@ public class LoginPresenter extends AbstractPresenter<LoginView> implements Pres
 
         VaadinSession.getCurrent().setAttribute(Account.class, getAccount());
 
-        doRememberPassword(password, msisdn);
+//        doRememberPassword(password, msisdn);
 
         eventBus.post(EventType.LOGIN_SUCCESFULL);
     }

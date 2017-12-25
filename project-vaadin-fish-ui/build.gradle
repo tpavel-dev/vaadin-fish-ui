@@ -65,6 +65,10 @@ subprojects {
         optional "org.springframework.boot:spring-boot-configuration-processor"
         runtime('org.springframework.boot:spring-boot-devtools')
 
+        compile "org.apache.cxf:cxf-spring-boot-starter-jaxrs:${cxf_version}"
+        compile "org.apache.cxf:cxf-spring-boot-starter-jaxws:${cxf_version}"
+
+
         //        compile('org.springframework.data:spring-data-rest-hal-browser')
         compile "com.google.guava:guava:${guava}"
         compile "commons-io:commons-io:${commons_io}"

@@ -1,0 +1,76 @@
+buildscript {
+    repositories {
+        mavenLocal()
+//        mavenCentral()
+        maven { url "http://artifactory.kcell.kz/ext-release-local" }
+        maven { url "http://artifactory.kcell.kz/maven-central" }
+        maven { url "http://artifactory.kcell.kz/jcenter" }
+        maven { url "http://artifactory.kcell.kz/jboss-nexus" }
+        maven { url "http://artifactory.kcell.kz/gradle-plugins" }
+    }
+
+    dependencies {
+        classpath 'no.nils:wsdl2java:0.10'
+    }
+
+}
+
+
+repositories {
+    mavenLocal()
+//        mavenCentral()
+//        maven {url "https://plugins.gradle.org/m2/"}
+    maven { url "http://artifactory.kcell.kz/libs-release-local" }
+    maven { url "http://artifactory.kcell.kz/ext-release-local" }
+    maven { url "http://artifactory.kcell.kz/maven-central" }
+    maven { url "http://artifactory.kcell.kz/jcenter" }
+    maven { url "http://artifactory.kcell.kz/jboss-nexus" }
+    maven { url "http://artifactory.kcell.kz/gradle-plugins" }
+
+
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: "maven-publish"
+
+}
+
+apply plugin: 'no.nils.wsdl2java'
+
+
+wsdl2javaExt {
+    cxfVersion = "3.2.1"
+    deleteGeneratedSourcesOnClean = true // default = true
+}
+
+
+task showJavaDoc(type: ShowReportTask) {
+    dependsOn javadoc
+    report 'docs/javadoc/index.html'
+}
+
+class ShowReportTask extends DefaultTask {
+    Object report;
+
+    @TaskAction
+    showReport() {
+        java.awt.Desktop.desktop.browse(project.file(report).toURI())
+    }
+}
+
+subprojects {
+    version = "1.8.82"
+}
+
+def coda_version = "1.8.82"
+
+
+wsdl2java {
+    wsdlDir = file("$projectDir/src/main/resources/wsdl"); mkdir(wsdlDir);
+    generatedWsdlDir = file("$projectDir/src/main/java"); mkdir(generatedWsdlDir);
+    wsdlsToGenerate = [
+            ['-p', 'kz.kcell.app.bonus_cmdr.ws.stub', '-autoNameResolution', "http://localhost:8080/services/auth?wsdl"],
+            ['-p', 'kz.kcell.app.bonus_cmdr.ws.stub', '-autoNameResolution', "http://localhost:8080/services/company?wsdl"],
+    ]
+}

@@ -3,8 +3,8 @@ package kz.kcell.apps.fish.mobile.vaadin.controller;
 import com.vaadin.event.selection.SelectionEvent;
 import com.vaadin.server.VaadinSession;
 import com.vaadin.ui.UI;
-import kz.kcell.app.bonus_cmdr.ws_api.CompanyService;
-import kz.kcell.app.bonus_cmdr.model.Company;
+import kz.kcell.app.bonus_cmdr.ws.stub.Company;
+import kz.kcell.app.bonus_cmdr.ws.stub.CompanyService;
 import kz.kcell.apps.fish.mobile.vaadin.annotation.SpringPresenter;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompaniesView;
 import kz.kcell.vaadin.ui.EventBus;
@@ -14,7 +14,7 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Collection;
+import java.util.List;
 
 @Slf4j
 @SpringPresenter
@@ -35,7 +35,7 @@ public class CompaniesPresenter extends AbstractPresenter<CompaniesView> impleme
     }
 
     @Override
-    public Collection<Company> getAllCompanies() {
+    public List<Company> getAllCompanies() {
         return companyService.getCompanyAll();
     }
 
