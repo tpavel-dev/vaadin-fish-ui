@@ -58,10 +58,6 @@ public class CompaniesViewImpl extends BaseNavigationView implements CompaniesVi
         collapsibleColumns
                 .add(grid.addColumn(Company::getName).setCaption("Рекламная кампания"));
 
-        grid.addComponentColumn(person ->
-                new Button("Info")
-        );
-
         grid.setColumnReorderingAllowed(true);
 
         grid.setDataProvider(new ListDataProvider<>(listener.getAllCompanies()));
