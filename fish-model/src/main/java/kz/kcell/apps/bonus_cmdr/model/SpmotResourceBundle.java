@@ -21,7 +21,7 @@ public enum SpmotResourceBundle implements ResourceBundle {
     ,login_title                      ("Вход"
             ,"Кіру")
 
-    ,login_msisdn_field_caption       ("Введите номер продавца (Activ)"
+    ,login_msisdn_field_caption       ("Введите логин"
             ,"Сатушы нөмірін енгізіңіз (Activ)")
 
     ,login_password_field_caption     ("Пароль")
@@ -317,7 +317,7 @@ public enum SpmotResourceBundle implements ResourceBundle {
     , language_name_ru("Русский язык")
 
     // todo translate
-    ,login_validate_msg_enter_msisdn          ("Введите номер продавца (Activ)"
+    ,login_validate_msg_enter_msisdn          ("Введите логин"
             ,"Сатушы нөмірін енгізіңіз (Activ)")
 
     ,login_validate_msg_unvalid_msisdn        ("Неверно ввели номер продавца (Activ)"

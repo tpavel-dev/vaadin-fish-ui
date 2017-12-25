@@ -2,6 +2,7 @@ package kz.kcell.apps.fish.mobile.vaadin.controller;
 
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.VaadinService;
+import com.vaadin.server.VaadinSession;
 import com.vaadin.ui.UI;
 import kz.kcell.apps.common.Language;
 import kz.kcell.apps.common.exceptions.BaseException;
@@ -10,6 +11,7 @@ import kz.kcell.apps.fish.exceptions.InvalidValueException;
 import kz.kcell.apps.fish.logging.MDCKeys;
 import kz.kcell.apps.fish.mobile.vaadin.RequestParams;
 import kz.kcell.apps.fish.mobile.vaadin.annotation.SpringPresenter;
+import kz.kcell.apps.fish.mobile.vaadin.data.Account;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.LoginView;
 import kz.kcell.vaadin.CookiesUtils;
 import kz.kcell.vaadin.data.EmptyStringValidator;
@@ -70,15 +72,15 @@ public class LoginPresenter extends AbstractPresenter<LoginView> implements Pres
 
         String password = view.getPassword();
         EmptyStringValidator.validate($(login_validate_msg_enter_msisdn), view.getUserName());
-        MsisdnValidator.validate($(login_validate_msg_unvalid_msisdn), view.getUserName());
         EmptyStringValidator.validate($(login_validate_msg_enter_password), password);
         FastMsisdn msisdn = new FastMsisdn(view.getUserName());
 
         MDC.put(MDCKeys.msisdn.name(),msisdn.get());
         getAccount().setMsisdn(msisdn);
 
-
         getAccount().setAuthorized(true);
+
+        VaadinSession.getCurrent().setAttribute(Account.class, getAccount());
 
         doRememberPassword(password, msisdn);
 

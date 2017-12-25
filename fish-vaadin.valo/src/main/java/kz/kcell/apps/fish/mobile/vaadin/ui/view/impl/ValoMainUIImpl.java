@@ -44,7 +44,7 @@ import static kz.kcell.apps.fish.mobile.vaadin.SpmotMobileResourceManager.$;
 //@Widgetset("kz.kcell.apps.spmot.mobile.vaadin.ui.AppWidgetSet")
 @Slf4j
 //@SpringUI
-@SpringUI(path = "/spmot-mobile")
+@SpringUI(path = "/")
 public class ValoMainUIImpl extends MainUI  {
 
     @Getter

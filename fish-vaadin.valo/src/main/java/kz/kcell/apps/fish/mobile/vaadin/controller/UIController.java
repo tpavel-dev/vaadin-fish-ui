@@ -44,36 +44,11 @@ public class UIController implements Controller, EventBus {
     @Autowired
     private Audit audit;
 
-    //    @Autowired
-//    private BonusesInfoPresenter bonusesInfoPresenter;
-//    @Autowired
-//    private LogoutPresenter logoutPresenter;
-//    @Autowired
-//    @Autowired
     @Setter
     private LoginPresenter loginPresenter;
 
 //    private ViewsCode captchaBlockedView = null;
     private EventType captchaBlockedEvent;
-
-//    @Autowired
-//    private CapcthaPresenter capcthaPresenter;
-//    @Autowired
-//    private ProductNavigatorPresenter productNavigatorPresenter;
-//    @Autowired
-//    private TransferBonusPresenter transferBonusPresenter;
-//    @Autowired
-//    private MainMenuPresenter mainMenuPresenter;
-//    @Autowired
-//    private DashboardPresenter dashboardPresenter;
-
-
-//    private AtomicInteger countAuthFailed = new AtomicInteger(0);
-
-//    private AtomicBoolean isBlockedCaptcha = new AtomicBoolean();
-
-//    @Autowired
-//    private ValoMainUIImpl mainUI;
 
     public UIController() {
     }

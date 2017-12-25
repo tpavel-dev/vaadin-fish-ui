@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 @Entity
 //@Table(name="APP_SPMOT_DB.DEALER")
 @Table(name="DEALER")
-public class Dealer implements Serializable {
+public class User implements Serializable {
     @Id @Column(name = "MSISDN", columnDefinition = "char")
     @Getter @Setter private String msisdn;
 
@@ -29,10 +29,10 @@ public class Dealer implements Serializable {
     @Getter @Setter
     private Language language;
 
-    public Dealer() {
+    public User() {
     }
 
-    public Dealer(String msisdn) {
+    public User(String msisdn) {
         this.msisdn = msisdn;
     }
 
@@ -41,12 +41,12 @@ public class Dealer implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Dealer dealer = (Dealer) o;
+        User user = (User) o;
 
-        if (msisdn != null ? !msisdn.equals(dealer.msisdn) : dealer.msisdn != null) return false;
-        if (access_group != null ? !access_group.equals(dealer.access_group) : dealer.access_group != null)
+        if (msisdn != null ? !msisdn.equals(user.msisdn) : user.msisdn != null) return false;
+        if (access_group != null ? !access_group.equals(user.access_group) : user.access_group != null)
             return false;
-        return !(bdd_code != null ? !bdd_code.equals(dealer.bdd_code) : dealer.bdd_code != null);
+        return !(bdd_code != null ? !bdd_code.equals(user.bdd_code) : user.bdd_code != null);
 
     }
 

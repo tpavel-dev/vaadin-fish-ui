@@ -11,7 +11,6 @@ import kz.kcell.apps.common.Format;
 import kz.kcell.apps.common.exceptions.BaseException;
 import kz.kcell.apps.common.msisdn.FastMsisdn;
 import kz.kcell.apps.common.msisdn.Msisdn;
-import kz.kcell.apps.fish.domain.spmot.entity.*;
 import kz.kcell.apps.fish.exceptions.InvalidValueException;
 import kz.kcell.apps.fish.mobile.vaadin.PresenterHelper;
 import kz.kcell.apps.fish.mobile.vaadin.annotation.SpringPresenter;
@@ -154,7 +153,7 @@ public class ProductNavigatorPresenter extends AbstractPresenter<ProductNavigato
     public void enterOrderForm(OrderIvrFormViewImpl formView) {
 
         log.info("SHAREBONUS for {} is {}.",
-                SessionManager.getAccount().getDealer().getMsisdn(),
+                SessionManager.getAccount().getUser().getMsisdn(),
                 SessionManager.isAccessGroupAvailable(AccessGroup.SHAREBONUS)?"available": "not available");
 
         formView.setVisibleShareBonus(SessionManager.isAccessGroupAvailable(AccessGroup.SHAREBONUS));
@@ -303,7 +302,7 @@ public class ProductNavigatorPresenter extends AbstractPresenter<ProductNavigato
     @Override
     public void enterOrderIvr(OrderIvrViewImpl ivrView) {
         log.info("SHAREBONUS for {} is {}.",
-                SessionManager.getAccount().getDealer().getMsisdn(),
+                SessionManager.getAccount().getUser().getMsisdn(),
                 SessionManager.isAccessGroupAvailable(AccessGroup.SHAREBONUS)?"available": "not available");
 
         ivrView.setShareBonusVisible(SessionManager.isAccessGroupAvailable(AccessGroup.SHAREBONUS));

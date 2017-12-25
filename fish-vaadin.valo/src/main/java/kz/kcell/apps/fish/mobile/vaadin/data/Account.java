@@ -2,7 +2,7 @@ package kz.kcell.apps.fish.mobile.vaadin.data;
 
 import kz.kcell.apps.common.Language;
 import kz.kcell.apps.common.msisdn.Msisdn;
-import kz.kcell.apps.bonus_cmdr.model.Dealer;
+import kz.kcell.apps.bonus_cmdr.model.User;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,7 +30,7 @@ public class Account  {
 //    private Language lang = Language.KZ;
 
     @Getter @Setter
-    private Dealer dealer;
+    private User user;
 
     public String getStateInfo() {
         return "isAuthorized: "+authorized+" ,isCaptchaBlocked"+ captchaBlocked;

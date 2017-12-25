@@ -1,7 +1,8 @@
 package kz.kcell.apps.fish.audit;
 
+import kz.kcell.apps.bonus_cmdr.model.User;
 import kz.kcell.apps.common.msisdn.Msisdn;
-import kz.kcell.apps.bonus_cmdr.model.Dealer;
+import kz.kcell.apps.bonus_cmdr.model.User;
 import kz.kcell.apps.fish.mobile.vaadin.SpmotWebConfig;
 import kz.kcell.apps.fish.mobile.vaadin.controller.SessionManager;
 import kz.kcell.apps.fish.mobile.vaadin.data.Account;
@@ -51,11 +52,11 @@ public class Audit {
         log.info("Reg event: " + eventType.name());
         switch (eventType) {
             case LOGIN_SUCCESFULL: {
-                Dealer dealer = SessionManager.getAccount().getDealer();
+                User user = SessionManager.getAccount().getUser();
                 log.info("Login {} with bdd {} accessGroup {}",
-                        dealer.getMsisdn(),
-                        dealer.getBdd_code(),
-                        dealer.getAccess_group()
+                        user.getMsisdn(),
+                        user.getBdd_code(),
+                        user.getAccess_group()
                 );
                 break;
             }
