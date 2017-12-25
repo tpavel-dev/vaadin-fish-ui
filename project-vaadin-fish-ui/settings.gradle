@@ -1,5 +1,3 @@
-includeFlat "fish-service-rest-client"
-includeFlat "fish-service-rest-api"
 includeFlat "fish-model"
 includeFlat "apps-commons-restclient"
 includeFlat "apps-utils"
@@ -9,6 +7,8 @@ includeFlat "vaadin-utils"
 includeFlat "fish-vaadin.valo"
 includeFlat "fish-web-app"
 includeFlat "fish-captcha"
+includeFlat "bonus-cmdr-service-ws-api"
+includeFlat "bonus-cmdr-model"
 //includeFlat "fish-configuration"
 
 
