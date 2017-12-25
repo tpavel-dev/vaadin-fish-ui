@@ -6,7 +6,7 @@ import com.vaadin.ui.UI;
 import kz.kcell.app.bonus_cmdr.ws_api.CompanyService;
 import kz.kcell.app.bonus_cmdr.model.Company;
 import kz.kcell.apps.fish.mobile.vaadin.annotation.SpringPresenter;
-import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompanyView;
+import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompaniesView;
 import kz.kcell.vaadin.ui.EventBus;
 import kz.kcell.vaadin.ui.EventType;
 import kz.kcell.vaadin.ui.Presenter;
@@ -18,7 +18,7 @@ import java.util.Collection;
 
 @Slf4j
 @SpringPresenter
-public class CompanyPresenter extends AbstractPresenter<CompanyView> implements Presenter, CompanyView.Listener {
+public class CompaniesPresenter extends AbstractPresenter<CompaniesView> implements Presenter, CompaniesView.Listener {
 
     @Autowired
     private EventBus eventBus;
@@ -27,10 +27,10 @@ public class CompanyPresenter extends AbstractPresenter<CompanyView> implements 
     private CompanyService companyService;
 
     @Setter
-    private CompanyView view;
+    private CompaniesView view;
 
     @Override
-    protected CompanyView getView() {
+    protected CompaniesView getView() {
         return view;
     }
 
@@ -40,7 +40,7 @@ public class CompanyPresenter extends AbstractPresenter<CompanyView> implements 
     }
 
     @Override
-    public void setView(CompanyView components) {
+    public void setView(CompaniesView components) {
 
     }
 
