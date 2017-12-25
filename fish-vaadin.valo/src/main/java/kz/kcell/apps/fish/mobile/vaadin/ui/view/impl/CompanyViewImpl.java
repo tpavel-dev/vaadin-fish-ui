@@ -51,8 +51,6 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         Grid<Company> grid = new Grid<>();
         grid.setSelectionMode(Grid.SelectionMode.SINGLE);
         grid.setSizeFull();
-        grid.setWidth("100%");
-        grid.setHeight("100%");
         setMargin(new MarginInfo(false, true, false, true));
 
         collapsibleColumns
@@ -87,6 +85,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         content.setSpacing(true);
 
         HorizontalLayout h = new HorizontalLayout();
+        h.setSizeFull();
 
         h.addComponent(table);
         h.setSpacing(true);
