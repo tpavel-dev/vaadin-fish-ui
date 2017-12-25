@@ -14,7 +14,8 @@ public enum ViewsCode {
     change_lang,
     my_balance,
     dashboard,
-    companies
+    companies,
+    company
 //        captcha
     ;
 
@@ -33,4 +34,5 @@ public enum ViewsCode {
     public static final String name_dashboard = "dashboard";
     public static final String name_error = "error";
     public static final String name_companies = "companies";
+    public static final String name_company = "company";
 }

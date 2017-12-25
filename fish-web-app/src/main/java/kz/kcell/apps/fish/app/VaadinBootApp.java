@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(
-        scanBasePackages = {"kz.kcell.apps"}
+        scanBasePackages = {"kz.kcell"}
 )
 public class VaadinBootApp {// extends SpringBootServletInitializer {
 
