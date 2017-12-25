@@ -85,7 +85,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         content.setSpacing(true);
 
         HorizontalLayout h = new HorizontalLayout();
-        h.setSizeFull();
+        h.setWidth(500, Unit.PIXELS);
 
         h.addComponent(table);
         h.setSpacing(true);

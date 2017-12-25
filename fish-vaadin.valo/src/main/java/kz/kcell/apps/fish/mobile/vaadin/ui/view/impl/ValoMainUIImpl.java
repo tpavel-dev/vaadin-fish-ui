@@ -37,7 +37,7 @@ import static kz.kcell.apps.fish.mobile.vaadin.SpmotMobileResourceManager.$;
  * @author Pavel.Terechshenkov@kcell.kz
  * @since 27 10 2014
  */
-@Theme("tests-valo")
+@Theme("valo")
 //@Theme("dashboard")
 //@Theme("tsr")
 @Title("Sales Point Motivation")
