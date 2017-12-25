@@ -34,7 +34,7 @@ dependencies {
     compile project(':fish-model')
     compile project(':apps-utils')
     compile project(':vaadin-utils')
-    compile project(':fish-resources')
+    compile project(':string-resources')
     compile project(':fish-captcha')
 
 }

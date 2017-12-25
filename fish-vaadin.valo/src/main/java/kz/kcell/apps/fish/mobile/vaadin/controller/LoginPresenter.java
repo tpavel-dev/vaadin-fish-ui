@@ -21,6 +21,7 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 
 import javax.annotation.PostConstruct;
 import java.util.EventObject;
@@ -63,6 +64,8 @@ public class LoginPresenter extends AbstractPresenter<LoginView> implements Pres
     @Override
     public void onSubmit(EventObject source) throws BaseException, InvalidValueException {
 
+        RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
+//        restTemplateBuilder.
 
 
         String password = view.getPassword();
