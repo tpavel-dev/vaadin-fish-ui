@@ -64,7 +64,7 @@ public class UIController implements Controller, EventBus {
 
     public void post(EventType eventType) {
         log.info("post event: {}", eventType);
-        audit.registrationEvent(eventType);
+         audit.registrationEvent(eventType);
 
         if (isNotCaptchaBlockedState() && eventType != BLOCK_CAPTCHA && audit.isWarrantForBlockWithCaptcha()) {
 //            post(BLOCK_CAPTCHA);
@@ -202,6 +202,10 @@ public class UIController implements Controller, EventBus {
             case ENTER_SUBSCRIBE_IVR_FORM_IMPOSSIBLE:
             case ENTER_SUBSCRIBE_IVR_VIEW_IMPOSSIBLE: {
                 post(EventType.SHOW_PRODUCT_SCREEN);
+                break;
+            }
+            case SHOW_COMPANY_SCREEN: {
+                mainUIPresenter.navigateTo(ViewsCode.companies);
                 break;
             }
         } // end switch

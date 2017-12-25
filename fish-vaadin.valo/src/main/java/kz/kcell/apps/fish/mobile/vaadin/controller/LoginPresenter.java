@@ -4,6 +4,7 @@ import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinSession;
 import com.vaadin.ui.UI;
+import kz.kcell.apps.bonus_cmdr.model.User;
 import kz.kcell.apps.common.Language;
 import kz.kcell.apps.common.exceptions.BaseException;
 import kz.kcell.apps.common.msisdn.FastMsisdn;
@@ -79,6 +80,8 @@ public class LoginPresenter extends AbstractPresenter<LoginView> implements Pres
         getAccount().setMsisdn(msisdn);
 
         getAccount().setAuthorized(true);
+
+        getAccount().setUser(new User(view.getUserName()));
 
         VaadinSession.getCurrent().setAttribute(Account.class, getAccount());
 

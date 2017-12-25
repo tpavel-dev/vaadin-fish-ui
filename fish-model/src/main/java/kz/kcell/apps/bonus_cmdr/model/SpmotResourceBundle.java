@@ -210,6 +210,9 @@ public enum SpmotResourceBundle implements ResourceBundle {
     ,main_menu_change_lang            ("Смена языка"
             ,"Тілді ауыстыру")
 
+    ,company_page_title            ("Компании"
+            ,"Тілді ауыстыру")
+
 /*
     ,main_menu_change_lang            ("Смена языка< br/>Тілді ауыстыру"
                                       ,"Тілді ауыстыру< br/>Смена языка")

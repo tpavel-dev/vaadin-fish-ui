@@ -26,7 +26,9 @@ public enum EventType {
     BLOCK_CAPTCHA,
 //    AFTER_VIEW_CHANGE,
 //    BEFORE_VIEW_CHANGE,
-    CAPCTHA_PASS
+    CAPCTHA_PASS,
+
+    SHOW_COMPANY_SCREEN
 }
 
 
