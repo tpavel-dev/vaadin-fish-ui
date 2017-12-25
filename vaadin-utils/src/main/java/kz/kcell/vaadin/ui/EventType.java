@@ -28,6 +28,7 @@ public enum EventType {
 //    BEFORE_VIEW_CHANGE,
     CAPCTHA_PASS,
 
+    SHOW_COMPANIES_SCREEN,
     SHOW_COMPANY_SCREEN
 }
 

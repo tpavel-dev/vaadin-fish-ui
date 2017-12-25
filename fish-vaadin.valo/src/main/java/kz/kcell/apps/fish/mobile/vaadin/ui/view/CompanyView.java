@@ -1,5 +1,6 @@
 package kz.kcell.apps.fish.mobile.vaadin.ui.view;
 
+import com.vaadin.event.selection.SelectionEvent;
 import kz.kcell.app.bonus_cmdr.model.Company;
 import kz.kcell.vaadin.ui.View;
 
@@ -12,6 +13,8 @@ public interface CompanyView extends View<CompanyView.Listener> {
         Collection<Company> getAllCompanies();
 
         void setView(CompanyView components);
+
+        void onRowClick(SelectionEvent event);
 
     }
 

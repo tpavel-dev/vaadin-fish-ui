@@ -204,7 +204,7 @@ public class UIController implements Controller, EventBus {
                 post(EventType.SHOW_PRODUCT_SCREEN);
                 break;
             }
-            case SHOW_COMPANY_SCREEN: {
+            case SHOW_COMPANIES_SCREEN: {
                 mainUIPresenter.navigateTo(ViewsCode.companies);
                 break;
             }

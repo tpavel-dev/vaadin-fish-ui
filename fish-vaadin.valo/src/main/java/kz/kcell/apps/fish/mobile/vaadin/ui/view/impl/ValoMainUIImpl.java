@@ -38,8 +38,8 @@ import static kz.kcell.apps.fish.mobile.vaadin.SpmotMobileResourceManager.$;
  * @since 27 10 2014
  */
 //@Theme("tests-valo")
-@Theme("tsr")
-//@Theme("dashboard")
+@Theme("dashboard")
+//@Theme("tsr")
 @Title("Sales Point Motivation")
 //@Widgetset("kz.kcell.apps.spmot.mobile.vaadin.ui.AppWidgetSet")
 @Slf4j
@@ -65,6 +65,7 @@ public class ValoMainUIImpl extends MainUI  {
     private Button main_menu_button_out;
     private Button main_menu_button_login;
     private Button main_menu_button_bonus;
+    private Button main_menu_button_companies;
 
     private Button showMenu;
 
@@ -233,6 +234,7 @@ public class ValoMainUIImpl extends MainUI  {
         main_menu_button_change_lang.setCaption($(main_menu_change_lang));
         main_menu_button_captcha.setCaption("captcha");
         main_menu_button_out.setCaption($(main_menu_out));
+        main_menu_button_companies.setCaption("Companies");
         showMenu.setCaption($(menu_button));
 
 //        updateTitle();
@@ -284,6 +286,7 @@ public class ValoMainUIImpl extends MainUI  {
         main_menu_button_change_lang = new Button($(main_menu_change_lang),       e -> getNavigator().navigateTo(ViewsCode.change_lang.name()));////listener.onClick(ViewsCode.change_lang));
         main_menu_button_out = new Button($(main_menu_out),                       e -> getNavigator().navigateTo(ViewsCode.logout.name()));////listener.onClick(ViewsCode.logout));
         main_menu_button_captcha = new Button("captcha",                   e -> getNavigator().navigateTo(ViewsCode.captcha.name()));//listener.onClick(ViewsCode.captcha));
+        main_menu_button_companies = new Button("Companies",               e -> getNavigator().navigateTo(ViewsCode.name_companies));
 
         main_menu_button_product.setId(main_menu_product.name());
         main_menu_button_subscribe_log.setId(main_menu_subscribe_log.name());
@@ -292,7 +295,9 @@ public class ValoMainUIImpl extends MainUI  {
         main_menu_button_change_lang.setId(main_menu_change_lang.name());
         main_menu_button_out.setId(main_menu_out.name());
         main_menu_button_captcha.setId("captcha");
+        main_menu_button_companies.setId("companies");
 
+        menuItems.put(ViewsCode.name_companies, main_menu_button_companies);
         menuItems.put(ViewsCode.services.name(), main_menu_button_product);
         menuItems.put(ViewsCode.log.name(), main_menu_button_subscribe_log);
         menuItems.put(ViewsCode.bonuses_info.name(), main_menu_button_bonus_info);
