@@ -36,7 +36,8 @@ dependencies {
     compile project(':vaadin-utils')
     compile project(':string-resources')
     compile project(':fish-captcha')
-    compile project(':bonus-cmdr-service-ws-api')
+    compile project(':bonus-cmdr-service-ws-stub')
+    compile project(':bonus-cmdr-model')
 
 }
 
