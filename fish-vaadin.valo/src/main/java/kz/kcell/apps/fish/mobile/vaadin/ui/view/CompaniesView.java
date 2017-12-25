@@ -1,7 +1,7 @@
 package kz.kcell.apps.fish.mobile.vaadin.ui.view;
 
 import com.vaadin.event.selection.SelectionEvent;
-import kz.kcell.app.bonus_cmdr.model.Company;
+import kz.kcell.app.bonus_cmdr.ws.stub.Company;
 import kz.kcell.vaadin.ui.View;
 
 import java.util.Collection;

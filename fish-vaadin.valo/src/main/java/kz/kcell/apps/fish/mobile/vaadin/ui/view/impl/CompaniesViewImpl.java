@@ -6,7 +6,7 @@ import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.HorizontalLayout;
-import kz.kcell.app.bonus_cmdr.model.Company;
+import kz.kcell.app.bonus_cmdr.ws.stub.Company;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompaniesView;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.ViewsCode;
 import lombok.Getter;

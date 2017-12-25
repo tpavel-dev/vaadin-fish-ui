@@ -50,13 +50,13 @@
 
     <jaxws:client id="authService"
                   serviceClass="kz.kcell.app.bonus_cmdr.ws.stub.AuthService"
-                  address="http://localhost:8080/services/auth?wsdl"
+                  address="http://10.10.170.53:8080/services/auth?wsdl"
     >
     </jaxws:client>
 
     <jaxws:client id="companyService"
                   serviceClass="kz.kcell.app.bonus_cmdr.ws.stub.CompanyService"
-                  address="http://localhost:8080/services/company?wsdl"
+                  address="http://10.10.170.53:8080/services/company?wsdl"
     >
     </jaxws:client>
 
