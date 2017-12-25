@@ -4,8 +4,8 @@ import com.vaadin.data.HasValue;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.UI;
 import kz.kcell.apps.common.Format;
-import kz.kcell.apps.fish.domain.spmot.entity.Subscribe;
-import kz.kcell.apps.fish.domain.spmot.entity.SubscribeStatus;
+import kz.kcell.apps.bonus_cmdr.model.Subscribe;
+import kz.kcell.apps.bonus_cmdr.model.SubscribeStatus;
 import kz.kcell.apps.fish.mobile.vaadin.annotation.SpringPresenter;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.SubscribeLogView;
 import kz.kcell.vaadin.ui.EventBus;
@@ -20,7 +20,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Collections;
 
-import static kz.kcell.apps.fish.domain.spmot.entity.SpmotResourceBundle.*;
+import static kz.kcell.apps.bonus_cmdr.model.SpmotResourceBundle.*;
 import static kz.kcell.apps.fish.mobile.vaadin.SpmotMobileResourceManager.$;
 
 

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
 
-import static kz.kcell.apps.fish.domain.spmot.entity.SpmotResourceBundle.*;
+import static kz.kcell.apps.bonus_cmdr.model.SpmotResourceBundle.*;
 import static kz.kcell.apps.fish.mobile.vaadin.SpmotMobileResourceManager.$;
 
 //@WebServlet(value = "/*", asyncSupported = true)

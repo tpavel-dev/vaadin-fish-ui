@@ -1,6 +1,6 @@
 package kz.kcell.apps.fish.resources.rest.impl;
 
-import kz.kcell.apps.fish.domain.spmot.entity.SpmotResourceBundle;
+import kz.kcell.apps.bonus_cmdr.model.SpmotResourceBundle;
 import kz.kcell.apps.fish.resources.rest.api.StringResourcesRestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

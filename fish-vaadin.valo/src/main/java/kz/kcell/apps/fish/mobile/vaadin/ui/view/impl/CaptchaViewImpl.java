@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
 
-import static kz.kcell.apps.fish.domain.spmot.entity.SpmotResourceBundle.captcha_prompt;
+import static kz.kcell.apps.bonus_cmdr.model.SpmotResourceBundle.captcha_prompt;
 import static kz.kcell.apps.fish.mobile.vaadin.SpmotMobileResourceManager.$;
 
 @SpringView(name = ViewsCode.name_captcha)

@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import javax.ws.rs.NotFoundException;
 
-import static kz.kcell.apps.fish.domain.spmot.entity.SpmotResourceBundle.*;
+import static kz.kcell.apps.bonus_cmdr.model.SpmotResourceBundle.*;
 import static kz.kcell.apps.fish.mobile.vaadin.SpmotMobileResourceManager.$;
 
 /**

@@ -2,7 +2,7 @@ package kz.kcell.apps.fish.resources;
 
 import kz.kcell.apps.common.Language;
 import kz.kcell.apps.common.resource.ResourceBundle;
-import kz.kcell.apps.fish.domain.spmot.entity.SpmotResourceBundle;
+import kz.kcell.apps.bonus_cmdr.model.SpmotResourceBundle;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;

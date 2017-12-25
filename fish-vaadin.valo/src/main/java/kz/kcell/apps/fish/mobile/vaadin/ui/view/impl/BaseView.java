@@ -9,8 +9,8 @@ import kz.kcell.vaadin.ui.Style;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
-import static kz.kcell.apps.fish.domain.spmot.entity.SpmotResourceBundle.notification_label;
-import static kz.kcell.apps.fish.domain.spmot.entity.SpmotResourceBundle.title_label;
+import static kz.kcell.apps.bonus_cmdr.model.SpmotResourceBundle.notification_label;
+import static kz.kcell.apps.bonus_cmdr.model.SpmotResourceBundle.title_label;
 
 /**
  * @author Pavel.Terechshenkov@kcell.kz

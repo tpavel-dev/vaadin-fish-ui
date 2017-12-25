@@ -1,7 +1,7 @@
 package kz.kcell.apps.fish.audit;
 
 import kz.kcell.apps.common.msisdn.Msisdn;
-import kz.kcell.apps.fish.domain.spmot.entity.Dealer;
+import kz.kcell.apps.bonus_cmdr.model.Dealer;
 import kz.kcell.apps.fish.mobile.vaadin.SpmotWebConfig;
 import kz.kcell.apps.fish.mobile.vaadin.controller.SessionManager;
 import kz.kcell.apps.fish.mobile.vaadin.data.Account;

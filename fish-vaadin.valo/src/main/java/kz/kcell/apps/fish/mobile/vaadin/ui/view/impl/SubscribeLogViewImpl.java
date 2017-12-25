@@ -9,7 +9,7 @@ import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import kz.kcell.apps.common.Format;
-import kz.kcell.apps.fish.domain.spmot.entity.Subscribe;
+import kz.kcell.apps.bonus_cmdr.model.Subscribe;
 import kz.kcell.apps.fish.mobile.vaadin.controller.SessionManager;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.SubscribeLogView;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.ViewsCode;
@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static kz.kcell.apps.fish.domain.spmot.entity.SpmotResourceBundle.*;
+import static kz.kcell.apps.bonus_cmdr.model.SpmotResourceBundle.*;
 import static kz.kcell.apps.fish.mobile.vaadin.SpmotMobileResourceManager.$;
 
 

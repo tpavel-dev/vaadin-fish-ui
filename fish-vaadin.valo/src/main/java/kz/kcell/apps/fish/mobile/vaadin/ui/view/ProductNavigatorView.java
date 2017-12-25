@@ -2,8 +2,8 @@ package kz.kcell.apps.fish.mobile.vaadin.ui.view;
 
 
 import kz.kcell.apps.common.exceptions.BaseException;
-import kz.kcell.apps.fish.domain.spmot.entity.BusinessProduct;
-import kz.kcell.apps.fish.domain.spmot.entity.BusinessProductCtgr;
+import kz.kcell.apps.bonus_cmdr.model.BusinessProduct;
+import kz.kcell.apps.bonus_cmdr.model.BusinessProductCtgr;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.impl.ProductDescViewImpl;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.impl.OrderIvrFormViewImpl;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.impl.OrderIvrViewImpl;

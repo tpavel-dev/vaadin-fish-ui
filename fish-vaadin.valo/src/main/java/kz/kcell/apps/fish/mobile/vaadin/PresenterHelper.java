@@ -1,11 +1,11 @@
 package kz.kcell.apps.fish.mobile.vaadin;
 
 import kz.kcell.apps.common.Format;
-import kz.kcell.apps.fish.domain.spmot.entity.BusinessProduct;
+import kz.kcell.apps.bonus_cmdr.model.BusinessProduct;
 import kz.kcell.apps.fish.mobile.vaadin.controller.SessionManager;
 import lombok.extern.slf4j.Slf4j;
 
-import static kz.kcell.apps.fish.domain.spmot.entity.SpmotResourceBundle.*;
+import static kz.kcell.apps.bonus_cmdr.model.SpmotResourceBundle.*;
 import static kz.kcell.apps.fish.mobile.vaadin.SpmotMobileResourceManager.$;
 
 /**

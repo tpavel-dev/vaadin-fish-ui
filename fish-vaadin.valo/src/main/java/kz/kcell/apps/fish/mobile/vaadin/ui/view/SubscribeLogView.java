@@ -4,7 +4,7 @@ package kz.kcell.apps.fish.mobile.vaadin.ui.view;
 import com.vaadin.data.HasValue;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.DateField;
-import kz.kcell.apps.fish.domain.spmot.entity.Subscribe;
+import kz.kcell.apps.bonus_cmdr.model.Subscribe;
 import kz.kcell.vaadin.ui.View;
 
 import java.time.LocalDate;
