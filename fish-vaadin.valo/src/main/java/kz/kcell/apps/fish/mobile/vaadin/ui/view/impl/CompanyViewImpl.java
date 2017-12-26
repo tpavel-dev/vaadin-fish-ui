@@ -1,8 +1,10 @@
 package kz.kcell.apps.fish.mobile.vaadin.ui.view.impl;
 
-import com.vaadin.shared.ui.MarginInfo;
+import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
+import com.vaadin.event.selection.SelectionEvent;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.*;
+import kz.kcell.app.bonus_cmdr.ws.stub.BonusAssigmentState;
 import kz.kcell.app.bonus_cmdr.ws.stub.BonusParams;
 import kz.kcell.app.bonus_cmdr.ws.stub.Company;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompanyView;
@@ -11,7 +13,10 @@ import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
-import javax.persistence.Column;
+import javax.xml.datatype.XMLGregorianCalendar;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -26,6 +31,10 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
     private Grid<BonusParams> grid;
     private static final Set<Grid.Column<BonusParams, ?>>
             collapsibleColumns = new LinkedHashSet<>();
+
+    private HorizontalLayout bonusInfoLayout;
+    private final DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+
 
     @Autowired
     @Getter
@@ -44,6 +53,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
     protected void injectInit() {
         company = listener.getCompany();
         bonusParamsList = listener.getBonusParamsByCompanyId(company.getCid());
+        bonusInfoLayout = new HorizontalLayout();
     }
 
     private Grid<BonusParams> buildGrid() {
@@ -62,14 +72,21 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         collapsibleColumns
                 .add(grid.addColumn(BonusParams::getAllowanceQuota).setCaption("Quota"));
         collapsibleColumns
-                .add(grid.addColumn(BonusParams::getAllowanceStartDate).setCaption("Start date"));
+                .add(grid.addColumn(company -> dateFormat
+                        .format(company.getAllowanceStartDate().toGregorianCalendar().getTime()))
+                        .setCaption("Start date"));
         collapsibleColumns
-                .add(grid.addColumn(BonusParams::getAllowanceEndDate).setCaption("End date"));
+                .add(grid.addColumn(company -> dateFormat
+                        .format(company.getAllowanceEndDate().toGregorianCalendar().getTime()))
+                        .setCaption("End date"));
         collapsibleColumns
                 .add(grid.addColumn(BonusParams::getStatus).setCaption("Status"));
 
         grid.addComponentColumn(bonus -> addBonusAction(bonus));
 
+        grid.addSelectionListener(event -> {
+            addSelectionEvent(event);
+        });
         grid.setItems(bonusParamsList);
 
         return grid;
@@ -97,6 +114,75 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         return actionBtn;
     }
 
+    private void addSelectionEvent(SelectionEvent<BonusParams> event) {
+        BonusParams bonus = event.getFirstSelectedItem().get();
+        bonusInfoLayout.removeAllComponents();
+        bonusInfoLayout.addComponent(buildBonusInfo(bonus));
+    }
+
+    private HorizontalLayout buildBonusInfo(BonusParams bonus) {
+        HorizontalLayout hr = new HorizontalLayout();
+        hr.setWidth(100, Unit.PERCENTAGE);
+
+        Panel kcellAllowancePanel = new Panel("Kcell Description");
+        kcellAllowancePanel.setSizeUndefined();
+        hr.addComponent(kcellAllowancePanel);
+
+        FormLayout kcellAllowance = new FormLayout();
+        kcellAllowance.addComponent(textField("Allowance ID", bonus.getAllowanceId()));
+        kcellAllowance.addComponent(textField("Quota", String.valueOf(bonus.getAllowanceQuota())));
+        kcellAllowance.addComponent(textField("Start date", dateFormat.format(bonus.getAllowanceStartDate().toGregorianCalendar().getTime())));
+        kcellAllowance.addComponent(textField("End date", dateFormat.format(bonus.getAllowanceEndDate().toGregorianCalendar().getTime())));
+        kcellAllowance.setSizeUndefined();
+        kcellAllowance.setMargin(true);
+        kcellAllowancePanel.setContent(kcellAllowance);
+
+        Panel activAllowancePanel = new Panel("Activ Description");
+        activAllowancePanel.setSizeUndefined();
+        hr.addComponent(activAllowancePanel);
+
+        FormLayout activAllowance = new FormLayout();
+        activAllowance.addComponent(textField("Pocket name", bonus.getOrgaPocketName()));
+        activAllowance.addComponent(textField("Balance name", bonus.getOrgaBalanceName()));
+        activAllowance.addComponent(textField("Comment", bonus.getOrgaComment()));
+        activAllowance.addComponent(textField("Amount", String.valueOf(bonus.getOrgaAmount())));
+        activAllowance.addComponent(textField("Start date", dateFormat.format(bonus.getOrgaStartDate().toGregorianCalendar().getTime())));
+        activAllowance.addComponent(textField("End date", dateFormat.format(bonus.getOrgaExpDate().toGregorianCalendar().getTime())));
+
+        activAllowance.setSizeUndefined();
+        activAllowance.setMargin(true);
+        activAllowancePanel.setContent(activAllowance);
+
+        Panel state = new Panel("State");
+        state.setSizeUndefined();
+        hr.addComponent(state);
+
+        BonusAssigmentState assignmentState = listener.getBonusAssigmentState(bonus);
+        //Test
+        assignmentState.setStart(XMLGregorianCalendarImpl.createDate(2017,12,24,6));
+        assignmentState.setFinish(XMLGregorianCalendarImpl.createDate(2017,12,27,6));
+
+        FormLayout stateInfo = new FormLayout();
+        stateInfo.addComponent(textField("All counts", String.valueOf(assignmentState.getAllCountSet())));
+        stateInfo.addComponent(textField("Complated counts", String.valueOf(assignmentState.getComplatedCount())));
+        stateInfo.addComponent(textField("Failed counts", String.valueOf(assignmentState.getFailedCount())));
+        stateInfo.addComponent(textField("Start date", dateFormat.format(assignmentState.getStart().toGregorianCalendar().getTime())));
+        stateInfo.addComponent(textField("End date", dateFormat.format(assignmentState.getFinish().toGregorianCalendar().getTime())));
+
+        stateInfo.setSizeUndefined();
+        stateInfo.setMargin(true);
+        state.setContent(stateInfo);
+
+        return hr;
+    }
+
+    private TextField textField(String caption, String val) {
+        TextField field = new TextField(caption);
+        field.setValue(val == null ? "" : val);
+        field.setEnabled(false);
+        return field;
+    }
+
     private void refreshTable() {
         grid.setItems(bonusParamsList);
     }
@@ -120,6 +206,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         h.setMargin(false);
 
         content.addComponent(h);
+        content.addComponent(bonusInfoLayout);
 
 //        content.addComponent(optionGroup);
     }

@@ -56,8 +56,8 @@ public class SubscribeLogViewImpl extends BaseNavigationView implements Subscrib
     private DateField to;
 
     // TODO drop
-//    private TextField toMoble = new TextField();
-//    private TextField fromMobile  = new TextField();
+//    private TextFieldUtil toMoble = new TextFieldUtil();
+//    private TextFieldUtil fromMobile  = new TextFieldUtil();
     @Getter
     private DateField from;
 

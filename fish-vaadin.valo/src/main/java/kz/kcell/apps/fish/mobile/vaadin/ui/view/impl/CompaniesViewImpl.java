@@ -49,8 +49,8 @@ public class CompaniesViewImpl extends BaseNavigationView implements CompaniesVi
     private Grid<Company> buildGrid() {
         Grid<Company> grid = new Grid<>();
         grid.setSelectionMode(Grid.SelectionMode.SINGLE);
-        grid.setSizeFull();
-        setMargin(new MarginInfo(false, true, false, true));
+        grid.setWidth(100, Unit.PERCENTAGE);
+            setMargin(new MarginInfo(false, true, false, true));
 
         collapsibleColumns
                 .add(grid.addColumn(Company::getCid)
@@ -78,13 +78,14 @@ public class CompaniesViewImpl extends BaseNavigationView implements CompaniesVi
         super.buildLayout();
         content.setSizeUndefined();
         content.setSpacing(true);
+        content.setWidth(100, Unit.PERCENTAGE);
 
         HorizontalLayout h = new HorizontalLayout();
-        h.setWidth(500, Unit.PIXELS);
+        h.setWidth(100, Unit.PERCENTAGE);
 
         h.addComponent(table);
         h.setSpacing(true);
-        h.setMargin(new MarginInfo(false, false, true, false));
+        h.setMargin(new MarginInfo(false, true, true, false));
 
         content.addComponent(h);
 

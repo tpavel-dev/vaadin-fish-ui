@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -18,20 +19,20 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="allowanceDescr" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="allowanceEndDate" type="{http://ws_api.bonus_cmdr.app.kcell.kz/}localDateTime" minOccurs="0"/&gt;
+ *         &lt;element name="allowanceEndDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="allowanceId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="allowanceName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="allowanceQuota" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
- *         &lt;element name="allowanceStartDate" type="{http://ws_api.bonus_cmdr.app.kcell.kz/}localDateTime" minOccurs="0"/&gt;
+ *         &lt;element name="allowanceStartDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="bid" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
  *         &lt;element name="cid" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
  *         &lt;element name="exeOrder" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/&gt;
  *         &lt;element name="orgaAmount" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
  *         &lt;element name="orgaBalanceName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="orgaComment" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="orgaExpDate" type="{http://ws_api.bonus_cmdr.app.kcell.kz/}localDateTime" minOccurs="0"/&gt;
+ *         &lt;element name="orgaExpDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="orgaPocketName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
- *         &lt;element name="orgaStartDate" type="{http://ws_api.bonus_cmdr.app.kcell.kz/}localDateTime" minOccurs="0"/&gt;
+ *         &lt;element name="orgaStartDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/&gt;
  *         &lt;element name="status" type="{http://ws_api.bonus_cmdr.app.kcell.kz/}bonusStatus" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
@@ -63,20 +64,24 @@ import javax.xml.bind.annotation.XmlType;
 public class BonusParams {
 
     protected String allowanceDescr;
-    protected LocalDateTime allowanceEndDate;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar allowanceEndDate;
     protected String allowanceId;
     protected String allowanceName;
     protected Double allowanceQuota;
-    protected LocalDateTime allowanceStartDate;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar allowanceStartDate;
     protected Long bid;
     protected Long cid;
     protected Integer exeOrder;
     protected Double orgaAmount;
     protected String orgaBalanceName;
     protected String orgaComment;
-    protected LocalDateTime orgaExpDate;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar orgaExpDate;
     protected String orgaPocketName;
-    protected LocalDateTime orgaStartDate;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar orgaStartDate;
     @XmlSchemaType(name = "string")
     protected BonusStatus status;
 
@@ -109,10 +114,10 @@ public class BonusParams {
      * 
      * @return
      *     possible object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public LocalDateTime getAllowanceEndDate() {
+    public XMLGregorianCalendar getAllowanceEndDate() {
         return allowanceEndDate;
     }
 
@@ -121,10 +126,10 @@ public class BonusParams {
      * 
      * @param value
      *     allowed object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setAllowanceEndDate(LocalDateTime value) {
+    public void setAllowanceEndDate(XMLGregorianCalendar value) {
         this.allowanceEndDate = value;
     }
 
@@ -205,10 +210,10 @@ public class BonusParams {
      * 
      * @return
      *     possible object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public LocalDateTime getAllowanceStartDate() {
+    public XMLGregorianCalendar getAllowanceStartDate() {
         return allowanceStartDate;
     }
 
@@ -217,10 +222,10 @@ public class BonusParams {
      * 
      * @param value
      *     allowed object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setAllowanceStartDate(LocalDateTime value) {
+    public void setAllowanceStartDate(XMLGregorianCalendar value) {
         this.allowanceStartDate = value;
     }
 
@@ -373,10 +378,10 @@ public class BonusParams {
      * 
      * @return
      *     possible object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public LocalDateTime getOrgaExpDate() {
+    public XMLGregorianCalendar getOrgaExpDate() {
         return orgaExpDate;
     }
 
@@ -385,10 +390,10 @@ public class BonusParams {
      * 
      * @param value
      *     allowed object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setOrgaExpDate(LocalDateTime value) {
+    public void setOrgaExpDate(XMLGregorianCalendar value) {
         this.orgaExpDate = value;
     }
 
@@ -421,10 +426,10 @@ public class BonusParams {
      * 
      * @return
      *     possible object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public LocalDateTime getOrgaStartDate() {
+    public XMLGregorianCalendar getOrgaStartDate() {
         return orgaStartDate;
     }
 
@@ -433,10 +438,10 @@ public class BonusParams {
      * 
      * @param value
      *     allowed object is
-     *     {@link LocalDateTime }
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setOrgaStartDate(LocalDateTime value) {
+    public void setOrgaStartDate(XMLGregorianCalendar value) {
         this.orgaStartDate = value;
     }
 

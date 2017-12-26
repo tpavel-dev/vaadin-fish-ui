@@ -2,7 +2,7 @@ buildscript {
 
     repositories {
         mavenLocal()
-//        mavenCentral()
+        mavenCentral()
 //        maven {url "https://plugins.gradle.org/m2/"}
         maven { url "http://artifactory.kcell.kz/libs-release-local" }
         maven { url "http://artifactory.kcell.kz/ext-release-local" }
@@ -43,7 +43,7 @@ subprojects {
 
     repositories {
         mavenLocal()
-//        mavenCentral()
+        mavenCentral()
 //        maven {url "https://plugins.gradle.org/m2/"}
         maven { url "http://artifactory.kcell.kz/libs-release-local" }
         maven { url "http://artifactory.kcell.kz/ext-release-local" }
