@@ -81,7 +81,8 @@ public class LoginPresenter extends AbstractPresenter<LoginView> implements Pres
         authService.auth(user, password);
 
 //        MDC.put(MDCKeys.msisdn.name(),msisdn.get());
-//        getAccount().setMsisdn(msisdn);
+        FastMsisdn msisdn = new FastMsisdn(view.getUserName());
+        getAccount().setMsisdn(msisdn);
 
         getAccount().setAuthorized(true);
 

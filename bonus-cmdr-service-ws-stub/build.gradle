@@ -70,7 +70,7 @@ wsdl2java {
     wsdlDir = file("$projectDir/src/main/resources/wsdl"); mkdir(wsdlDir);
     generatedWsdlDir = file("$projectDir/src/main/java"); mkdir(generatedWsdlDir);
     wsdlsToGenerate = [
-            ['-p', 'kz.kcell.app.bonus_cmdr.ws.stub', '-autoNameResolution', "http://localhost:8080/services/auth?wsdl"],
-            ['-p', 'kz.kcell.app.bonus_cmdr.ws.stub', '-autoNameResolution', "http://localhost:8080/services/company?wsdl"],
+            ['-p', 'kz.kcell.app.bonus_cmdr.ws.stub', '-autoNameResolution', "http://10.10.170.53:8080/services/auth?wsdl"],
+            ['-p', 'kz.kcell.app.bonus_cmdr.ws.stub', '-autoNameResolution', "http://10.10.170.53:8080/services/company?wsdl"],
     ]
 }

@@ -208,6 +208,10 @@ public class UIController implements Controller, EventBus {
                 mainUIPresenter.navigateTo(ViewsCode.companies);
                 break;
             }
+            case SHOW_COMPANY_SCREEN: {
+                mainUIPresenter.navigateTo(ViewsCode.company);
+                break;
+            }
         } // end switch
     }
 
