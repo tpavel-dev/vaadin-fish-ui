@@ -57,7 +57,7 @@ public abstract class BaseView extends VerticalLayout {
 
     ;
 
-    protected void buildLayout() {
+    protected void  buildLayout() {
         setSizeFull();
         addStyleName("content-common");
 //        setWidth(Style._100p);

@@ -3,6 +3,7 @@ package kz.kcell.app.bonus_cmdr.ws.stub;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -16,8 +17,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
+ *         &lt;element name="allowanceDescr" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="allowanceEndDate" type="{http://ws_api.bonus_cmdr.app.kcell.kz/}localDateTime" minOccurs="0"/&gt;
  *         &lt;element name="allowanceId" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="allowanceName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="allowanceQuota" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/&gt;
  *         &lt;element name="allowanceStartDate" type="{http://ws_api.bonus_cmdr.app.kcell.kz/}localDateTime" minOccurs="0"/&gt;
  *         &lt;element name="bid" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
@@ -29,6 +32,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="orgaExpDate" type="{http://ws_api.bonus_cmdr.app.kcell.kz/}localDateTime" minOccurs="0"/&gt;
  *         &lt;element name="orgaPocketName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *         &lt;element name="orgaStartDate" type="{http://ws_api.bonus_cmdr.app.kcell.kz/}localDateTime" minOccurs="0"/&gt;
+ *         &lt;element name="status" type="{http://ws_api.bonus_cmdr.app.kcell.kz/}bonusStatus" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -39,8 +43,10 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "bonusParams", propOrder = {
+    "allowanceDescr",
     "allowanceEndDate",
     "allowanceId",
+    "allowanceName",
     "allowanceQuota",
     "allowanceStartDate",
     "bid",
@@ -51,12 +57,15 @@ import javax.xml.bind.annotation.XmlType;
     "orgaComment",
     "orgaExpDate",
     "orgaPocketName",
-    "orgaStartDate"
+    "orgaStartDate",
+    "status"
 })
 public class BonusParams {
 
+    protected String allowanceDescr;
     protected LocalDateTime allowanceEndDate;
     protected String allowanceId;
+    protected String allowanceName;
     protected Double allowanceQuota;
     protected LocalDateTime allowanceStartDate;
     protected Long bid;
@@ -68,6 +77,32 @@ public class BonusParams {
     protected LocalDateTime orgaExpDate;
     protected String orgaPocketName;
     protected LocalDateTime orgaStartDate;
+    @XmlSchemaType(name = "string")
+    protected BonusStatus status;
+
+    /**
+     * Gets the value of the allowanceDescr property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAllowanceDescr() {
+        return allowanceDescr;
+    }
+
+    /**
+     * Sets the value of the allowanceDescr property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setAllowanceDescr(String value) {
+        this.allowanceDescr = value;
+    }
 
     /**
      * Gets the value of the allowanceEndDate property.
@@ -115,6 +150,30 @@ public class BonusParams {
      */
     public void setAllowanceId(String value) {
         this.allowanceId = value;
+    }
+
+    /**
+     * Gets the value of the allowanceName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAllowanceName() {
+        return allowanceName;
+    }
+
+    /**
+     * Sets the value of the allowanceName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setAllowanceName(String value) {
+        this.allowanceName = value;
     }
 
     /**
@@ -379,6 +438,30 @@ public class BonusParams {
      */
     public void setOrgaStartDate(LocalDateTime value) {
         this.orgaStartDate = value;
+    }
+
+    /**
+     * Gets the value of the status property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link BonusStatus }
+     *     
+     */
+    public BonusStatus getStatus() {
+        return status;
+    }
+
+    /**
+     * Sets the value of the status property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link BonusStatus }
+     *     
+     */
+    public void setStatus(BonusStatus value) {
+        this.status = value;
     }
 
 }

@@ -2,6 +2,7 @@ package kz.kcell.apps.fish.mobile.vaadin.controller;
 
 import com.vaadin.event.selection.SelectionEvent;
 import com.vaadin.server.VaadinSession;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
 import kz.kcell.app.bonus_cmdr.ws.stub.BonusParams;
 import kz.kcell.app.bonus_cmdr.ws.stub.Company;
@@ -44,6 +45,16 @@ public class CompanyPresenter extends AbstractPresenter<CompanyView> implements 
     @Override
     public void onRowClick(SelectionEvent event) {
 
+    }
+
+    @Override
+    public void startBonusJob(BonusParams bonusParams) {
+        companyService.startAssigmentBonus(bonusParams.getCid(), bonusParams.getBid().intValue());
+    }
+
+    @Override
+    public void stopBonusJob(BonusParams bonusParams) {
+        companyService.stopAssigmentBonus(bonusParams.getCid(), bonusParams.getBid().intValue());
     }
 
     @Override

@@ -17,6 +17,10 @@ public interface CompanyView extends View<CompanyView.Listener> {
 
         void onRowClick(SelectionEvent event);
 
+        void startBonusJob(BonusParams bonusParams);
+
+        void stopBonusJob(BonusParams bonusParams);
+
         Company getCompany();
     }
 
