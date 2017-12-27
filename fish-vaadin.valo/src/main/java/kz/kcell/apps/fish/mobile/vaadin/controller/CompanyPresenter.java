@@ -64,6 +64,11 @@ public class CompanyPresenter extends AbstractPresenter<CompanyView> implements 
     }
 
     @Override
+    public void updateBonusParams(BonusParams bonusParams) {
+        companyService.updateBonus(bonusParams);
+    }
+
+    @Override
     public Company getCompany() {
         return VaadinSession.getCurrent().getAttribute(Company.class);
     }

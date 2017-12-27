@@ -3,21 +3,20 @@ package kz.kcell.app.bonus_cmdr.ws.stub;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for authResponse complex type.
+ * <p>Java class for addCompany complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="authResponse"&gt;
+ * &lt;complexType name="addCompany"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="return" type="{http://ws_api.bonus_cmdr.app.kcell.kz/}user" minOccurs="0"/&gt;
+ *         &lt;element name="company" type="{http://ws_api.bonus_cmdr.app.kcell.kz/}company" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -27,36 +26,35 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "authResponse", propOrder = {
-    "_return"
+@XmlType(name = "addCompany", propOrder = {
+    "company"
 })
-public class AuthResponse {
+public class AddCompany {
 
-    @XmlElement(name = "return")
-    protected User _return;
+    protected Company company;
 
     /**
-     * Gets the value of the return property.
+     * Gets the value of the company property.
      * 
      * @return
      *     possible object is
-     *     {@link User }
+     *     {@link Company }
      *     
      */
-    public User getReturn() {
-        return _return;
+    public Company getCompany() {
+        return company;
     }
 
     /**
-     * Sets the value of the return property.
+     * Sets the value of the company property.
      * 
      * @param value
      *     allowed object is
-     *     {@link User }
+     *     {@link Company }
      *     
      */
-    public void setReturn(User value) {
-        this._return = value;
+    public void setCompany(Company value) {
+        this.company = value;
     }
 
 }

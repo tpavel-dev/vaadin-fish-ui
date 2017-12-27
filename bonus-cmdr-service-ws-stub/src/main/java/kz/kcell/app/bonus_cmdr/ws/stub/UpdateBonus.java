@@ -3,21 +3,20 @@ package kz.kcell.app.bonus_cmdr.ws.stub;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for authResponse complex type.
+ * <p>Java class for updateBonus complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="authResponse"&gt;
+ * &lt;complexType name="updateBonus"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="return" type="{http://ws_api.bonus_cmdr.app.kcell.kz/}user" minOccurs="0"/&gt;
+ *         &lt;element name="bonus" type="{http://ws_api.bonus_cmdr.app.kcell.kz/}bonusParams" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -27,36 +26,35 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "authResponse", propOrder = {
-    "_return"
+@XmlType(name = "updateBonus", propOrder = {
+    "bonus"
 })
-public class AuthResponse {
+public class UpdateBonus {
 
-    @XmlElement(name = "return")
-    protected User _return;
+    protected BonusParams bonus;
 
     /**
-     * Gets the value of the return property.
+     * Gets the value of the bonus property.
      * 
      * @return
      *     possible object is
-     *     {@link User }
+     *     {@link BonusParams }
      *     
      */
-    public User getReturn() {
-        return _return;
+    public BonusParams getBonus() {
+        return bonus;
     }
 
     /**
-     * Sets the value of the return property.
+     * Sets the value of the bonus property.
      * 
      * @param value
      *     allowed object is
-     *     {@link User }
+     *     {@link BonusParams }
      *     
      */
-    public void setReturn(User value) {
-        this._return = value;
+    public void setBonus(BonusParams value) {
+        this.bonus = value;
     }
 
 }

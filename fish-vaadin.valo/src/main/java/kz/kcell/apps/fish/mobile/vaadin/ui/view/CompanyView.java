@@ -24,6 +24,8 @@ public interface CompanyView extends View<CompanyView.Listener> {
 
         BonusAssigmentState getBonusAssigmentState(BonusParams bonusParams);
 
+        void updateBonusParams(BonusParams bonusParams);
+
         Company getCompany();
     }
 
