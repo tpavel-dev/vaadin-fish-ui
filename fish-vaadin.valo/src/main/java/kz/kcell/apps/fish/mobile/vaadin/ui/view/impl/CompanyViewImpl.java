@@ -11,6 +11,7 @@ import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompanyView;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.ViewsCode;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.component.BonusInfo;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.window.BonusWindow;
+import kz.kcell.apps.fish.mobile.vaadin.ui.view.window.UploadMsisdnWindow;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -139,7 +140,8 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
     }
 
     private void refreshTable() {
-        grid.setItems(bonusParamsList);
+        grid.setItems(listener.getBonusParamsByCompanyId(company.getCid()));
+        grid.getDataProvider().refreshAll();
     }
 
     private void onInfo(SelectionEvent<BonusParams> event) {
@@ -162,6 +164,12 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         addCompanyBtn.setIcon(FontAwesome.PLUS);
         actionButtonLayout.addComponent(addCompanyBtn);
 
+        Button uploadMsisdnBtn = new Button("Upload MSISDNs");
+        uploadMsisdnBtn.addClickListener(e -> {
+            UI.getCurrent().addWindow(new UploadMsisdnWindow());
+        });
+        actionButtonLayout.addComponent(uploadMsisdnBtn);
+
         return actionButtonLayout;
     }
 
@@ -169,16 +177,12 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         HorizontalLayout actionButtons = new HorizontalLayout();
         actionButtons.setSpacing(true);
         actionButtons.setMargin(false);
-        Button backBtn = new Button("Back", event -> {
-            listener.showCompaniesView();
-        });
+        Button backBtn = new Button("Back", event -> listener.showCompaniesView());
         backBtn.setIcon(FontAwesome.ARROW_LEFT);
         actionButtons.addComponent(backBtn);
 
         if (isSupervisor) {
-            Button saveBtn = new Button("Save", event -> {
-                saveBonusInfo();
-            });
+            Button saveBtn = new Button("Save", event -> saveBonusInfo());
             saveBtn.setIcon(FontAwesome.SAVE);
             actionButtons.addComponent(saveBtn);
         }
@@ -187,7 +191,12 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
 
     private void saveBonusInfo() {
         BonusParams bonusParams = bonusInfo.getBean();
-        listener.updateBonus(bonusParams);
+        if (bonusParams.getBid() != null) {
+            listener.updateBonus(bonusParams);
+            showNotification("Bonus successfully edited!", Notification.Type.HUMANIZED_MESSAGE);
+        } else {
+            showNotification("Select bonus", Notification.Type.ERROR_MESSAGE);
+        }
     }
 
     public void translate() {

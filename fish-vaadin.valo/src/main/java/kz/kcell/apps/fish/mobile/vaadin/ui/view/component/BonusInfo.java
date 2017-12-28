@@ -1,17 +1,14 @@
 package kz.kcell.apps.fish.mobile.vaadin.ui.view.component;
 
 import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
-import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.*;
 import kz.kcell.app.bonus_cmdr.ws.stub.BonusAssigmentState;
 import kz.kcell.app.bonus_cmdr.ws.stub.BonusParams;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompanyView;
 
-import javax.xml.datatype.DatatypeConstants;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.TimeZone;
 
 public class BonusInfo extends AbstractInfo<BonusParams> {
 

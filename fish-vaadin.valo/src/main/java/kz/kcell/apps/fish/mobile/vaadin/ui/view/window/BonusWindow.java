@@ -220,6 +220,8 @@ public class BonusWindow extends AbstractWindow<BonusParams> {
         BonusParams bonus = generateBonusParams();
         bonus.setCid(company.getCid());
         listener.saveBonus(bonus);
+        close();
+        UI.getCurrent().showNotification("Bonus successfully added!");
     }
 
     @Override
