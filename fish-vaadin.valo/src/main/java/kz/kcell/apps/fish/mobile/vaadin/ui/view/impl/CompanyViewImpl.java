@@ -7,6 +7,7 @@ import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.*;
 import kz.kcell.app.bonus_cmdr.ws.stub.*;
 import kz.kcell.apps.bonus_cmdr.model.AccessGroup;
+import kz.kcell.apps.bonus_cmdr.model.AccessGroupUtils;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompanyView;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.ViewsCode;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.component.BonusInfo;
@@ -30,7 +31,6 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
     private User currentUser;
     private BonusWindow window;
     private BonusInfo bonusInfo;
-    private Boolean isSupervisor;
 
     private Grid<BonusParams> grid;
 
@@ -54,10 +54,9 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         company = listener.getCompany();
         bonusParamsList = listener.getBonusParamsByCompanyId(company.getCid());
 
-        isSupervisor = AccessGroup.SUPERVISOR.name().equals(currentUser.getAccessGroup());
-
         window = new BonusWindow(listener, company);
-        bonusInfo = new BonusInfo(listener, null, isSupervisor);
+        bonusInfo = new BonusInfo(listener, null, AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups())
+);
     }
 
     @Override
@@ -74,7 +73,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
 
         VerticalLayout v = new VerticalLayout();
         v.setWidth(100, Unit.PERCENTAGE);
-        if (AccessGroup.SUPERVISOR.name().equals(currentUser.getAccessGroup()))
+        if (AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups()))
             v.addComponent(buildTopActionButtons());
         v.addComponent(buildGrid());
         v.setSpacing(true);
@@ -124,7 +123,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         grid.addSelectionListener(event -> {
             onInfo(event);
         });
-        if (isSupervisor) {
+        if (AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups())) {
             grid.addComponentColumn(bonus -> {
                 Button removeBtn = new Button();
                 removeBtn.setIcon(FontAwesome.REMOVE);
@@ -195,7 +194,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         backBtn.setIcon(FontAwesome.ARROW_LEFT);
         actionButtons.addComponent(backBtn);
 
-        if (isSupervisor) {
+        if (AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups())) {
             Button saveBtn = new Button("Save", event -> saveBonusInfo());
             saveBtn.setIcon(FontAwesome.SAVE);
             actionButtons.addComponent(saveBtn);

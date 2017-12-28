@@ -226,6 +226,10 @@ public class MainUIPresenter extends AbstractPresenter<MainUI> implements Presen
 //        title.setValue(bonusStr);
     }
 
+    public void changeAccessMenuTab(String tabName) {
+        mainUI.removeMenuTab(tabName);
+    }
+
 //    public void login() {
 //        navigateTo(ViewsCode.login);
 //    }

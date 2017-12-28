@@ -53,9 +53,7 @@ public class Audit {
             case LOGIN_SUCCESFULL: {
                 User user = SessionManager.getAccount().getUser();
                 log.info("Login {} with bdd {} accessGroup {}",
-                        user.getName(),
-                        user.getAccessGroup()
-                );
+                        user.getName());
                 break;
             }
         }

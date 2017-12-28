@@ -7,6 +7,7 @@ import com.vaadin.server.VaadinSession;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.UI;
+import kz.kcell.apps.bonus_cmdr.model.AccessGroup;
 import kz.kcell.apps.common.msisdn.Msisdn;
 import kz.kcell.apps.fish.audit.Audit;
 import kz.kcell.apps.fish.mobile.vaadin.SpmotWebConfig;
@@ -121,6 +122,8 @@ public class UIController implements Controller, EventBus {
             }
             case LOGIN_SUCCESFULL: {
                 mainUIPresenter.loginSuccessful();
+                if (!getAccount().hasRole(AccessGroup.UPLOADER.name()))
+                    mainUIPresenter.changeAccessMenuTab(ViewsCode.name_upload_file);
                 post(EventType.SHOW_PRODUCT_SCREEN);
                 break;
             }

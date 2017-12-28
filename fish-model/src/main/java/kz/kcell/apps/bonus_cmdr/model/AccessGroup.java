@@ -8,5 +8,6 @@ public enum AccessGroup {
     SHAREBONUS,
     DEBUG,
     SUPERVISOR,
+    UPLOADER,
     EXECUTOR
 }

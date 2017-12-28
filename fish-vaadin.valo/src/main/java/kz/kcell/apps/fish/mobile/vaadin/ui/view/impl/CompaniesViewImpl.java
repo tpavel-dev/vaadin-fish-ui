@@ -8,6 +8,7 @@ import com.vaadin.ui.*;
 import kz.kcell.app.bonus_cmdr.ws.stub.Company;
 import kz.kcell.app.bonus_cmdr.ws.stub.User;
 import kz.kcell.apps.bonus_cmdr.model.AccessGroup;
+import kz.kcell.apps.bonus_cmdr.model.AccessGroupUtils;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompaniesView;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.ViewsCode;
 import lombok.Getter;
@@ -100,7 +101,7 @@ public class CompaniesViewImpl extends BaseNavigationView implements CompaniesVi
             showNotification("Company succesfully edited!", Notification.Type.HUMANIZED_MESSAGE);
         });
 
-        if (AccessGroup.SUPERVISOR.name().equals(currentUser.getAccessGroup()))
+        if (AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups()))
             grid.getEditor().setEnabled(true);
 
         grid.addComponentColumn(company -> {
@@ -112,7 +113,7 @@ public class CompaniesViewImpl extends BaseNavigationView implements CompaniesVi
             return enterBtn;
         }).setCaption("Инфо");
 
-        if (AccessGroup.SUPERVISOR.name().equals(currentUser.getAccessGroup())) {
+        if (AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups())) {
             grid.addComponentColumn(company -> {
                 Button removeBtn = new Button("");
                 removeBtn.setIcon(FontAwesome.REMOVE);
@@ -150,7 +151,7 @@ public class CompaniesViewImpl extends BaseNavigationView implements CompaniesVi
         VerticalLayout v = new VerticalLayout();
         v.setWidth(100, Unit.PERCENTAGE);
 
-        if (AccessGroup.SUPERVISOR.name().equals(currentUser.getAccessGroup()))
+        if (AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups()))
             v.addComponent(buildActionButtons());
         v.addComponent(table);
         v.setSpacing(true);

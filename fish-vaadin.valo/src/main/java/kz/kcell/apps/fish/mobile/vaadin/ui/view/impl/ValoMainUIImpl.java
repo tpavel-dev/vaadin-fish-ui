@@ -2,15 +2,14 @@ package kz.kcell.apps.fish.mobile.vaadin.ui.view.impl;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.Title;
-import com.vaadin.server.FontAwesome;
-import com.vaadin.server.Responsive;
-import com.vaadin.server.ThemeResource;
-import com.vaadin.server.VaadinRequest;
+import com.vaadin.server.*;
 import com.vaadin.shared.ui.ContentMode;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.spring.navigator.SpringViewProvider;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
+import kz.kcell.app.bonus_cmdr.ws.stub.User;
+import kz.kcell.apps.bonus_cmdr.model.AccessGroup;
 import kz.kcell.apps.common.msisdn.FastMsisdn;
 import kz.kcell.apps.common.msisdn.Msisdn;
 import kz.kcell.apps.fish.mobile.vaadin.ui.MainUI;
@@ -224,6 +223,10 @@ public class ValoMainUIImpl extends MainUI  {
             }
         }
         menu.removeStyleName("valo-menu-visible");
+    }
+
+    public void removeMenuTab(String tabName) {
+        menuItems.remove(tabName);
     }
 
 

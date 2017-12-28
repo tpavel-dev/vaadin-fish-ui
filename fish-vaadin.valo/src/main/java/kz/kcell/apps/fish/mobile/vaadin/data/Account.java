@@ -1,6 +1,7 @@
 package kz.kcell.apps.fish.mobile.vaadin.data;
 
 import kz.kcell.app.bonus_cmdr.ws.stub.User;
+import kz.kcell.apps.bonus_cmdr.model.AccessGroup;
 import kz.kcell.apps.common.Language;
 import kz.kcell.apps.common.msisdn.Msisdn;
 import lombok.Getter;
@@ -31,6 +32,13 @@ public class Account  {
 
     @Getter @Setter
     private User user;
+
+    public boolean hasRole(String accessGroup) {
+        for (String role : user.getAccessGroups()) {
+            if (role.equals(accessGroup)) return true;
+        }
+        return false;
+    }
 
     public String getStateInfo() {
         return "isAuthorized: "+authorized+" ,isCaptchaBlocked"+ captchaBlocked;
