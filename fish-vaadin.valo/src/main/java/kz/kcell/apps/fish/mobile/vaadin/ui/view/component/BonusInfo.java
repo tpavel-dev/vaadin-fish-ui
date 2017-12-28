@@ -58,10 +58,6 @@ public class BonusInfo extends AbstractInfo<BonusParams> {
     protected void init() {
         bonusState = new BonusAssigmentState();
 
-        setWidth(100, Unit.PERCENTAGE);
-        setSpacing(false);
-        setMargin(new MarginInfo(false, true, false, true));
-
         name = new TextField("Name:");
         description = new TextField("Description:");
         order = new ComboBox("Order:", Arrays.asList(new Integer[]{1,2,3,4,5}));
@@ -210,6 +206,7 @@ public class BonusInfo extends AbstractInfo<BonusParams> {
         BonusParams bonusParams = new BonusParams();
         bonusParams.setCid(bonus.getCid());
         bonusParams.setBid(bonus.getBid());
+        bonusParams.setStatus(bonus.getStatus());
         bonusParams.setAllowanceName(name.getValue());
         bonusParams.setAllowanceDescr(description.getValue());
         bonusParams.setExeOrder((Integer) order.getValue());
@@ -239,7 +236,7 @@ public class BonusInfo extends AbstractInfo<BonusParams> {
 
     private XMLGregorianCalendar convertToXMLGregorianCalendar(LocalDate date) {
         try {
-            return XMLGregorianCalendarImpl.createDate(date.getYear(), date.getMonthValue(), date.getDayOfMonth(), 6 * 60);
+            return XMLGregorianCalendarImpl.createDateTime(date.getYear(), date.getMonthValue(), date.getDayOfMonth(), 00, 00, 00);
         } catch (Exception e) {
             return null;
         }

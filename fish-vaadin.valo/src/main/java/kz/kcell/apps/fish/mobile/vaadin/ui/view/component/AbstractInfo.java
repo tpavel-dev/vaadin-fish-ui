@@ -6,6 +6,10 @@ import kz.kcell.app.bonus_cmdr.ws.stub.BonusParams;
 public abstract class AbstractInfo<T> extends HorizontalLayout {
 
     void init() {
+        setWidth(100, Unit.PERCENTAGE);
+        setSpacing(false);
+        setMargin(false);
+
         buildLayout();
         setFieldsValue();
     }

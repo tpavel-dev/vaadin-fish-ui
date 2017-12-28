@@ -3,12 +3,14 @@ package kz.kcell.apps.fish.mobile.vaadin.ui.view.window;
 import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 import com.vaadin.data.Binder;
 import com.vaadin.data.BinderValidationStatus;
+import com.vaadin.data.ValidationException;
 import com.vaadin.data.validator.DateRangeValidator;
 import com.vaadin.data.validator.StringLengthValidator;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.Setter;
 import com.vaadin.ui.*;
 import kz.kcell.app.bonus_cmdr.ws.stub.BonusParams;
+import kz.kcell.app.bonus_cmdr.ws.stub.BonusStatus;
 import kz.kcell.app.bonus_cmdr.ws.stub.Company;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompanyView;
 import kz.kcell.vaadin.data.EmptyDateValidator;
@@ -66,10 +68,10 @@ public class BonusWindow extends AbstractWindow<BonusParams> {
         });
         binder.bind(codaFrom, b -> b.getAllowanceStartDate().toGregorianCalendar().toZonedDateTime().toLocalDate(),
                 (Setter<BonusParams, LocalDate>) (bonusParams, localDate) ->
-                        bonusParams.setAllowanceStartDate(toXmlGregorianCalendar(localDate)));
+                        bonusParams.setAllowanceStartDate(convertToXMLGregorianCalendar(localDate)));
         binder.bind(codaTo, b -> b.getAllowanceEndDate().toGregorianCalendar().toZonedDateTime().toLocalDate(),
                 (Setter<BonusParams, LocalDate>) (bonusParams, localDate) ->
-                        bonusParams.setAllowanceEndDate(toXmlGregorianCalendar(localDate)));
+                        bonusParams.setAllowanceEndDate(convertToXMLGregorianCalendar(localDate)));
         binder.bind(orgaPocketName, BonusParams::getOrgaPocketName, BonusParams::setOrgaPocketName);
         binder.bind(orgaBalanceName, BonusParams::getOrgaBalanceName, BonusParams::setOrgaBalanceName);
         binder.bind(orgaComment, BonusParams::getOrgaComment, BonusParams::setOrgaComment);
@@ -78,10 +80,10 @@ public class BonusWindow extends AbstractWindow<BonusParams> {
         });
         binder.bind(orgaFrom, b -> b.getOrgaStartDate().toGregorianCalendar().toZonedDateTime().toLocalDate(),
                 (Setter<BonusParams, LocalDate>) (bonusParams, localDate) ->
-                        bonusParams.setOrgaStartDate(toXmlGregorianCalendar(localDate)));
+                        bonusParams.setOrgaStartDate(convertToXMLGregorianCalendar(localDate)));
         binder.bind(orgaTo, b -> b.getOrgaExpDate().toGregorianCalendar().toZonedDateTime().toLocalDate(),
                 (Setter<BonusParams, LocalDate>) (bonusParams, localDate) ->
-                        bonusParams.setOrgaExpDate(toXmlGregorianCalendar(localDate)));
+                        bonusParams.setOrgaExpDate(convertToXMLGregorianCalendar(localDate)));
 
         // Validation
         binder.forField(name)
@@ -101,11 +103,11 @@ public class BonusWindow extends AbstractWindow<BonusParams> {
                 });
         binder.forField(codaFrom).withValidator(new EmptyDateValidator("Select date"))
                 .bind(b -> toLocalDate(b.getAllowanceStartDate()), (Setter<BonusParams, LocalDate>) (bonusParams, localDate) -> {
-                    bonusParams.setAllowanceStartDate(toXmlGregorianCalendar(localDate));
+                    bonusParams.setAllowanceStartDate(convertToXMLGregorianCalendar(localDate));
                 });
         binder.forField(codaTo).withValidator(new EmptyDateValidator("Select date"))
                 .bind(b -> toLocalDate(b.getAllowanceEndDate()), (Setter<BonusParams, LocalDate>) (bonusParams, localDate) -> {
-                    bonusParams.setAllowanceEndDate(toXmlGregorianCalendar(localDate));
+                    bonusParams.setAllowanceEndDate(convertToXMLGregorianCalendar(localDate));
                 });
 
         binder.forField(orgaPocketName).withValidator(new StringLengthValidator(
@@ -122,11 +124,11 @@ public class BonusWindow extends AbstractWindow<BonusParams> {
                 });
         binder.forField(orgaFrom).withValidator(new EmptyDateValidator("Select date"))
                 .bind(b -> toLocalDate(b.getOrgaStartDate()), (Setter<BonusParams, LocalDate>) (bonusParams, localDate) -> {
-                    bonusParams.setOrgaStartDate(toXmlGregorianCalendar(localDate));
+                    bonusParams.setOrgaStartDate(convertToXMLGregorianCalendar(localDate));
                 });
         binder.forField(orgaTo).withValidator(new EmptyDateValidator("Select date"))
                 .bind(b -> toLocalDate(b.getOrgaStartDate()), (Setter<BonusParams, LocalDate>) (bonusParams, localDate) -> {
-                    bonusParams.setOrgaExpDate(toXmlGregorianCalendar(localDate));
+                    bonusParams.setOrgaExpDate(convertToXMLGregorianCalendar(localDate));
                 });
 
     }
@@ -215,7 +217,7 @@ public class BonusWindow extends AbstractWindow<BonusParams> {
             return;
         }
 
-        BonusParams bonus = binder.getBean();
+        BonusParams bonus = generateBonusParams();
         bonus.setCid(company.getCid());
         listener.saveBonus(bonus);
     }
@@ -226,8 +228,34 @@ public class BonusWindow extends AbstractWindow<BonusParams> {
         return status.getValidationErrors().isEmpty();
     }
 
-    private XMLGregorianCalendar toXmlGregorianCalendar(LocalDate localDate) {
-        return XMLGregorianCalendarImpl.createDate(localDate.getYear(), localDate.getMonthValue(), localDate.getDayOfMonth(), 6 * 60);
+    private BonusParams generateBonusParams() {
+        BonusParams bonusParams = new BonusParams();
+        bonusParams.setCid(company.getCid());
+        bonusParams.setStatus(BonusStatus.STOPED);
+        bonusParams.setAllowanceName(name.getValue());
+        bonusParams.setAllowanceDescr(description.getValue());
+        bonusParams.setExeOrder((Integer) order.getValue());
+
+        bonusParams.setAllowanceId(codaAllowanceId.getValue());
+        bonusParams.setAllowanceQuota(convertToDouble(codaQuota.getValue()));
+        bonusParams.setAllowanceStartDate(convertToXMLGregorianCalendar(codaFrom.getValue()));
+        bonusParams.setAllowanceEndDate(convertToXMLGregorianCalendar(codaTo.getValue()));
+
+        bonusParams.setOrgaPocketName(orgaPocketName.getValue());
+        bonusParams.setOrgaBalanceName(orgaBalanceName.getValue());
+        bonusParams.setOrgaComment(orgaComment.getValue());
+        bonusParams.setOrgaAmount(convertToDouble(orgaAmount.getValue()));
+        bonusParams.setOrgaStartDate(convertToXMLGregorianCalendar(orgaFrom.getValue()));
+        bonusParams.setOrgaExpDate(convertToXMLGregorianCalendar(orgaTo.getValue()));
+        return bonusParams;
+    }
+
+    private XMLGregorianCalendar convertToXMLGregorianCalendar(LocalDate localDate) {
+        return XMLGregorianCalendarImpl.createDateTime(localDate.getYear(), localDate.getMonthValue(), localDate.getDayOfMonth(), 00, 00, 00);
+    }
+
+    private Double convertToDouble(String str) {
+        return Double.parseDouble(str);
     }
 
     private LocalDate toLocalDate(XMLGregorianCalendar calendar) {
