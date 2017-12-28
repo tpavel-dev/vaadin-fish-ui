@@ -6,8 +6,10 @@ import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinSession;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
 import kz.kcell.apps.bonus_cmdr.model.AccessGroup;
+import kz.kcell.apps.bonus_cmdr.model.AccessGroupUtils;
 import kz.kcell.apps.common.msisdn.Msisdn;
 import kz.kcell.apps.fish.audit.Audit;
 import kz.kcell.apps.fish.mobile.vaadin.SpmotWebConfig;
@@ -229,6 +231,12 @@ public class UIController implements Controller, EventBus {
                 // if have login but it authorized then first do logout
                 if (state == ViewsCode.login) {
                     post(SHOW_LOGOUT_SCREEN);
+                }
+                if (state == ViewsCode.upload_file) {
+                    return AccessGroupUtils.checkAccess(AccessGroup.UPLOADER.name(), getAccount().getUser().getAccessGroups());
+                }
+                if (state == ViewsCode.companies) {
+                    return AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), getAccount().getUser().getAccessGroups());
                 }
             } else {
                 // if not authorized then go to login

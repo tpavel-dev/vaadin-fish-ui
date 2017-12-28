@@ -118,8 +118,10 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         grid.addColumn(BonusParams::getAllowanceDescr).setCaption("Description");
         grid.addColumn(BonusParams::getExeOrder).setCaption("Order");
         grid.addColumn(BonusParams::getStatus).setCaption("Status");
-        grid.addComponentColumn(bonus -> addBonusAction(bonus))
-                .setMaximumWidth(100).setCaption("Change");
+        if (AccessGroupUtils.checkAccess(AccessGroup.EXECUTOR.name(), currentUser.getAccessGroups())) {
+            grid.addComponentColumn(bonus -> addBonusAction(bonus))
+                    .setMaximumWidth(100).setCaption("Change");
+        }
         grid.addSelectionListener(event -> {
             onInfo(event);
         });
