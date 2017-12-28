@@ -2,6 +2,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: "com.gorylenko.gradle-git-properties"
 
 version "${release_version}"
+jar.baseName "${app_module_name}"
 
 dependencies {
     compile project(':fish-vaadin.valo')

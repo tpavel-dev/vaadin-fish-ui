@@ -138,9 +138,9 @@ subprojects {
 
 allprojects {
     ext {
-        deploy_version = "3.2.2"
-        release_version = "3.2.2"
-        app_name = "fish-web"
+        deploy_version = "0.1"
+        release_version = "0.1"
+        app_name = "bonus-cmdr-ui"
         app_module_name = "${app_name}-app"
     }
 }
@@ -155,7 +155,7 @@ remotes {
     }
     fish_preprod {
         role 'node'
-        host = '192.168.216.147'
+        host = '192.168.217.10'
         user = 'user01'
         password = 'user01'
     }

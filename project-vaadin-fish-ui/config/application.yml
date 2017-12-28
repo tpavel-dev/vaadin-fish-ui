@@ -1,5 +1,12 @@
+debug: true
+
 server:
   port: 8081
 
 bonus_cmdr:
   data_dir_name: /home/x/prj/bonus-commander/data
+  services:
+    authServiceWsdlUrl: http://10.10.170.53:8080/services/auth?wsdl
+    companyServiceWsdlUrl: http://10.10.170.53:8080/services/company?wsdl
+
+management.security.enabled: false

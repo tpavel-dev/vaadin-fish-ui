@@ -59,6 +59,8 @@ public class SpmotResourceLoader implements SmartLifecycle {
     }
 
     private void updateResources() {
+        if(resources == null) return;
+
         resources.entrySet().forEach( p -> {
             try {
                 SpmotResourceBundle res = SpmotResourceBundle.valueOf(p.getKey());
