@@ -4,10 +4,7 @@ import com.vaadin.event.selection.SelectionEvent;
 import com.vaadin.server.VaadinSession;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
-import kz.kcell.app.bonus_cmdr.ws.stub.BonusAssigmentState;
-import kz.kcell.app.bonus_cmdr.ws.stub.BonusParams;
-import kz.kcell.app.bonus_cmdr.ws.stub.Company;
-import kz.kcell.app.bonus_cmdr.ws.stub.CompanyService;
+import kz.kcell.app.bonus_cmdr.ws.stub.*;
 import kz.kcell.apps.fish.mobile.vaadin.annotation.SpringPresenter;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompaniesView;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompanyView;
@@ -50,27 +47,47 @@ public class CompanyPresenter extends AbstractPresenter<CompanyView> implements 
 
     @Override
     public void startBonusJob(BonusParams bonusParams) {
-        companyService.startAssigmentBonus(bonusParams.getCid(), bonusParams.getBid().intValue());
+        companyService.startAssigmentBonus(bonusParams.getCid(), bonusParams.getBid());
     }
 
     @Override
     public void stopBonusJob(BonusParams bonusParams) {
-        companyService.stopAssigmentBonus(bonusParams.getCid(), bonusParams.getBid().intValue());
+        companyService.stopAssigmentBonus(bonusParams.getCid(), bonusParams.getBid());
     }
 
     @Override
     public BonusAssigmentState getBonusAssigmentState(BonusParams bonusParams) {
-        return companyService.getAssigmentState(bonusParams.getCid(), bonusParams.getBid().intValue());
+        return companyService.getAssigmentState(bonusParams.getCid(), bonusParams.getBid());
     }
 
     @Override
-    public void updateBonusParams(BonusParams bonusParams) {
+    public void updateBonus(BonusParams bonusParams) {
         companyService.updateBonus(bonusParams);
+    }
+
+    @Override
+    public void showCompaniesView() {
+        eventBus.post(EventType.SHOW_COMPANIES_SCREEN);
+    }
+
+    @Override
+    public User getCurrentUser() {
+        return getAccount().getUser();
+    }
+
+    @Override
+    public void removeBonus(BonusParams bonusParams) {
+        companyService.removeBonus(bonusParams);
     }
 
     @Override
     public Company getCompany() {
         return VaadinSession.getCurrent().getAttribute(Company.class);
+    }
+
+    @Override
+    public void saveBonus(BonusParams bonusParams) {
+        companyService.addBonus(bonusParams);
     }
 
     @Override

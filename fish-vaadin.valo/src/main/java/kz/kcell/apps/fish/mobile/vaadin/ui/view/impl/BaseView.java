@@ -85,6 +85,10 @@ public abstract class BaseView extends VerticalLayout {
 //            Notification.show(msg, typeMsg);
     }
 
+    public void notifyUser(String msg, Notification.Type type) {
+        Notification.show(msg, type);
+    }
+
     public void clearNotification() {
         ErrorHandler.showNotification(notificationLabel, null, null);
     }

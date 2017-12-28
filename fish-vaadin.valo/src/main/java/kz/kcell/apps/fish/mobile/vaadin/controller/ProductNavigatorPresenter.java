@@ -153,7 +153,7 @@ public class ProductNavigatorPresenter extends AbstractPresenter<ProductNavigato
     public void enterOrderForm(OrderIvrFormViewImpl formView) {
 
         log.info("SHAREBONUS for {} is {}.",
-                SessionManager.getAccount().getUser().getMsisdn(),
+                SessionManager.getAccount().getUser().getName(),
                 SessionManager.isAccessGroupAvailable(AccessGroup.SHAREBONUS)?"available": "not available");
 
         formView.setVisibleShareBonus(SessionManager.isAccessGroupAvailable(AccessGroup.SHAREBONUS));
@@ -302,7 +302,7 @@ public class ProductNavigatorPresenter extends AbstractPresenter<ProductNavigato
     @Override
     public void enterOrderIvr(OrderIvrViewImpl ivrView) {
         log.info("SHAREBONUS for {} is {}.",
-                SessionManager.getAccount().getUser().getMsisdn(),
+                SessionManager.getAccount().getUser().getName(),
                 SessionManager.isAccessGroupAvailable(AccessGroup.SHAREBONUS)?"available": "not available");
 
         ivrView.setShareBonusVisible(SessionManager.isAccessGroupAvailable(AccessGroup.SHAREBONUS));

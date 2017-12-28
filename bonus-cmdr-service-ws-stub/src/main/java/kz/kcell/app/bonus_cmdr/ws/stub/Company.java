@@ -17,7 +17,10 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
  *         &lt;element name="cid" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
+ *         &lt;element name="fileName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="isComplated" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="uploadedItems" type="{http://www.w3.org/2001/XMLSchema}long" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -29,12 +32,18 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "company", propOrder = {
     "cid",
-    "name"
+    "fileName",
+    "isComplated",
+    "name",
+    "uploadedItems"
 })
 public class Company {
 
     protected Long cid;
+    protected String fileName;
+    protected Long isComplated;
     protected String name;
+    protected Long uploadedItems;
 
     /**
      * Gets the value of the cid property.
@@ -61,6 +70,54 @@ public class Company {
     }
 
     /**
+     * Gets the value of the fileName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getFileName() {
+        return fileName;
+    }
+
+    /**
+     * Sets the value of the fileName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setFileName(String value) {
+        this.fileName = value;
+    }
+
+    /**
+     * Gets the value of the isComplated property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Long }
+     *     
+     */
+    public Long getIsComplated() {
+        return isComplated;
+    }
+
+    /**
+     * Sets the value of the isComplated property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Long }
+     *     
+     */
+    public void setIsComplated(Long value) {
+        this.isComplated = value;
+    }
+
+    /**
      * Gets the value of the name property.
      * 
      * @return
@@ -82,6 +139,30 @@ public class Company {
      */
     public void setName(String value) {
         this.name = value;
+    }
+
+    /**
+     * Gets the value of the uploadedItems property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Long }
+     *     
+     */
+    public Long getUploadedItems() {
+        return uploadedItems;
+    }
+
+    /**
+     * Sets the value of the uploadedItems property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Long }
+     *     
+     */
+    public void setUploadedItems(Long value) {
+        this.uploadedItems = value;
     }
 
 }

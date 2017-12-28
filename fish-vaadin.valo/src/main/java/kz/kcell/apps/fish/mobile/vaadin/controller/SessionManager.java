@@ -76,7 +76,7 @@ public final class SessionManager {
     }
 
     public static boolean isAccessGroupAvailable(AccessGroup accessGroup) {
-        boolean access = AccessGroupUtils.checkAccess(getAccount().getUser().getAccess_group(), accessGroup);
+        boolean access = AccessGroupUtils.checkAccess(getAccount().getUser().getAccessGroup(), accessGroup);
         return access;
     }
 

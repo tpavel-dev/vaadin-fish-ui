@@ -1,8 +1,8 @@
 package kz.kcell.apps.fish.mobile.vaadin.data;
 
+import kz.kcell.app.bonus_cmdr.ws.stub.User;
 import kz.kcell.apps.common.Language;
 import kz.kcell.apps.common.msisdn.Msisdn;
-import kz.kcell.apps.bonus_cmdr.model.User;
 import lombok.Getter;
 import lombok.Setter;
 

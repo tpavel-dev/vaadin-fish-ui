@@ -5,32 +5,29 @@ import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinSession;
 import com.vaadin.ui.UI;
 import kz.kcell.app.bonus_cmdr.ws.stub.AuthService;
-import kz.kcell.apps.bonus_cmdr.model.User;
+import kz.kcell.app.bonus_cmdr.ws.stub.User;
 import kz.kcell.apps.common.Language;
 import kz.kcell.apps.common.exceptions.BaseException;
 import kz.kcell.apps.common.msisdn.FastMsisdn;
 import kz.kcell.apps.fish.exceptions.InvalidValueException;
-import kz.kcell.apps.fish.logging.MDCKeys;
 import kz.kcell.apps.fish.mobile.vaadin.RequestParams;
 import kz.kcell.apps.fish.mobile.vaadin.annotation.SpringPresenter;
 import kz.kcell.apps.fish.mobile.vaadin.data.Account;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.LoginView;
 import kz.kcell.vaadin.CookiesUtils;
 import kz.kcell.vaadin.data.EmptyStringValidator;
-import kz.kcell.vaadin.data.MsisdnValidator;
 import kz.kcell.vaadin.ui.EventType;
 import kz.kcell.vaadin.ui.Presenter;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 
 import javax.annotation.PostConstruct;
 import java.util.EventObject;
 
-import static kz.kcell.apps.bonus_cmdr.model.SpmotResourceBundle.*;
+import static kz.kcell.apps.bonus_cmdr.model.SpmotResourceBundle.login_validate_msg_enter_msisdn;
+import static kz.kcell.apps.bonus_cmdr.model.SpmotResourceBundle.login_validate_msg_enter_password;
 import static kz.kcell.apps.fish.mobile.vaadin.SpmotMobileResourceManager.$;
 
 
@@ -75,10 +72,10 @@ public class LoginPresenter extends AbstractPresenter<LoginView> implements Pres
         String password = view.getPassword();
         EmptyStringValidator.validate($(login_validate_msg_enter_msisdn), view.getUserName());
         EmptyStringValidator.validate($(login_validate_msg_enter_password), password);
-        String user = view.getUserName();
+        String login = view.getUserName();
 
 
-        authService.auth(user, password);
+        User user = authService.auth(login, password);
 
 //        MDC.put(MDCKeys.msisdn.name(),msisdn.get());
         FastMsisdn msisdn = new FastMsisdn(view.getUserName());
@@ -86,7 +83,7 @@ public class LoginPresenter extends AbstractPresenter<LoginView> implements Pres
 
         getAccount().setAuthorized(true);
 
-        getAccount().setUser(new User(view.getUserName()));
+        getAccount().setUser(user);
 
         VaadinSession.getCurrent().setAttribute(Account.class, getAccount());
 
