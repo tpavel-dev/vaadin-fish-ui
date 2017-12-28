@@ -67,14 +67,14 @@ public class UIController implements Controller, EventBus {
 
     public void post(EventType eventType) {
         log.info("post event: {}", eventType);
-        audit.registrationEvent(eventType);
+//        audit.registrationEvent(eventType);
 
-        if (isNotCaptchaBlockedState() && eventType != BLOCK_CAPTCHA && audit.isWarrantForBlockWithCaptcha()) {
+        /*if (isNotCaptchaBlockedState() && eventType != BLOCK_CAPTCHA && audit.isWarrantForBlockWithCaptcha()) {
 //            post(BLOCK_CAPTCHA);
             captchaBlockedEvent = eventType;
             eventType = BLOCK_CAPTCHA;
 //            return;
-        }
+        }*/
 
         if (isCaptchaBlockedState() && (eventType != BLOCK_CAPTCHA && eventType != CAPCTHA_PASS)) {
 //            post(BLOCK_CAPTCHA);
@@ -274,7 +274,8 @@ public class UIController implements Controller, EventBus {
     }
 
     private boolean isCaptchaBlockedState() {
-        return webConfig.getCaptcha().enabled && getAccount().isCaptchaBlocked();
+            return false;
+//        return webConfig.getCaptcha().enabled && getAccount().isCaptchaBlocked();
     }
 
     private boolean isNotCaptchaBlockedState() {

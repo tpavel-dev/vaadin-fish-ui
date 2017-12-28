@@ -45,7 +45,7 @@ public class SpmotWebConfig /*implements SmartLifecycle*/ {
     @Data
     @ToString
     public static class Captcha {
-        public Boolean enabled = true;
+        public Boolean enabled = false;
 
         public int attemptsAuthorization = 5;
 
