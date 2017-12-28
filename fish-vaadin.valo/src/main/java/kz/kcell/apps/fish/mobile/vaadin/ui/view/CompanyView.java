@@ -36,6 +36,14 @@ public interface CompanyView extends View<CompanyView.Listener> {
         Company getCompany();
 
         void saveBonus(BonusParams bonusParams);
+
+        List<String> getFileNames();
+
+        void uploadFile(String fileName, Long cid);
+
+        void buildCompany(Long cid);
+
+        void clearCompany(Long cid);
     }
 
 }

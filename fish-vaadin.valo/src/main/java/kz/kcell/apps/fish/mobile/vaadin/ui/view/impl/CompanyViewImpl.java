@@ -11,7 +11,7 @@ import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompanyView;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.ViewsCode;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.component.BonusInfo;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.window.BonusWindow;
-import kz.kcell.apps.fish.mobile.vaadin.ui.view.window.UploadMsisdnWindow;
+import kz.kcell.apps.fish.mobile.vaadin.ui.view.window.SelectFileMsisdnWindow;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -166,15 +166,23 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
 
         Button buildCompany = new Button("Build Company");
         buildCompany.addClickListener(e -> {
-
+            listener.buildCompany(company.getCid());
+            Notification.show("Company succesfully builded!", Notification.Type.HUMANIZED_MESSAGE);
         });
         actionButtonLayout.addComponent(buildCompany);
 
-        Button uploadMsisdnBtn = new Button("Upload MSISDNs");
+        Button uploadMsisdnBtn = new Button("Select MSISDNs");
         uploadMsisdnBtn.addClickListener(e -> {
-            UI.getCurrent().addWindow(new UploadMsisdnWindow(listener));
+            UI.getCurrent().addWindow(new SelectFileMsisdnWindow(listener, company));
         });
         actionButtonLayout.addComponent(uploadMsisdnBtn);
+
+        Button clearCompanyBtn = new Button("Clear company");
+        clearCompanyBtn.addClickListener(e -> {
+            listener.clearCompany(company.getCid());
+            Notification.show("Company successfully cleared", Notification.Type.HUMANIZED_MESSAGE);
+        });
+        actionButtonLayout.addComponent(clearCompanyBtn);
 
         return actionButtonLayout;
     }

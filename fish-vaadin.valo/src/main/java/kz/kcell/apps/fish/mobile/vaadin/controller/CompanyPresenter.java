@@ -91,8 +91,28 @@ public class CompanyPresenter extends AbstractPresenter<CompanyView> implements 
     }
 
     @Override
+    public List<String> getFileNames() {
+        return companyService.getListFile();
+    }
+
+    @Override
+    public void uploadFile(String fileName, Long cid) {
+        companyService.updloadFile(cid, fileName);
+    }
+
+    @Override
     public void display(UI ui) {
 //        ui.setContent(view);
+    }
+
+    @Override
+    public void buildCompany(Long cid) {
+        companyService.buildCompanyStatus(cid);
+    }
+
+    @Override
+    public void clearCompany(Long cid) {
+        companyService.clearCompany(cid);
     }
 
     @Override
