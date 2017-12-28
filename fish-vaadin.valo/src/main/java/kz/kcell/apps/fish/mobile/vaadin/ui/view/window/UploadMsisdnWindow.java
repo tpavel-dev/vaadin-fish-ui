@@ -4,6 +4,7 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.Upload;
 import com.vaadin.ui.Window;
+import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompanyView;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.FileNotFoundException;
@@ -13,8 +14,11 @@ import java.io.OutputStream;
 @Slf4j
 public class UploadMsisdnWindow extends Window {
 
-    public UploadMsisdnWindow() {
+    private CompanyView.Listener listener;
+
+    public UploadMsisdnWindow(CompanyView.Listener listener) {
         init();
+        this.listener = listener;
     }
 
     private void init() {

@@ -66,6 +66,7 @@ public class ValoMainUIImpl extends MainUI  {
     private Button main_menu_button_login;
     private Button main_menu_button_bonus;
     private Button main_menu_button_companies;
+    private Button main_menu_button_upload_file;
 
     private Button showMenu;
 
@@ -235,6 +236,7 @@ public class ValoMainUIImpl extends MainUI  {
         main_menu_button_captcha.setCaption("captcha");
         main_menu_button_out.setCaption($(main_menu_out));
         main_menu_button_companies.setCaption("Companies");
+        main_menu_button_upload_file.setCaption("Upload file");
         showMenu.setCaption($(menu_button));
 
 //        updateTitle();
@@ -287,6 +289,7 @@ public class ValoMainUIImpl extends MainUI  {
         main_menu_button_out = new Button($(main_menu_out),                       e -> getNavigator().navigateTo(ViewsCode.logout.name()));////listener.onClick(ViewsCode.logout));
         main_menu_button_captcha = new Button("captcha",                   e -> getNavigator().navigateTo(ViewsCode.captcha.name()));//listener.onClick(ViewsCode.captcha));
         main_menu_button_companies = new Button("Companies",               e -> getNavigator().navigateTo(ViewsCode.name_companies));
+        main_menu_button_upload_file = new Button("Upload file",               e -> getNavigator().navigateTo(ViewsCode.name_upload_file));
 
         main_menu_button_product.setId(main_menu_product.name());
         main_menu_button_subscribe_log.setId(main_menu_subscribe_log.name());
@@ -296,8 +299,10 @@ public class ValoMainUIImpl extends MainUI  {
         main_menu_button_out.setId(main_menu_out.name());
         main_menu_button_captcha.setId("captcha");
         main_menu_button_companies.setId("companies");
+        main_menu_button_upload_file.setId("upload_file");
 
         menuItems.put(ViewsCode.name_companies, main_menu_button_companies);
+        menuItems.put(ViewsCode.name_upload_file, main_menu_button_upload_file);
         menuItems.put(ViewsCode.services.name(), main_menu_button_product);
         menuItems.put(ViewsCode.log.name(), main_menu_button_subscribe_log);
         menuItems.put(ViewsCode.bonuses_info.name(), main_menu_button_bonus_info);

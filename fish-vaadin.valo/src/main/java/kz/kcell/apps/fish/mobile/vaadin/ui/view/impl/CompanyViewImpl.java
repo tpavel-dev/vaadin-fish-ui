@@ -164,9 +164,15 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         addCompanyBtn.setIcon(FontAwesome.PLUS);
         actionButtonLayout.addComponent(addCompanyBtn);
 
+        Button buildCompany = new Button("Build Company");
+        buildCompany.addClickListener(e -> {
+
+        });
+        actionButtonLayout.addComponent(buildCompany);
+
         Button uploadMsisdnBtn = new Button("Upload MSISDNs");
         uploadMsisdnBtn.addClickListener(e -> {
-            UI.getCurrent().addWindow(new UploadMsisdnWindow());
+            UI.getCurrent().addWindow(new UploadMsisdnWindow(listener));
         });
         actionButtonLayout.addComponent(uploadMsisdnBtn);
 

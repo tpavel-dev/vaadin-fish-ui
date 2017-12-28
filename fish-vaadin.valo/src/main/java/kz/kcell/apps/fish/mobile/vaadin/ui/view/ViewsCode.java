@@ -15,7 +15,8 @@ public enum ViewsCode {
     my_balance,
     dashboard,
     companies,
-    company
+    company,
+    upload_file
 //        captcha
     ;
 
@@ -35,4 +36,5 @@ public enum ViewsCode {
     public static final String name_error = "error";
     public static final String name_companies = "companies";
     public static final String name_company = "company";
+    public static final String name_upload_file = "upload_file";
 }
