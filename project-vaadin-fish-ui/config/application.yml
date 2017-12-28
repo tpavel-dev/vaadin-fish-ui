@@ -1,2 +1,5 @@
 server:
   port: 8081
+
+bonus_cmdr:
+  data_dir_name: /home/x/prj/bonus-commander/data

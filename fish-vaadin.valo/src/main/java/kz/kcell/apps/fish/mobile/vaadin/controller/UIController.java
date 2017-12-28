@@ -6,7 +6,6 @@ import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinSession;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;
-import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
 import kz.kcell.apps.bonus_cmdr.model.AccessGroup;
 import kz.kcell.apps.bonus_cmdr.model.AccessGroupUtils;
@@ -24,6 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
+import java.util.Arrays;
 
 import static kz.kcell.vaadin.ui.EventType.*;
 
@@ -50,7 +50,7 @@ public class UIController implements Controller, EventBus {
     @Setter
     private LoginPresenter loginPresenter;
 
-//    private ViewsCode captchaBlockedView = null;
+    //    private ViewsCode captchaBlockedView = null;
     private EventType captchaBlockedEvent;
 
     public UIController() {
@@ -67,7 +67,7 @@ public class UIController implements Controller, EventBus {
 
     public void post(EventType eventType) {
         log.info("post event: {}", eventType);
-         audit.registrationEvent(eventType);
+        audit.registrationEvent(eventType);
 
         if (isNotCaptchaBlockedState() && eventType != BLOCK_CAPTCHA && audit.isWarrantForBlockWithCaptcha()) {
 //            post(BLOCK_CAPTCHA);
@@ -233,10 +233,14 @@ public class UIController implements Controller, EventBus {
                     post(SHOW_LOGOUT_SCREEN);
                 }
                 if (state == ViewsCode.upload_file) {
-                    return AccessGroupUtils.checkAccess(AccessGroup.UPLOADER.name(), getAccount().getUser().getAccessGroups());
+                    return AccessGroupUtils.checkAccess(
+                            AccessGroup.UPLOADER.name(),
+                            getAccount().getUser().getAccessGroups());
                 }
                 if (state == ViewsCode.companies) {
-                    return AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), getAccount().getUser().getAccessGroups());
+                    return AccessGroupUtils.checkAccess(
+                            Arrays.asList(AccessGroup.SUPERVISOR.name(), AccessGroup.EXECUTOR.name()),
+                            getAccount().getUser().getAccessGroups());
                 }
             } else {
                 // if not authorized then go to login

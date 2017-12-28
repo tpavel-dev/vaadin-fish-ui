@@ -54,19 +54,10 @@ public class UploadFileViewImpl extends BaseNavigationView implements UploadFile
         uploadLayout.setSpacing(true);
         uploadLayout.setMargin(true);
 
-        Upload upload = new Upload("Upload msisdn set here", (Upload.Receiver) (filename, mimeType) -> {
-            try {
-                OutputStream outputStream = new FileOutputStream(filename);
-                return outputStream;
-            } catch (FileNotFoundException e) {
-                log.error(e.getMessage());
-            }
-            return null;
-        });
+        Upload upload = new Upload("Upload msisdn set here", listener);
+
         upload.setImmediateMode(false);
-        upload.addFinishedListener(e -> {
-            UI.getCurrent().showNotification("File uploaded Successfully!");
-        });
+        upload.addFinishedListener(listener);
         uploadLayout.addComponent(upload);
 
         content.addComponent(uploadLayout);
