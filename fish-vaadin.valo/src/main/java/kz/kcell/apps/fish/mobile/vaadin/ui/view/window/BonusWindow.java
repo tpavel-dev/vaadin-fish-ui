@@ -12,6 +12,7 @@ import com.vaadin.ui.*;
 import kz.kcell.app.bonus_cmdr.ws.stub.BonusParams;
 import kz.kcell.app.bonus_cmdr.ws.stub.BonusStatus;
 import kz.kcell.app.bonus_cmdr.ws.stub.Company;
+import kz.kcell.apps.bonus_cmdr.model.NotificationUtils;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompanyView;
 import kz.kcell.vaadin.data.EmptyDateValidator;
 import kz.kcell.vaadin.data.ParseToDoubleValidator;
@@ -221,7 +222,7 @@ public class BonusWindow extends AbstractWindow<BonusParams> {
         bonus.setCid(company.getCid());
         listener.saveBonus(bonus);
         close();
-        UI.getCurrent().showNotification("Bonus successfully added!");
+        NotificationUtils.show("Bonus successfully added!", Notification.Type.HUMANIZED_MESSAGE);
     }
 
     @Override

@@ -9,6 +9,7 @@ import kz.kcell.app.bonus_cmdr.ws.stub.Company;
 import kz.kcell.app.bonus_cmdr.ws.stub.User;
 import kz.kcell.apps.bonus_cmdr.model.AccessGroup;
 import kz.kcell.apps.bonus_cmdr.model.AccessGroupUtils;
+import kz.kcell.apps.bonus_cmdr.model.NotificationUtils;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompaniesView;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.ViewsCode;
 import lombok.Getter;
@@ -63,7 +64,7 @@ public class CompaniesViewImpl extends BaseNavigationView implements CompaniesVi
                 company.setName(name.getValue());
                 listener.saveCompany(company);
                 window.close();
-                showNotification("Company successfully added!", Notification.Type.HUMANIZED_MESSAGE);
+                NotificationUtils.show("Company successfully added!", Notification.Type.HUMANIZED_MESSAGE);
                 refreshTable();
             });
             actionBtns.addComponent(saveBtn);
@@ -98,7 +99,8 @@ public class CompaniesViewImpl extends BaseNavigationView implements CompaniesVi
                 taskField, Company::setName).setExpandRatio(1);
         grid.getEditor().addSaveListener(event -> {
             listener.updateCompany(event.getBean());
-            showNotification("Company succesfully edited!", Notification.Type.HUMANIZED_MESSAGE);
+            refreshTable();
+            NotificationUtils.show("Company successfully edited!", Notification.Type.HUMANIZED_MESSAGE);
         });
 
         if (AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups()))
@@ -119,7 +121,7 @@ public class CompaniesViewImpl extends BaseNavigationView implements CompaniesVi
                 removeBtn.setIcon(FontAwesome.REMOVE);
                 removeBtn.addClickListener(event -> {
                     listener.removeCompany(company);
-                    showNotification("Company succesfully deleted!", Notification.Type.HUMANIZED_MESSAGE);
+                    NotificationUtils.show("Company succesfully deleted!", Notification.Type.HUMANIZED_MESSAGE);
                     refreshTable();
                 });
                 return removeBtn;
@@ -132,7 +134,7 @@ public class CompaniesViewImpl extends BaseNavigationView implements CompaniesVi
         return grid;
     }
 
-    private void refreshTable() {
+    public void refreshTable() {
         table.setItems(listener.getAllCompanies());
     }
 

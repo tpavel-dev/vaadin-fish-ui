@@ -8,10 +8,12 @@ import com.vaadin.ui.*;
 import kz.kcell.app.bonus_cmdr.ws.stub.*;
 import kz.kcell.apps.bonus_cmdr.model.AccessGroup;
 import kz.kcell.apps.bonus_cmdr.model.AccessGroupUtils;
+import kz.kcell.apps.bonus_cmdr.model.NotificationUtils;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompanyView;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.ViewsCode;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.component.BonusInfo;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.window.BonusWindow;
+import kz.kcell.apps.fish.mobile.vaadin.ui.view.window.ConfirmationDialog;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.window.SelectFileMsisdnWindow;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +36,6 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
 
     private Grid<BonusParams> grid;
 
-    private final DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm");
-
     @Autowired
     @Getter
     private CompanyView.Listener listener;
@@ -55,6 +55,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         bonusParamsList = listener.getBonusParamsByCompanyId(company.getCid());
 
         window = new BonusWindow(listener, company);
+        window.addCloseListener(e -> refreshTable());
         bonusInfo = new BonusInfo(listener, null, AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups())
 );
     }
@@ -151,9 +152,13 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
     }
 
     private void onRemove(BonusParams bonus) {
-        listener.removeBonus(bonus);
-        refreshTable();
-        showNotification("Bonus successfully deleted!", Notification.Type.HUMANIZED_MESSAGE);
+        UI.getCurrent().addWindow(new ConfirmationDialog(
+                "Are you sure to delete bonus (" + bonus.getAllowanceName() + ") ?",
+                e -> {
+                    listener.removeBonus(bonus);
+                    refreshTable();
+                    NotificationUtils.show("Bonus successfully deleted!", Notification.Type.HUMANIZED_MESSAGE);
+                }));
     }
 
     private HorizontalLayout buildTopActionButtons() {
@@ -168,7 +173,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         Button buildCompany = new Button("Build Company");
         buildCompany.addClickListener(e -> {
             listener.buildCompany(company.getCid());
-            Notification.show("Company succesfully builded!", Notification.Type.HUMANIZED_MESSAGE);
+            NotificationUtils.show("Company succesfully builded!", Notification.Type.HUMANIZED_MESSAGE);
         });
         actionButtonLayout.addComponent(buildCompany);
 
@@ -181,7 +186,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         Button clearCompanyBtn = new Button("Clear company");
         clearCompanyBtn.addClickListener(e -> {
             listener.clearCompany(company.getCid());
-            Notification.show("Company successfully cleared", Notification.Type.HUMANIZED_MESSAGE);
+            NotificationUtils.show("Company successfully cleared", Notification.Type.HUMANIZED_MESSAGE);
         });
         actionButtonLayout.addComponent(clearCompanyBtn);
 
@@ -191,7 +196,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
     private HorizontalLayout buildBottomActionButtons() {
         HorizontalLayout actionButtons = new HorizontalLayout();
         actionButtons.setSpacing(true);
-        actionButtons.setMargin(false);
+        actionButtons.setMargin(new MarginInfo(false, false, true, false));
         Button backBtn = new Button("Back", event -> listener.showCompaniesView());
         backBtn.setIcon(FontAwesome.ARROW_LEFT);
         actionButtons.addComponent(backBtn);
@@ -208,9 +213,10 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         BonusParams bonusParams = bonusInfo.getBean();
         if (bonusParams.getBid() != null) {
             listener.updateBonus(bonusParams);
-            showNotification("Bonus successfully edited!", Notification.Type.HUMANIZED_MESSAGE);
+            NotificationUtils.show("Bonus successfully edited!", Notification.Type.HUMANIZED_MESSAGE);
+            refreshTable();
         } else {
-            showNotification("Select bonus", Notification.Type.ERROR_MESSAGE);
+            NotificationUtils.show("Select bonus", Notification.Type.ERROR_MESSAGE);
         }
     }
 
