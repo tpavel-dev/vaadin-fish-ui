@@ -192,23 +192,7 @@ public class BonusWindow extends AbstractWindow<BonusParams> {
         topLayout.addComponent(rightSide);
 
         content.addComponent(topLayout);
-
-        HorizontalLayout actionBtns = new HorizontalLayout();
-        Button saveBtn = new Button("Save");
-        saveBtn.setIcon(FontAwesome.SAVE);
-        saveBtn.addClickListener(event -> {
-            save();
-        });
-        actionBtns.addComponent(saveBtn);
-
-        Button closeBtn = new Button("Close");
-        closeBtn.setIcon(FontAwesome.CLOSE);
-        closeBtn.addClickListener(event -> {
-            close();
-        });
-        actionBtns.addComponent(closeBtn);
-        actionBtns.setComponentAlignment(closeBtn, Alignment.MIDDLE_RIGHT);
-        content.addComponent(actionBtns);
+        content.addComponent(getActionButtons());
         return content;
     }
 

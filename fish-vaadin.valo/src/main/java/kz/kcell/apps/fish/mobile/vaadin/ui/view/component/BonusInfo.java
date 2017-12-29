@@ -166,7 +166,7 @@ public class BonusInfo extends AbstractInfo<BonusParams> {
     }
 
     @Override
-    public void setBonus(BonusParams bonus) {
+    public void setValue(BonusParams bonus) {
         this.bonus = bonus;
         this.bonusState = listener.getBonusAssigmentState(bonus);
         setFieldsValue();

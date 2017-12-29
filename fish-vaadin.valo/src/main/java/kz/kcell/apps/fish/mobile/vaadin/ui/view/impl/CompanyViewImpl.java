@@ -148,7 +148,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
 
     private void onInfo(SelectionEvent<BonusParams> event) {
         if (event.getFirstSelectedItem().equals(Optional.empty())) return;
-        bonusInfo.setBonus(event.getFirstSelectedItem().get());
+        bonusInfo.setValue(event.getFirstSelectedItem().get());
     }
 
     private void onRemove(BonusParams bonus) {

@@ -17,7 +17,7 @@ public abstract class AbstractInfo<T> extends HorizontalLayout {
 
     abstract void buildLayout();
 
-    abstract void setBonus(BonusParams bonus);
+    abstract void setValue(T object);
 
     abstract void setFieldsValue();
 
