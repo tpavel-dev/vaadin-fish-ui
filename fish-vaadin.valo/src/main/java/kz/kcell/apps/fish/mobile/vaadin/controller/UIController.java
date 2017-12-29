@@ -124,9 +124,21 @@ public class UIController implements Controller, EventBus {
             }
             case LOGIN_SUCCESFULL: {
                 mainUIPresenter.loginSuccessful();
-                if (!getAccount().hasRole(AccessGroup.UPLOADER.name()))
-                    mainUIPresenter.changeAccessMenuTab(ViewsCode.name_upload_file);
-                post(EventType.SHOW_PRODUCT_SCREEN);
+                if (AccessGroupUtils.checkAccess(
+                        Arrays.asList(AccessGroup.SUPERVISOR.name(), AccessGroup.EXECUTOR.name()),
+                        getAccount().getUser().getAccessGroups())) {
+                    post(EventType.SHOW_COMPANIES_SCREEN);
+                } else if (AccessGroupUtils.checkAccess(
+                        AccessGroup.UPLOADER.name(),
+                        getAccount().getUser().getAccessGroups())) {
+                    post(EventType.SHOW_UPLOAD_SCREEN);
+                } else {
+                    post(EventType.SHOW_PRODUCT_SCREEN);
+                }
+                break;
+            }
+            case SHOW_UPLOAD_SCREEN: {
+                mainUIPresenter.navigateTo(ViewsCode.upload_file);
                 break;
             }
             case EXIT: {

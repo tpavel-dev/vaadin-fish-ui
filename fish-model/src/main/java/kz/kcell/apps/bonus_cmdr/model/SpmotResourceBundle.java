@@ -182,7 +182,7 @@ public enum SpmotResourceBundle implements ResourceBundle {
     ,transfer_reject_notify           ("Операция отменена"
             ,"Операция тоқтатылды")
 
-    ,main_title                       ("<h3>Sales Point <strong>Motivation</strong></h3>")
+    ,main_title                       ("<h3>Bonus <strong>Commander</strong></h3>")
 
     ,main_menu_product                ("Продукты"
             ,"Өнімдер")
@@ -205,7 +205,7 @@ public enum SpmotResourceBundle implements ResourceBundle {
     ,main_bonus_label                 ("Бонусы: %10.2f ед."
             ,"Бонус: %10.2f бірлік")
 
-    ,page_title                       ("Sales Point Motivation")
+    ,page_title                       ("Bonus Commander")
 
     ,main_menu_change_lang            ("Смена языка"
             ,"Тілді ауыстыру")

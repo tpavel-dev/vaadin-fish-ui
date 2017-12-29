@@ -39,7 +39,7 @@ import static kz.kcell.apps.fish.mobile.vaadin.SpmotMobileResourceManager.$;
 @Theme("valo")
 //@Theme("dashboard")
 //@Theme("tsr")
-@Title("Sales Point Motivation")
+@Title("Bonus Commander")
 //@Widgetset("kz.kcell.apps.spmot.mobile.vaadin.ui.AppWidgetSet")
 @Slf4j
 //@SpringUI
@@ -225,18 +225,8 @@ public class ValoMainUIImpl extends MainUI  {
         menu.removeStyleName("valo-menu-visible");
     }
 
-    public void removeMenuTab(String tabName) {
-        menuItems.remove(tabName);
-    }
-
-
     @Override
     public void translate() {
-        main_menu_button_product.setCaption($(main_menu_product));
-        main_menu_button_subscribe_log.setCaption($(main_menu_subscribe_log));
-        main_menu_button_transfer_bonus.setCaption($(main_menu_transfer_bonus));
-        main_menu_button_change_lang.setCaption($(main_menu_change_lang));
-        main_menu_button_captcha.setCaption("captcha");
         main_menu_button_out.setCaption($(main_menu_out));
         main_menu_button_companies.setCaption("Companies");
         main_menu_button_upload_file.setCaption("Upload file");
@@ -272,33 +262,12 @@ public class ValoMainUIImpl extends MainUI  {
 
 
     private CssLayout buildMenu() {
-        // Add items
-/*
-        main_menu_button_product        = new Button(main_menu_product        ), e-> {navigator.navigateTo(State.services.name()   );});
-        main_menu_button_subscribe_log  = new Button(main_menu_subscribe_log  ), e-> {navigator.navigateTo(State.log.name()        );});
-        main_menu_button_transfer_bonus = new Button(main_menu_transfer_bonus ), e-> {navigator.navigateTo(State.transfer.name()   );});
-        main_menu_button_bonus_info     = new Button(main_menu_bonus_info     ), e-> {navigator.navigateTo(State.bonuses_info.name());});
-        main_menu_button_change_lang    = new Button(main_menu_change_lang    ), e-> {navigator.navigateTo(State.change_lang.name());});
-        main_menu_button_out            = new Button(main_menu_out            ), e-> {navigator.navigateTo(State.logout.name()     );});
-//        main_menu_button_login          = new Button("Вход"                       , e-> {navigator.navigateTo(State.login.name()      );});
-//        main_menu_button_bonus          = new Button("Мои бонусы"                 , e-> {navigator.navigateTo(State.my_balance.name() );});
-*/
 
-        main_menu_button_product = new Button($(main_menu_product),               e -> getNavigator().navigateTo(ViewsCode.services.name()));
-        main_menu_button_subscribe_log = new Button($(main_menu_subscribe_log),   e -> getNavigator().navigateTo(ViewsCode.log.name()));//listener.onClick(ViewsCode.log));
-        main_menu_button_transfer_bonus = new Button($(main_menu_transfer_bonus), e -> getNavigator().navigateTo(ViewsCode.transfer.name()));////listener.onClick(ViewsCode.transfer));
-        main_menu_button_bonus_info = new Button($(main_menu_bonus_info),         e -> getNavigator().navigateTo(ViewsCode.bonuses_info.name()));////listener.onClick(ViewsCode.bonuses_info));
-        main_menu_button_change_lang = new Button($(main_menu_change_lang),       e -> getNavigator().navigateTo(ViewsCode.change_lang.name()));////listener.onClick(ViewsCode.change_lang));
         main_menu_button_out = new Button($(main_menu_out),                       e -> getNavigator().navigateTo(ViewsCode.logout.name()));////listener.onClick(ViewsCode.logout));
         main_menu_button_captcha = new Button("captcha",                   e -> getNavigator().navigateTo(ViewsCode.captcha.name()));//listener.onClick(ViewsCode.captcha));
         main_menu_button_companies = new Button("Companies",               e -> getNavigator().navigateTo(ViewsCode.name_companies));
         main_menu_button_upload_file = new Button("Upload file",               e -> getNavigator().navigateTo(ViewsCode.name_upload_file));
 
-        main_menu_button_product.setId(main_menu_product.name());
-        main_menu_button_subscribe_log.setId(main_menu_subscribe_log.name());
-        main_menu_button_transfer_bonus.setId(main_menu_transfer_bonus.name());
-        main_menu_button_bonus_info.setId(main_menu_bonus_info.name());
-        main_menu_button_change_lang.setId(main_menu_change_lang.name());
         main_menu_button_out.setId(main_menu_out.name());
         main_menu_button_captcha.setId("captcha");
         main_menu_button_companies.setId("companies");
@@ -306,18 +275,12 @@ public class ValoMainUIImpl extends MainUI  {
 
         menuItems.put(ViewsCode.name_companies, main_menu_button_companies);
         menuItems.put(ViewsCode.name_upload_file, main_menu_button_upload_file);
-        menuItems.put(ViewsCode.services.name(), main_menu_button_product);
-        menuItems.put(ViewsCode.log.name(), main_menu_button_subscribe_log);
-        menuItems.put(ViewsCode.bonuses_info.name(), main_menu_button_bonus_info);
-        menuItems.put(ViewsCode.transfer.name(), main_menu_button_transfer_bonus);
-        menuItems.put(ViewsCode.change_lang.name(), main_menu_button_change_lang);
         menuItems.put(ViewsCode.logout.name(), main_menu_button_out);
 
-        if (developMode) {
-            menuItems.put(ViewsCode.login.name(), main_menu_button_login);
-            menuItems.put(ViewsCode.login.name(), main_menu_button_captcha);
-
-        }
+//        if (developMode) {
+//            menuItems.put(ViewsCode.login.name(), main_menu_button_login);
+//            menuItems.put(ViewsCode.login.name(), main_menu_button_captcha);
+//        }
 
         final HorizontalLayout top = new HorizontalLayout();
         top.setWidth("100%");
@@ -490,9 +453,8 @@ public class ValoMainUIImpl extends MainUI  {
 */
 
     @Override
-    public void setMsisdn(String msisdnStr) {
-        msisdn = new FastMsisdn(msisdnStr);
-        msisdnLabel.setValue(msisdn.format(Msisdn.Format.CANONICAL));
+    public void setMsisdn(String login) {
+        msisdnLabel.setValue(login);
 //        updateTitle();
     }
 

@@ -88,7 +88,7 @@ public class MainUIPresenter extends AbstractPresenter<MainUI> implements Presen
 
     private void update() {
         updateBalance();
-        setMsisdn(getAccount().getMsisdn().get());
+        setMsisdn(getAccount().getUser().getName());
     }
 
     ///*
@@ -197,7 +197,7 @@ public class MainUIPresenter extends AbstractPresenter<MainUI> implements Presen
 
     public void loginSuccessful() {
 //        getMainUI().offFullScreen();
-        mainUI.setMsisdn(getAccount().getMsisdn().get());
+        mainUI.setMsisdn(getAccount().getUser().getName());
         update();
     }
 
@@ -210,7 +210,7 @@ public class MainUIPresenter extends AbstractPresenter<MainUI> implements Presen
 
     private void refreshMsisdnAndBonusLabel() {
         if (SessionManager.getAccount().getMsisdn() != null) {
-            setMsisdn(SessionManager.getAccount().getMsisdn().get());
+            setMsisdn(SessionManager.getAccount().getUser().getName());
         }
 //        setBonus(SessionManager.getAccount().getBonus());
         updateTitle();
@@ -224,10 +224,6 @@ public class MainUIPresenter extends AbstractPresenter<MainUI> implements Presen
 
 //        String bonusStr = bonus == null ? main_no_bonus_label.$(): main_bonus_label.$(bonus);
 //        title.setValue(bonusStr);
-    }
-
-    public void changeAccessMenuTab(String tabName) {
-        mainUI.removeMenuTab(tabName);
     }
 
 //    public void login() {
