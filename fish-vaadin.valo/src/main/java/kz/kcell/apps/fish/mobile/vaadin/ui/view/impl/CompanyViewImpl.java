@@ -19,8 +19,6 @@ import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 @SpringView(name = ViewsCode.name_company)
@@ -56,7 +54,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
 
         window = new BonusWindow(listener, company);
         window.addCloseListener(e -> refreshTable());
-        bonusInfo = new BonusInfo(listener, null, AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups())
+        bonusInfo = new BonusInfo(listener, null, AccessGroupUtils.checkAccess(AccessGroup.BONUS_CMDR_SUPERVISOR.name(), currentUser.getAccessGroups())
 );
     }
 
@@ -74,7 +72,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
 
         VerticalLayout v = new VerticalLayout();
         v.setWidth(100, Unit.PERCENTAGE);
-        if (AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups()))
+        if (AccessGroupUtils.checkAccess(AccessGroup.BONUS_CMDR_SUPERVISOR.name(), currentUser.getAccessGroups()))
             v.addComponent(buildTopActionButtons());
         v.addComponent(buildGrid());
         v.setSpacing(true);
@@ -119,14 +117,14 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         grid.addColumn(BonusParams::getAllowanceDescr).setCaption("Description");
         grid.addColumn(BonusParams::getExeOrder).setCaption("Order");
         grid.addColumn(BonusParams::getStatus).setCaption("Status");
-        if (AccessGroupUtils.checkAccess(AccessGroup.EXECUTOR.name(), currentUser.getAccessGroups())) {
+        if (AccessGroupUtils.checkAccess(AccessGroup.BONUS_CMDR_EXECUTOR.name(), currentUser.getAccessGroups())) {
             grid.addComponentColumn(bonus -> addBonusAction(bonus))
                     .setMaximumWidth(100).setCaption("Change");
         }
         grid.addSelectionListener(event -> {
             onInfo(event);
         });
-        if (AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups())) {
+        if (AccessGroupUtils.checkAccess(AccessGroup.BONUS_CMDR_SUPERVISOR.name(), currentUser.getAccessGroups())) {
             grid.addComponentColumn(bonus -> {
                 Button removeBtn = new Button();
                 removeBtn.setIcon(FontAwesome.REMOVE);
@@ -201,7 +199,7 @@ public class CompanyViewImpl extends BaseNavigationView implements CompanyView {
         backBtn.setIcon(FontAwesome.ARROW_LEFT);
         actionButtons.addComponent(backBtn);
 
-        if (AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups())) {
+        if (AccessGroupUtils.checkAccess(AccessGroup.BONUS_CMDR_SUPERVISOR.name(), currentUser.getAccessGroups())) {
             Button saveBtn = new Button("Save", event -> saveBonusInfo());
             saveBtn.setIcon(FontAwesome.SAVE);
             actionButtons.addComponent(saveBtn);

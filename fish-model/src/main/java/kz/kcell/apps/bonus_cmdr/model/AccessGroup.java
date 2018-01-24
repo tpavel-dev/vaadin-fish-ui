@@ -7,7 +7,7 @@ package kz.kcell.apps.bonus_cmdr.model;
 public enum AccessGroup {
     SHAREBONUS,
     DEBUG,
-    SUPERVISOR,
-    UPLOADER,
-    EXECUTOR
+    BONUS_CMDR_SUPERVISOR,
+    BONUS_CMDR_UPLOADER,
+    BONUS_CMDR_EXECUTOR
 }

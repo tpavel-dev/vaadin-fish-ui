@@ -125,11 +125,11 @@ public class UIController implements Controller, EventBus {
             case LOGIN_SUCCESFULL: {
                 mainUIPresenter.loginSuccessful();
                 if (AccessGroupUtils.checkAccess(
-                        Arrays.asList(AccessGroup.SUPERVISOR.name(), AccessGroup.EXECUTOR.name()),
+                        Arrays.asList(AccessGroup.BONUS_CMDR_SUPERVISOR.name(), AccessGroup.BONUS_CMDR_EXECUTOR.name()),
                         getAccount().getUser().getAccessGroups())) {
                     post(EventType.SHOW_COMPANIES_SCREEN);
                 } else if (AccessGroupUtils.checkAccess(
-                        AccessGroup.UPLOADER.name(),
+                        AccessGroup.BONUS_CMDR_UPLOADER.name(),
                         getAccount().getUser().getAccessGroups())) {
                     post(EventType.SHOW_UPLOAD_SCREEN);
                 } else {
@@ -246,12 +246,12 @@ public class UIController implements Controller, EventBus {
                 }
                 if (state == ViewsCode.upload_file) {
                     return AccessGroupUtils.checkAccess(
-                            AccessGroup.UPLOADER.name(),
+                            AccessGroup.BONUS_CMDR_UPLOADER.name(),
                             getAccount().getUser().getAccessGroups());
                 }
                 if (state == ViewsCode.companies) {
                     return AccessGroupUtils.checkAccess(
-                            Arrays.asList(AccessGroup.SUPERVISOR.name(), AccessGroup.EXECUTOR.name()),
+                            Arrays.asList(AccessGroup.BONUS_CMDR_SUPERVISOR.name(), AccessGroup.BONUS_CMDR_EXECUTOR.name()),
                             getAccount().getUser().getAccessGroups());
                 }
             } else {

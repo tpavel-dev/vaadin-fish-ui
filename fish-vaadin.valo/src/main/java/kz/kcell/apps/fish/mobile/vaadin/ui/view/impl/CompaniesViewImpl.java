@@ -6,7 +6,6 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.*;
-import kz.kcell.app.bonus_cmdr.ws.stub.BonusParams;
 import kz.kcell.app.bonus_cmdr.ws.stub.Company;
 import kz.kcell.app.bonus_cmdr.ws.stub.User;
 import kz.kcell.apps.bonus_cmdr.model.AccessGroup;
@@ -14,9 +13,7 @@ import kz.kcell.apps.bonus_cmdr.model.AccessGroupUtils;
 import kz.kcell.apps.bonus_cmdr.model.NotificationUtils;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.CompaniesView;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.ViewsCode;
-import kz.kcell.apps.fish.mobile.vaadin.ui.view.component.BonusInfo;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.component.CompanyInfo;
-import kz.kcell.apps.fish.mobile.vaadin.ui.view.window.BonusWindow;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.window.CompanyWindow;
 import kz.kcell.apps.fish.mobile.vaadin.ui.view.window.ConfirmationDialog;
 import lombok.Getter;
@@ -60,7 +57,7 @@ public class CompaniesViewImpl extends BaseNavigationView implements CompaniesVi
         window = new CompanyWindow(listener);
         window.addCloseListener(e -> refreshTable());
         companyInfo = new CompanyInfo(listener, null,
-                AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(),
+                AccessGroupUtils.checkAccess(AccessGroup.BONUS_CMDR_SUPERVISOR.name(),
                         currentUser.getAccessGroups()));
     }
 
@@ -98,7 +95,7 @@ public class CompaniesViewImpl extends BaseNavigationView implements CompaniesVi
             onInfo(event);
         });
 
-        if (AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups())) {
+        if (AccessGroupUtils.checkAccess(AccessGroup.BONUS_CMDR_SUPERVISOR.name(), currentUser.getAccessGroups())) {
             grid.addComponentColumn(company -> {
                 Button removeBtn = new Button("");
                 removeBtn.setIcon(FontAwesome.REMOVE);
@@ -134,7 +131,7 @@ public class CompaniesViewImpl extends BaseNavigationView implements CompaniesVi
         VerticalLayout v = new VerticalLayout();
         v.setWidth(100, Unit.PERCENTAGE);
 
-        if (AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups()))
+        if (AccessGroupUtils.checkAccess(AccessGroup.BONUS_CMDR_SUPERVISOR.name(), currentUser.getAccessGroups()))
             v.addComponent(buildActionButtons());
         v.addComponent(table);
         v.setSpacing(true);
@@ -152,7 +149,7 @@ public class CompaniesViewImpl extends BaseNavigationView implements CompaniesVi
         actionButtons.setSpacing(true);
         actionButtons.setMargin(new MarginInfo(false, false, true, false));
 
-        if (AccessGroupUtils.checkAccess(AccessGroup.SUPERVISOR.name(), currentUser.getAccessGroups())) {
+        if (AccessGroupUtils.checkAccess(AccessGroup.BONUS_CMDR_SUPERVISOR.name(), currentUser.getAccessGroups())) {
             Button saveBtn = new Button("Save", event -> saveCompanyInfo());
             saveBtn.setIcon(FontAwesome.SAVE);
             actionButtons.addComponent(saveBtn);

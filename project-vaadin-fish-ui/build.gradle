@@ -39,8 +39,6 @@ subprojects {
         enabled = false
     }
 
-    test { enabled = false }
-
     repositories {
         mavenLocal()
         mavenCentral()
